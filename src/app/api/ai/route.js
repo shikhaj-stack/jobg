@@ -1,11 +1,14 @@
 import { NextResponse } from "next/server";
+import { requireAuthenticatedUser } from "@/lib/auth/server";
 
 export async function POST(request) {
   try {
+    const { errorResponse, user } = await requireAuthenticatedUser(request);
+    if (errorResponse) return errorResponse;
+
     const body = await request.json();
     const { query, type, track } = body;
 
-    // AI Mock response generator for LiteLLM Gateway
     let guidance = "";
     if (type === "interview") {
       guidance = "Analyze edge cases first: Ask about duplicate inputs, negative weights in graph, and concurrent read/write ratios.";
@@ -17,7 +20,8 @@ export async function POST(request) {
 
     return NextResponse.json({
       success: true,
-      query,
+      uid: user.uid,
+      query: query || "",
       type: type || "career-guidance",
       guidance,
       modelUsed: "litellm/claude-3-5-sonnet",

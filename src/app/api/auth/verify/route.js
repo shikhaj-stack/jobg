@@ -1,16 +1,24 @@
 import { NextResponse } from "next/server";
+import { getAuthenticatedUser } from "@/lib/auth/server";
 
 export async function POST(request) {
   try {
-    const body = await request.json();
-    const { token, email, uid } = body;
+    const user = await getAuthenticatedUser(request);
+    if (!user) {
+      return NextResponse.json(
+        { success: false, verified: false, error: "Invalid or missing credentials" },
+        { status: 401 }
+      );
+    }
 
     return NextResponse.json({
       success: true,
       verified: true,
       user: {
-        uid: uid || "demo-uid",
-        email: email || "alex.rivera@engineer.io",
+        uid: user.uid,
+        email: user.email,
+        displayName: user.displayName,
+        isDemo: user.isDemo,
       },
       message: "Chamber session verified.",
     });

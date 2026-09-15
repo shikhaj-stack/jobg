@@ -1,5 +1,5 @@
 "use client";
-import React, { createContext, useContext, useState, useEffect } from 'react';
+import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import { 
   auth, 
   googleProvider, 
@@ -7,7 +7,8 @@ import {
   signInWithPopup, 
   signInWithEmailAndPassword, 
   createUserWithEmailAndPassword, 
-  firebaseSignOut 
+  firebaseSignOut,
+  updateProfile
 } from '@/lib/firebase';
 import { supabase } from '@/lib/supabase';
 
@@ -30,6 +31,32 @@ export function AuthProvider({ children }) {
   const [user, setUser] = useState(null);
   const [profile, setProfile] = useState(DEFAULT_PROFILE);
   const [loading, setLoading] = useState(true);
+  const [idToken, setIdToken] = useState(null);
+
+  // Sync server demo session cookie
+  const syncServerDemoSession = useCallback(async (userData) => {
+    try {
+      await fetch('/api/auth/session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'login', userData }),
+      });
+    } catch (e) {
+      console.warn('Server session sync notice:', e);
+    }
+  }, []);
+
+  const clearServerDemoSession = useCallback(async () => {
+    try {
+      await fetch('/api/auth/session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ action: 'logout' }),
+      });
+    } catch (e) {
+      console.warn('Server session clear notice:', e);
+    }
+  }, []);
 
   // Initialize auth & load saved local profile
   useEffect(() => {
@@ -39,28 +66,32 @@ export function AuthProvider({ children }) {
         try {
           const parsed = JSON.parse(savedProfile);
           setProfile(prev => ({ ...prev, ...parsed }));
-        } catch (e) {
-          console.error('Error loading profile from localStorage', e);
-        }
+        } catch (e) {}
       }
 
-      // Check for demo or firebase user
       const isDemoLoggedIn = localStorage.getItem('jobg_demo_logged_in');
       if (isDemoLoggedIn === 'true') {
-        setUser({
+        const demoUser = {
           uid: profile.uid || 'demo-user-101',
           email: profile.email || 'alex.rivera@engineer.io',
           displayName: profile.displayName || 'Alex Rivera',
-          photoURL: profile.photoURL,
-        });
+          photoURL: profile.photoURL || DEFAULT_PROFILE.photoURL,
+          isDemo: true,
+        };
+        setUser(demoUser);
+        syncServerDemoSession(demoUser);
       }
     }
 
-    // Firebase Auth listener if auth initialized
     if (auth) {
-      const unsubscribe = auth.onAuthStateChanged((firebaseUser) => {
+      const unsubscribe = auth.onAuthStateChanged(async (firebaseUser) => {
         if (firebaseUser) {
           setUser(firebaseUser);
+          try {
+            const token = await firebaseUser.getIdToken();
+            setIdToken(token);
+          } catch (e) {}
+
           const updated = {
             uid: firebaseUser.uid,
             email: firebaseUser.email,
@@ -79,15 +110,14 @@ export function AuthProvider({ children }) {
     } else {
       setLoading(false);
     }
-  }, []);
+  }, [syncServerDemoSession]);
 
-  const saveProfile = (newProfileData) => {
+  const saveProfile = useCallback((newProfileData) => {
     setProfile(prev => {
       const updated = { ...prev, ...newProfileData, lastActive: 'Just now' };
       if (typeof window !== 'undefined') {
         localStorage.setItem('jobg_user_profile', JSON.stringify(updated));
       }
-      // Sync to Supabase if connected
       if (supabase && user?.uid) {
         supabase
           .from('users')
@@ -105,18 +135,36 @@ export function AuthProvider({ children }) {
       }
       return updated;
     });
-  };
+  }, [user]);
+
+  const demoLogin = useCallback((customData = {}) => {
+    const newUser = {
+      uid: customData.uid || ('demo-user-' + Date.now()),
+      email: customData.email || 'alex.rivera@engineer.io',
+      displayName: customData.displayName || 'Alex Rivera',
+      photoURL: customData.photoURL || DEFAULT_PROFILE.photoURL,
+      isDemo: true,
+    };
+    setUser(newUser);
+    saveProfile(customData);
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('jobg_demo_logged_in', 'true');
+    }
+    syncServerDemoSession(newUser);
+    return newUser;
+  }, [saveProfile, syncServerDemoSession]);
 
   const loginWithGoogle = async () => {
     if (auth && googleProvider) {
       try {
         const result = await signInWithPopup(auth, googleProvider);
+        const token = await result.user.getIdToken();
+        setIdToken(token);
         return result.user;
       } catch (err) {
-        console.warn('Firebase Google Auth error, switching to demo auth:', err.message);
+        console.warn('Firebase Google Auth notice, switching to demo:', err.message);
       }
     }
-    // Fallback demo login
     return demoLogin({
       email: 'alex.rivera@gmail.com',
       displayName: 'Alex Rivera (Google)',
@@ -128,9 +176,11 @@ export function AuthProvider({ children }) {
     if (auth && githubProvider) {
       try {
         const result = await signInWithPopup(auth, githubProvider);
+        const token = await result.user.getIdToken();
+        setIdToken(token);
         return result.user;
       } catch (err) {
-        console.warn('Firebase GitHub Auth error, switching to demo auth:', err.message);
+        console.warn('Firebase GitHub Auth notice, switching to demo:', err.message);
       }
     }
     return demoLogin({
@@ -144,14 +194,16 @@ export function AuthProvider({ children }) {
     if (auth) {
       try {
         const result = await signInWithEmailAndPassword(auth, email, password);
+        const token = await result.user.getIdToken();
+        setIdToken(token);
         return result.user;
       } catch (err) {
-        console.warn('Firebase Email Auth error, falling back to local session:', err.message);
+        console.warn('Firebase Email Auth notice, falling back to demo session:', err.message);
       }
     }
     return demoLogin({
       email,
-      displayName: email.split('@')[0].replace('.', ' ').replace(/w/g, l => l.toUpperCase()),
+      displayName: email.split('@')[0].replace('.', ' ').replace(/\b\w/g, l => l.toUpperCase()),
     });
   };
 
@@ -162,10 +214,12 @@ export function AuthProvider({ children }) {
         if (extraData.displayName) {
           await updateProfile(result.user, { displayName: extraData.displayName });
         }
+        const token = await result.user.getIdToken();
+        setIdToken(token);
         saveProfile({ ...extraData, email, displayName: extraData.displayName || email.split('@')[0] });
         return result.user;
       } catch (err) {
-        console.warn('Firebase Signup error, falling back to local session:', err.message);
+        console.warn('Firebase Signup notice, falling back to demo session:', err.message);
       }
     }
     return demoLogin({
@@ -175,33 +229,18 @@ export function AuthProvider({ children }) {
     });
   };
 
-  const demoLogin = (customData = {}) => {
-    const newUser = {
-      uid: customData.uid || 'demo-user-' + Date.now(),
-      email: customData.email || 'alex.rivera@engineer.io',
-      displayName: customData.displayName || 'Alex Rivera',
-      photoURL: customData.photoURL || DEFAULT_PROFILE.photoURL,
-    };
-    setUser(newUser);
-    saveProfile(customData);
-    if (typeof window !== 'undefined') {
-      localStorage.setItem('jobg_demo_logged_in', 'true');
-    }
-    return newUser;
-  };
-
   const logout = async () => {
     if (auth) {
       try {
         await firebaseSignOut(auth);
-      } catch (e) {
-        console.error('Firebase signout error', e);
-      }
+      } catch (e) {}
     }
     setUser(null);
+    setIdToken(null);
     if (typeof window !== 'undefined') {
       localStorage.removeItem('jobg_demo_logged_in');
     }
+    await clearServerDemoSession();
   };
 
   return (
@@ -209,6 +248,7 @@ export function AuthProvider({ children }) {
       user,
       profile,
       loading,
+      idToken,
       loginWithGoogle,
       loginWithGithub,
       loginWithEmail,
