@@ -19,7 +19,7 @@
 Thumbs.db
 scratch/
 *.log
-server.js
+/server.js
 
 # local env files
 .env*.local
