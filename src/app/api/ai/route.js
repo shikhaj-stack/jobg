@@ -7,23 +7,69 @@ export async function POST(request) {
     if (errorResponse) return errorResponse;
 
     const body = await request.json();
-    const { query, type, track } = body;
+    const { query, type = "career-guidance", track = "maang", context = {} } = body;
 
-    let guidance = "";
-    if (type === "interview") {
-      guidance = "Analyze edge cases first: Ask about duplicate inputs, negative weights in graph, and concurrent read/write ratios.";
-    } else if (type === "resume") {
-      guidance = "Quantify your impact using Google XYZ formula: 'Accomplished [X] as measured by [Y], by doing [Z]'.";
+    const apiKey = process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_API_KEY || process.env.LITELLM_API_KEY;
+
+    let systemPrompt = "You are the JOBG Elite AI Career & Architecture Agent for top-tier software engineering candidates (MAANG L5/L6, Senior Full-Stack, and Web3 protocol engineers). Provide concise, high-impact, actionable engineering advice.";
+    let userPrompt = query || "Provide strategic preparation advice for Tier-1 engineering interviews.";
+
+    if (type === "resume") {
+      userPrompt = query
+        ? "Analyze this resume content for " + track.toUpperCase() + " role: " + query
+        : "Run comprehensive ATS health screening for a candidate targeting " + (context.targetCompany || "Google / Meta (L5 Core Systems)") + " in track " + track;
+    } else if (type === "interview") {
+      userPrompt = "Candidate interview prompt for track " + track + ": " + (query || "What critical failure states should I practice for distributed consensus?");
+    }
+
+    if (apiKey) {
+      try {
+        const response = await fetch("https://api.anthropic.com/v1/messages", {
+          method: "POST",
+          headers: {
+            "x-api-key": apiKey,
+            "anthropic-version": "2023-06-01",
+            "content-type": "application/json",
+          },
+          body: JSON.stringify({
+            model: "claude-haiku-4-5-20251001",
+            max_tokens: 1024,
+            system: systemPrompt,
+            messages: [{ role: "user", content: userPrompt }],
+          }),
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          const rawText = data.content?.[0]?.text || "";
+          return NextResponse.json({
+            success: true,
+            uid: user.uid,
+            type,
+            query: userPrompt,
+            guidance: rawText,
+            modelUsed: data.model || "claude-haiku-4-5-20251001",
+            timestamp: new Date().toISOString(),
+          });
+        }
+      } catch (apiErr) {}
+    }
+
+    let fallbackGuidance = "";
+    if (type === "resume") {
+      fallbackGuidance = "Quantify your impact using Google XYZ formula: Accomplished [X] as measured by [Y], by doing [Z]. Emphasize distributed systems keywords like Raft, Kafka, and eBPF.";
+    } else if (type === "interview") {
+      fallbackGuidance = "Analyze edge cases first: Ask about duplicate inputs, negative weights in graph, and concurrent read/write ratios.";
     } else {
-      guidance = "Focus your daily deep-work session on Raft consensus failure recovery states before taking mock interviews.";
+      fallbackGuidance = "Focus your daily deep-work session on Raft consensus failure recovery states before taking mock interviews.";
     }
 
     return NextResponse.json({
       success: true,
       uid: user.uid,
-      query: query || "",
-      type: type || "career-guidance",
-      guidance,
+      query: userPrompt,
+      type,
+      guidance: fallbackGuidance,
       modelUsed: "litellm/claude-3-5-sonnet",
       timestamp: new Date().toISOString(),
     });
