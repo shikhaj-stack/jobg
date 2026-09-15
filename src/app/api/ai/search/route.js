@@ -89,8 +89,8 @@ export async function POST(request) {
       return NextResponse.json({ error: "Query is required" }, { status: 400 });
     }
 
-    const openAiKey = process.env.OPENAI_API_KEY;
-    const anthropicKey = process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_API_KEY;
+    const openAiKey = request.headers.get("x-openai-key") || body.openaiKey || process.env.OPENAI_API_KEY;
+    const anthropicKey = request.headers.get("x-anthropic-key") || body.anthropicKey || process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_API_KEY;
     let aiResult = null;
 
     if (openAiKey) {
@@ -180,7 +180,7 @@ export async function POST(request) {
         spaceComp = "EVM Storage Slots";
         intuition = `Examine ${query} for Checks-Effects-Interactions violations, flash-loan oracle manipulation, price slippage curves, and cross-contract reentrancy gates.`;
         faangTrap = "Unchecked external calls before updating state balances, allowing recursive drain attacks.";
-        codeSnippet = `// Reentrancy-Guarded Smart Contract Blueprint\ncontract SecureVault is ReentrancyGuard {\n  mapping(address => uint256) private balances;\n  function withdraw(uint256 amount) external nonReentrant {\n    require(balances[msg.sender] >= amount, "Insufficient");\n    balances[msg.sender] -= amount;\n    (bool sent, ) = msg.sender.call{value: amount}("");\n    require(sent, "Transfer failed");\n  }\n}`;
+        codeSnippet = `// Reentrancy-Guarded Smart Contract Blueprint\ncontract SecureVault is ReentrancyGuard {\n  mapping(address => uint256) private balances;\n  function withdraw(uint256 amount) external nonReentrant {\n    require(balances[msg.sender] >= amount, "Insufficient");\n    balances[msg.sender] -= amount; // Effect first\n    (bool sent, ) = msg.sender.call{value: amount}(""); // Interaction\n    require(sent, "Transfer failed");\n  }\n}`;
       }
 
       aiResult = {
