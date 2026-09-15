@@ -3,7 +3,6 @@
 # 🚀 J O B G // The Elite MAANG & Web3 Readiness Chamber
 ### *Bridging the Gap Between Unstructured Content and Top-Tier Engineering Employment*
 
-[![Claude Impact Lab](https://img.shields.io/badge/Claude%20Community-Impact%20Lab%202026-6366f1?style=for-the-badge&logo=anthropic)](https://anthropic.com)
 [![Team: Launch Legends](https://img.shields.io/badge/Team-Launch%20Legends-amber?style=for-the-badge)](https://github.com/shikhaj-stack/jobg)
 [![Next.js 14](https://img.shields.io/badge/Next.js-14%20(App%20Router)-black?style=for-the-badge&logo=next.js)](https://nextjs.org)
 [![PostgreSQL Supabase](https://img.shields.io/badge/Supabase-PostgreSQL%20%2B%20RLS-3ecf8e?style=for-the-badge&logo=supabase)](https://supabase.com)
@@ -14,26 +13,7 @@
 
 ---
 
-## 🏆 Claude Community Impact Lab Scorecard Alignment
-
-This platform was architected and built by **Team Launch Legends** for the **Claude Community Impact Lab (Bhopal 2026)** to evaluate ideas for a more human and equitable future.
-
-```
-┌───────────────────────────────────────────────┬────────────┬─────────────┐
-│ Evaluation Criteria                           │ Weight     │ Fulfillment │
-├───────────────────────────────────────────────┼────────────┼─────────────┤
-│ 🌍 1. Impact & Social Relevance               │ 25%        │ ★★★★★ 100%  │
-│ ⚙️ 2. Technical Execution & Architecture       │ 20%        │ ★★★★★ 100%  │
-│ 👥 3. Usability & Community Practicality       │ 15%        │ ★★★★★ 100%  │
-│ 💎 4. Code Quality & Open Source Standard     │ 10%        │ ★★★★★ 100%  │
-│ 💡 5. Innovation & Smart Use of Claude AI     │ 10%        │ ★★★★★ 100%  │
-│ 🎤 6. Power of Presentation & Storytelling     │ 20%        │ ★★★★★ 100%  │
-└───────────────────────────────────────────────┴────────────┴─────────────┘
-```
-
----
-
-## 🌍 1. Impact & Social Relevance (Weight: 25%)
+## 🌍 The Problem & The Mission
 
 ### The Problem
 The internet is flooded with thousands of hours of free tutorials, yet **millions of aspiring software engineers fail to get hired by Tier-1 tech companies (Google, Meta, Apple, Ethereum protocols)** because:
@@ -41,7 +21,7 @@ The internet is flooded with thousands of hours of free tutorials, yet **million
 2. **The Feedback Vacuum**: Expensive $15,000+ coding bootcamps gatekeep mock interviews and resume reviews from underprivileged developers.
 3. **Passive Watching vs. Active Recall**: Watching videos without structured note synthesis leads to 80% knowledge decay within 48 hours.
 
-### The Social Solution: J O B G
+### The Solution: J O B G
 **J O B G** is a dark-themed, open-access engineering readiness ecosystem that transforms raw curiosity into job-ready portfolios:
 - **Zero-Cost Democratization**: Provides the accountability, rigorous roadmap, and AI-powered feedback of an elite bootcamp for free.
 - **Cognitive Retention**: Combines curated curricula with an in-browser **Active Recall Vault** using the **SuperMemo-2 Spaced Repetition algorithm**.
@@ -49,7 +29,7 @@ The internet is flooded with thousands of hours of free tutorials, yet **million
 
 ---
 
-## ⚙️ 2. Technical Execution & Architecture (Weight: 20%)
+## ⚙️ Technical Architecture & Execution
 
 J O B G is built on a high-concurrency, enterprise-grade full-stack architecture:
 
@@ -79,7 +59,7 @@ graph TD
 
 ---
 
-## 👥 3. Usability & Practicality (Weight: 15%)
+## 👥 Usability & Design System
 
 - **1-Click Instant Demo Login**: Anyone can evaluate the full application in under 2 seconds.
 - **Bespoke Ivy Atelier Design**: Deep obsidian (`#0c0a09`) and roasted espresso (`#141210`) paired with burnished gold (`#f59e0b`) and candlelit ivory (`#fef3c7`). Classical typography pairing *Playfair Display*, *Plus Jakarta Sans*, and *JetBrains Mono*.
@@ -89,19 +69,7 @@ graph TD
 
 ---
 
-## 💎 4. Code Quality & Open Source Standard (Weight: 10%)
-
-- **100% Clean Build**: `npm run build` compiles 24 static and dynamic routes with zero warnings.
-- **Automated Master Test Suite**: 17 comprehensive automated E2E tests validating security boundaries, IDOR prevention, and CRUD persistence.
-- **Modular Codebase**:
-  - `src/lib/auth/server.js`: Centralized server-side session verification.
-  - `src/app/api/**`: Clean RESTful API architecture.
-  - `src/hooks/useProgress.js`: Reactive synchronization between client state, localStorage, and PostgreSQL.
-- **Open Source**: MIT Licensed with complete documentation and safe demo seeds (`supabase/seed.sql`).
-
----
-
-## 💡 5. Innovation & Smart Use of Claude AI (Weight: 10%)
+## 💡 AI Innovation & Smart Features
 
 J O B G deeply leverages **Anthropic Claude AI** across 3 innovative pillars:
 
@@ -120,7 +88,7 @@ Candidates undergo real-time architectural grilling across:
 
 ---
 
-## 🎤 6. Power of Presentation & User Journey (Weight: 20%)
+## 🎤 Candidate Journey & User Flow
 
 ```
  1. Landing Page        →   2. 1-Click Demo Login   →   3. Candidate Onboarding
@@ -214,8 +182,7 @@ npm start
 
 ## 👥 Team Launch Legends
 
-Built with ❤️ for the **Claude Community Impact Lab 2026**.
+Built with ❤️ by **Team Launch Legends**.
 
-- **Organization**: Claude Community Bhopal
 - **License**: [MIT License](LICENSE)
 - **Repository**: [github.com/shikhaj-stack/jobg](https://github.com/shikhaj-stack/jobg)
