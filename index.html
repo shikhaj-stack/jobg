@@ -1,0 +1,2297 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full bg-[#18110b] text-[#faeed7] selection:bg-[#b45309]/30 selection:text-[#fde68a]">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JOBG // Classical FAANG Preparation Chamber</title>
+
+  <!-- Google Fonts: Playfair Display (Classic Serif) & Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            classic: {
+              950: '#18110b', // Deep rich roasted chestnut base
+              900: '#20160f', // Roasted dark espresso surface
+              850: '#261b12', // Rich warm coffee card
+              800: '#2d1f16', // Elevated warm leather surface
+              700: '#432e1e', // Warm antique cedar border
+              600: '#5a3f2b', // Warm medium accent border
+              500: '#8c684d', // Warm muted toasted hazelnut
+              400: '#b89474', // Warm caramel cream
+              300: '#dac0a5', // Warm light toasted almond
+              200: '#f0e0ce', // Warm cream linen
+              100: '#fdf6ea', // Crisp warm antique ivory
+            },
+            gold: {
+              300: '#fde68a',
+              400: '#fcd34d',
+              500: '#f59e0b',
+              600: '#d97706',
+              700: '#b45309',
+            },
+            copper: {
+              400: '#fb923c',
+              500: '#f97316',
+              600: '#ea580c',
+              700: '#c2410c',
+            }
+          },
+          animation: {
+            'pulse-warm': 'pulseWarm 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'fade-in-up': 'fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+            'flicker-flame': 'flickerFlame 2.2s ease-in-out infinite',
+          },
+          keyframes: {
+            pulseWarm: {
+              '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+              '50%': { opacity: '0.6', transform: 'scale(1.1)' },
+            },
+            fadeInUp: {
+              'from': { opacity: '0', transform: 'translateY(14px)' },
+              'to': { opacity: '1', transform: 'translateY(0)' },
+            },
+            flickerFlame: {
+              '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
+              '25%': { transform: 'scale(1.06) rotate(-2deg)' },
+              '50%': { transform: 'scale(0.97) rotate(1deg)' },
+              '75%': { transform: 'scale(1.03) rotate(-1deg)' },
+            },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* Custom Warm Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #18110b;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #463223;
+      border-radius: 9999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #664832;
+    }
+
+    /* Classic ambient grain overlay */
+    .bg-grain {
+      background-image: radial-gradient(rgba(217, 119, 6, 0.07) 1px, transparent 0);
+      background-size: 24px 24px;
+    }
+
+    /* WCAG 2.1 AA Compliance: Respect user preferences for reduced motion */
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+      }
+    }
+  </style>
+</head>
+
+<body class="min-h-full bg-[#18110b] font-sans text-[#faeed7] antialiased relative overflow-x-hidden">
+  
+  <!-- Accessible Skip to Main Content Link (WCAG 2.1 - 2.4.1 Bypass Blocks) -->
+  <a
+    href="#mainContent"
+    class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-amber-500 focus:text-[#18110b] focus:font-bold focus:rounded-xl focus:shadow-2xl focus:outline-none focus:ring-2 focus:ring-amber-300"
+  >
+    Skip to main content
+  </a>
+  
+  <!-- ========================================================================= -->
+  <!-- DEEP WARM ARCHITECTURAL BACKGROUND (Pure Warm Hue, Zero Light Effects)     -->
+  <!-- ========================================================================= -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0">
+    <div class="absolute inset-0 bg-[#18110b] bg-grain opacity-75"></div>
+  </div>
+
+  <div class="relative z-10 flex min-h-screen bg-transparent">
+
+    <!-- ========================================================================= -->
+    <!-- 1. FIXED SIDEBAR NAVIGATION (Classic Warm Aesthetic)                      -->
+    <!-- ========================================================================= -->
+    <aside
+      id="sidebar"
+      class="fixed inset-y-0 left-0 z-40 flex w-64 flex-col border-r border-[#3e2b1d] bg-[#1e150e]/95 backdrop-blur-xl transition-all duration-300 ease-out -translate-x-full lg:translate-x-0 shadow-2xl shadow-black/50"
+      aria-label="Main Navigation"
+    >
+      <!-- Logo / Brand Header -->
+      <div class="flex h-20 items-center justify-between px-6 border-b border-[#3e2b1d] bg-[#241a12]/60">
+        <a href="#dashboard" class="flex items-center gap-3 group">
+          <div class="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 p-0.5 shadow-lg shadow-amber-900/40 group-hover:scale-105 group-hover:shadow-amber-600/30 transition-all duration-300">
+            <div class="flex h-full w-full items-center justify-center rounded-[10px] bg-[#20160f] text-amber-400 group-hover:bg-transparent group-hover:text-[#14110e] font-serif font-bold text-base transition-all duration-300">
+              JG
+            </div>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-serif text-lg font-bold tracking-tight text-amber-100 group-hover:text-amber-300 transition-colors">JOBG</span>
+              <span class="rounded bg-amber-500/10 px-1.5 py-0.5 text-[9px] font-semibold text-amber-400 border border-amber-500/20 font-mono tracking-wide">EST. 2026</span>
+            </div>
+            <span class="text-[11px] font-medium text-[#b89b82] block -mt-0.5">Classic FAANG Atelier</span>
+          </div>
+        </a>
+
+        <!-- Mobile Close Button -->
+        <button
+          id="closeSidebarBtn"
+          class="lg:hidden p-2 text-[#b89b82] hover:text-amber-200 rounded-lg hover:bg-[#322318] transition-colors"
+          aria-label="Close sidebar"
+        >
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Navigation Links -->
+      <div class="flex flex-1 flex-col justify-between p-4 overflow-y-auto">
+        <nav class="space-y-1.5" aria-label="Primary Navigation">
+          <p class="px-3 pb-2 text-[10px] font-semibold tracking-widest text-amber-400 uppercase font-serif">Curriculum Tracks</p>
+
+          <!-- 1. Dashboard Home (Active) -->
+          <a
+            href="#dashboard"
+            id="nav-dashboard-link"
+            class="nav-tab-link group relative flex items-center gap-3.5 rounded-xl bg-gradient-to-r from-amber-500/15 via-amber-500/10 to-transparent px-3.5 py-2.5 text-sm font-medium text-amber-200 border border-amber-500/30 shadow-sm transition-all duration-200 hover:translate-x-1"
+            aria-current="page"
+          >
+            <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-amber-500/20 text-amber-400 group-hover:scale-110 transition-transform">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="3" y="3" width="7" height="9" rx="1" />
+                <rect x="14" y="3" width="7" height="5" rx="1" />
+                <rect x="14" y="12" width="7" height="9" rx="1" />
+                <rect x="3" y="16" width="7" height="5" rx="1" />
+              </svg>
+            </div>
+            <span class="font-medium">Dashboard Home</span>
+            <span class="absolute right-3 h-1.5 w-1.5 rounded-full bg-amber-400 shadow-sm shadow-amber-400/80"></span>
+          </a>
+
+          <!-- 2. 4-Pillar Roadmap -->
+          <a
+            href="#roadmap-section"
+            id="nav-roadmap-link"
+            class="group flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium text-[#e0c7b0] hover:bg-[#2d1f16] hover:text-amber-200 border border-transparent hover:border-[#583d29] transition-all duration-200 hover:translate-x-1"
+          >
+            <div class="flex items-center gap-3.5">
+              <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-[#332419] text-[#b89b82] group-hover:text-amber-400 group-hover:bg-amber-500/10 transition-all">
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M16.2 7.8l-2 6.3-6.4 2 2-6.3z" />
+                </svg>
+              </div>
+              <span>4-Pillar Roadmap</span>
+            </div>
+            <span class="rounded bg-[#302117] px-2 py-0.5 text-[10px] text-amber-400/90 font-mono border border-[#523926]">4 Pillars</span>
+          </a>
+
+          <!-- 3. Live Pods/Streams (Live Streams & Podcasts) -->
+          <a
+            href="#live"
+            id="nav-live-link"
+            class="nav-tab-link group flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium text-[#e0c7b0] hover:bg-[#2d1f16] hover:text-amber-200 border border-transparent hover:border-[#583d29] transition-all duration-200 hover:translate-x-1"
+          >
+            <div class="flex items-center gap-3.5">
+              <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-[#332419] text-[#b89b82] group-hover:text-rose-400 group-hover:bg-rose-500/10 transition-all">
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9" />
+                  <path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5" />
+                  <circle cx="12" cy="12" r="2" fill="currentColor" />
+                  <path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5" />
+                  <path d="M19.1 4.9C23 8.8 23 15.1 19.1 19" />
+                </svg>
+              </div>
+              <span>Live Streams & Theater</span>
+            </div>
+            <span class="flex items-center gap-1.5 rounded-full bg-rose-500/10 px-2 py-0.5 text-[10px] text-rose-400 font-semibold border border-rose-500/20 shadow-sm">
+              <span class="h-1.5 w-1.5 rounded-full bg-rose-500 animate-pulse-warm"></span>
+              LIVE
+            </span>
+          </a>
+
+          <!-- 4. Resume Tracker -->
+          <a
+            href="#resume-tracker"
+            id="nav-resume-link"
+            class="group flex items-center justify-between rounded-xl px-3.5 py-2.5 text-sm font-medium text-[#e0c7b0] hover:bg-[#2d1f16] hover:text-amber-200 border border-transparent hover:border-[#583d29] transition-all duration-200 hover:translate-x-1"
+          >
+            <div class="flex items-center gap-3.5">
+              <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-[#332419] text-[#b89b82] group-hover:text-emerald-400 group-hover:bg-emerald-500/10 transition-all">
+                <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                  <polyline points="14 2 14 8 20 8" />
+                  <line x1="16" y1="13" x2="8" y2="13" />
+                  <line x1="16" y1="17" x2="8" y2="17" />
+                </svg>
+              </div>
+              <span>Resume Tracker</span>
+            </div>
+            <span class="rounded bg-emerald-500/10 px-1.5 py-0.5 text-[10px] font-medium text-emerald-400 border border-emerald-500/20 font-mono">ATS 94%</span>
+          </a>
+
+          <p class="pt-6 px-3 pb-2 text-[10px] font-semibold tracking-widest text-amber-400 uppercase font-serif">Fellowship Tools</p>
+
+          <a
+            href="#"
+            class="group flex items-center gap-3.5 rounded-xl px-3.5 py-2.5 text-sm font-medium text-[#b89b82] hover:bg-[#2d1f16] hover:text-amber-200 transition-all duration-200 hover:translate-x-1"
+          >
+            <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2b1e15] text-[#b89b82] group-hover:text-amber-400 transition-colors">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <polyline points="16 18 22 12 16 6" />
+                <polyline points="8 6 2 12 8 18" />
+              </svg>
+            </div>
+            <span>Algorithm Bank</span>
+          </a>
+
+          <a
+            href="#"
+            class="group flex items-center gap-3.5 rounded-xl px-3.5 py-2.5 text-sm font-medium text-[#b89b82] hover:bg-[#2d1f16] hover:text-amber-200 transition-all duration-200 hover:translate-x-1"
+          >
+            <div class="flex h-7 w-7 items-center justify-center rounded-lg bg-[#2b1e15] text-[#b89b82] group-hover:text-amber-400 transition-colors">
+              <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                <line x1="8" y1="21" x2="16" y2="21" />
+                <line x1="12" y1="17" x2="12" y2="21" />
+              </svg>
+            </div>
+            <span>System Whiteboard</span>
+          </a>
+        </nav>
+
+        <!-- Sidebar User Card (Classic Ivory & Gold Ring) -->
+        <div class="border-t border-[#3e2b1d] pt-4 mt-4">
+          <div class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-[#261b12] border border-[#463020] hover:border-amber-500/30 transition-all duration-300 shadow-md">
+            <div class="relative">
+              <div class="h-9 w-9 rounded-full bg-gradient-to-tr from-amber-600 to-amber-400 p-0.5 shadow-sm">
+                <div class="h-full w-full rounded-full bg-[#241912] flex items-center justify-center font-serif font-bold text-amber-200 text-xs">
+                  AR
+                </div>
+              </div>
+              <span class="absolute bottom-0 right-0 h-2.5 w-2.5 rounded-full bg-emerald-500 ring-2 ring-[#171412]"></span>
+            </div>
+            <div class="min-w-0 flex-1">
+              <p class="text-xs font-semibold text-[#fdf6ea] font-serif truncate">Alex Rivera</p>
+              <p class="text-[11px] text-amber-400/90 truncate font-mono">Meta E6 & Google L6</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Mobile Sidebar Backdrop -->
+    <div
+      id="sidebarBackdrop"
+      class="fixed inset-0 z-30 bg-black/80 backdrop-blur-sm hidden lg:hidden transition-opacity"
+      aria-hidden="true"
+    ></div>
+
+    <!-- ========================================================================= -->
+    <!-- 2. MAIN CONTENT WRAPPER (Offset by sidebar width 16rem on lg)             -->
+    <!-- ========================================================================= -->
+    <div class="flex flex-1 flex-col lg:pl-64">
+
+      <!-- Top Header Navigation Bar (Warm Glassmorphism) -->
+      <header class="sticky top-0 z-20 flex h-20 items-center justify-between border-b border-[#3e2b1d] bg-[#1e150e]/85 px-4 sm:px-6 lg:px-8 backdrop-blur-xl">
+        <div class="flex items-center gap-3 sm:gap-4">
+          <button
+            id="openSidebarBtn"
+            class="p-2 text-[#b89b82] hover:text-amber-200 rounded-xl hover:bg-[#2e2016] lg:hidden focus:outline-none transition-colors"
+            aria-label="Open sidebar"
+          >
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          </button>
+          
+          <div class="flex items-center gap-2">
+            <span class="hidden sm:inline font-serif text-xs italic text-amber-400">Classical Atelier</span>
+            <span class="hidden sm:inline text-[#7c5f4b]">&bull;</span>
+            <span id="headerBreadcrumb" class="text-xs font-medium text-[#e0c7b0] font-mono tracking-wide">JOBG Dashboard</span>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3 sm:gap-4">
+          <!-- Search input with warm gold focus ring -->
+          <div class="relative hidden sm:block w-64">
+            <input
+              type="search"
+              aria-label="Search classical patterns and curriculum tracks"
+              placeholder="Search classical patterns..."
+              class="w-full rounded-xl bg-[#281c14] border border-[#483221] px-3.5 py-1.5 text-xs text-[#faeed7] placeholder-[#9d7d65] focus:outline-none focus:border-amber-500/60 focus:ring-1 focus:ring-amber-500/60 transition-all"
+            />
+            <kbd class="pointer-events-none absolute inset-y-0 right-2.5 my-auto flex h-4 items-center rounded border border-[#5b3f2a] bg-[#1e150e] px-1 font-mono text-[9px] text-amber-400/80">⌘K</kbd>
+          </div>
+
+          <!-- Dynamic Action Button with Golden Motion Glow -->
+          <button
+            type="button"
+            aria-label="Book a FAANG mock interview panel"
+            class="relative group inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 px-4 py-2 text-xs font-bold text-[#18110b] shadow-lg shadow-amber-600/25 hover:shadow-amber-500/40 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 cursor-pointer"
+          >
+            <span class="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity"></span>
+            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4" />
+            </svg>
+            <span>Book Mock Panel</span>
+          </button>
+        </div>
+      </header>
+
+      <!-- Main Layout Body -->
+      <main id="mainContent" class="flex-1 p-4 sm:p-6 lg:p-8 space-y-8 max-w-6xl w-full mx-auto" tabindex="-1">
+
+        <!-- ========================================================================= -->
+        <!-- VIEW: DASHBOARD HOME                                                      -->
+        <!-- ========================================================================= -->
+        <div id="view-dashboard" class="page-view space-y-8 animate-fade-in-up">
+
+          <!-- User Welcome Header (Classic Editorial Typography) -->
+          <section aria-labelledby="welcome-heading" class="border-b border-[#3e2b1d] pb-6">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <div>
+                <div class="flex items-center gap-2 mb-2">
+                  <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-0.5 text-xs font-semibold text-amber-300 border border-amber-500/20 shadow-sm">
+                    <span class="h-1.5 w-1.5 rounded-full bg-amber-400 animate-pulse-warm"></span>
+                    Sprint Day 32 of 60
+                  </span>
+                  <span class="text-xs text-[#b89b82] font-mono">Loop Window: Q4 2026</span>
+                </div>
+                <h1 id="welcome-heading" class="text-2xl sm:text-3xl font-serif font-bold text-[#fdf6ea] tracking-tight">
+                  Welcome back, <span class="bg-gradient-to-r from-amber-200 via-amber-400 to-amber-200 bg-clip-text text-transparent italic">Alex</span>
+                </h1>
+                <p class="text-xs sm:text-sm text-[#b89b82] mt-1 leading-relaxed">
+                  You are tracking in the top 5th percentile for <strong class="text-[#faeed7]">Meta E6 & Google L6</strong> systems loops.
+                </p>
+              </div>
+
+              <!-- Target Loops Classic Tags -->
+              <div class="flex flex-wrap items-center gap-2">
+                <div class="flex items-center gap-2 rounded-xl bg-[#241a12] border border-[#463020] px-3.5 py-2 text-xs text-[#e0c7b0] shadow-sm hover:border-amber-500/30 transition-colors">
+                  <span class="h-2 w-2 rounded-full bg-amber-400 shadow-sm shadow-amber-400/60"></span>
+                  <span class="font-serif">Meta E6 Loop</span>
+                  <span class="text-amber-400 font-mono text-[10px] font-bold">READY</span>
+                </div>
+                <div class="flex items-center gap-2 rounded-xl bg-[#241a12] border border-[#463020] px-3.5 py-2 text-xs text-[#e0c7b0] shadow-sm hover:border-amber-500/30 transition-colors">
+                  <span class="h-2 w-2 rounded-full bg-orange-400 shadow-sm shadow-orange-400/60"></span>
+                  <span class="font-serif">Google L6 Loop</span>
+                  <span class="text-orange-400 font-mono text-[10px] font-bold">MOCK PENDING</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Classical Motto / Latin Proverb Ribbon (Ivy FAANG Atelier) -->
+            <div class="mt-6 relative overflow-hidden rounded-xl border border-amber-900/40 bg-gradient-to-r from-[#171310] via-[#1e1813] to-[#171310] px-4 py-3 shadow-md flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-amber-500/15 text-amber-400 border border-amber-500/30 font-serif text-xs">
+                  ✦
+                </div>
+                <p class="font-serif text-xs sm:text-sm italic text-amber-200/90 leading-relaxed tracking-wide">
+                  &ldquo;Per aspera ad FAANG — Excellence forged in algorithmic discipline and distributed architectural rigor.&rdquo;
+                </p>
+              </div>
+              <div class="flex items-center gap-2 shrink-0 self-end sm:self-auto">
+                <span class="rounded bg-amber-500/10 px-2 py-0.5 font-mono text-[9px] font-bold tracking-widest text-amber-400/90 uppercase border border-amber-500/20">CLASSIC ATELIER &bull; 2026</span>
+              </div>
+            </div>
+          </section>
+
+          <!-- ========================================================================= -->
+          <!-- OVERALL PROGRESS METRIC GRID (Dynamic Warm Cards with Motion Lift)       -->
+          <!-- ========================================================================= -->
+          <section aria-labelledby="metrics-heading">
+            <h2 id="metrics-heading" class="sr-only">Progress Overview</h2>
+            <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+              <!-- Metric 1: Total Videos Watched -->
+              <div class="interactive-tilt-card group relative overflow-hidden rounded-2xl border border-[#442f1f] bg-gradient-to-b from-[#181411] to-[#120f0d] p-5 shadow-lg hover:border-amber-500/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-950/20 transition-all duration-300">
+                <div class="flex items-center justify-between">
+                  <p class="text-[11px] font-bold tracking-widest text-amber-400 uppercase font-mono">Videos Watched</p>
+                  <div class="rounded-xl bg-amber-500/10 p-2 text-amber-400 border border-amber-500/20 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-baseline gap-2">
+                  <span id="metricVideosCount" class="text-3xl font-serif font-bold text-[#fdf6ea]">84</span>
+                  <span id="metricVideosTotal" class="text-xs text-[#b89b82] font-mono">/ 112</span>
+                </div>
+                <!-- Shimmer Progress Bar -->
+                <div class="mt-3.5 h-1.5 w-full rounded-full bg-[#35251a] overflow-hidden ">
+                  <div id="metricVideosBar" class="h-full rounded-full bg-gradient-to-r from-amber-500 to-amber-300 transition-all duration-500 ease-out" style="width: 75%"></div>
+                </div>
+                <p id="metricVideosPercentText" class="mt-2.5 text-[11px] text-amber-400/90 font-mono">75% complete (8 this week)</p>
+              </div>
+
+              <!-- Metric 2: Daily Streak -->
+              <div class="interactive-tilt-card group relative overflow-hidden rounded-2xl border border-[#442f1f] bg-gradient-to-b from-[#181411] to-[#120f0d] p-5 shadow-lg hover:border-orange-500/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-orange-950/20 transition-all duration-300">
+                <div class="flex items-center justify-between">
+                  <p class="text-[11px] font-bold tracking-widest text-orange-400 uppercase font-mono">Daily Streak</p>
+                  <div class="rounded-xl bg-orange-500/10 p-2 text-orange-400 border border-orange-500/20 group-hover:scale-110 group-hover:bg-orange-500/20 transition-all animate-flicker-flame">
+                    <svg class="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+                      <path d="M12 2c-.6 0-1.1.3-1.4.8C9.5 4.8 7.3 8.3 7 11.2c-.3 2.9.9 5.8 3.1 7.6 1.1.9 2.5 1.3 3.9 1.2 2.3-.2 4.4-1.6 5.3-3.7 1-2.3.7-5-1-6.9-.4-.4-.9-.4-1.3-.1-.4.3-.5.8-.4 1.3.3 1.1.1 2.3-.5 3.2-.8 1.1-2 1.7-3.3 1.6-1-.1-1.9-.5-2.6-1.2-1.3-1.2-1.9-3-1.6-4.8.4-2.1 2-4.9 3.5-7 0-.1.1-.1.1-.2.2-.4.1-.9-.2-1.2C12.7 2.3 12.4 2 12 2z"/>
+                    </svg>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-baseline gap-2">
+                  <span id="metricStreakCount" class="text-3xl font-serif font-bold text-[#fdf6ea]">28</span>
+                  <span class="text-xs text-orange-400 font-serif italic">Days Flame</span>
+                </div>
+                <div class="mt-3.5 h-1.5 w-full rounded-full bg-[#35251a] overflow-hidden ">
+                  <div id="metricStreakBar" class="h-full rounded-full bg-gradient-to-r from-orange-500 to-amber-400 transition-all duration-500 ease-out" style="width: 62%"></div>
+                </div>
+                <p class="mt-2.5 text-[11px] text-[#b89b82]">Personal best: <strong class="text-amber-300">45 days</strong></p>
+              </div>
+
+              <!-- Metric 3: Roadmap Progress % -->
+              <div class="interactive-tilt-card group relative overflow-hidden rounded-2xl border border-[#442f1f] bg-gradient-to-b from-[#181411] to-[#120f0d] p-5 shadow-lg hover:border-amber-500/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-950/20 transition-all duration-300">
+                <div class="flex items-center justify-between">
+                  <p class="text-[11px] font-bold tracking-widest text-amber-400 uppercase font-mono">Roadmap Progress</p>
+                  <div class="rounded-xl bg-amber-500/10 p-2 text-amber-400 border border-amber-500/20 group-hover:scale-110 group-hover:bg-amber-500/20 transition-all">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <path d="M12 6v6l4 2" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-baseline gap-2">
+                  <span id="metricRoadmapPercent" class="text-3xl font-serif font-bold text-amber-300">74.2%</span>
+                </div>
+                <div class="mt-3.5 h-1.5 w-full rounded-full bg-[#35251a] overflow-hidden ">
+                  <div id="metricRoadmapBar" class="h-full rounded-full bg-gradient-to-r from-amber-500 via-yellow-400 to-amber-200 transition-all duration-500 ease-out" style="width: 74.2%"></div>
+                </div>
+                <p id="metricRoadmapSubtitle" class="mt-2.5 text-[11px] text-[#b89b82]">3 of 4 pillars on track</p>
+              </div>
+
+              <!-- Metric 4: Mock Interviews Score -->
+              <div class="interactive-tilt-card group relative overflow-hidden rounded-2xl border border-[#442f1f] bg-gradient-to-b from-[#181411] to-[#120f0d] p-5 shadow-lg hover:border-emerald-500/40 hover:-translate-y-1 hover:shadow-xl hover:shadow-emerald-950/20 transition-all duration-300">
+                <div class="flex items-center justify-between">
+                  <p class="text-[11px] font-bold tracking-widest text-emerald-400 uppercase font-mono">Mock Score</p>
+                  <div class="rounded-xl bg-emerald-500/10 p-2 text-emerald-400 border border-emerald-500/20 group-hover:scale-110 group-hover:bg-emerald-500/20 transition-all">
+                    <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+                      <polyline points="22 4 12 14.01 9 11.01" />
+                    </svg>
+                  </div>
+                </div>
+                <div class="mt-3 flex items-baseline gap-2">
+                  <span class="text-3xl font-serif font-bold text-[#fdf6ea]">4.8</span>
+                  <span class="text-xs text-[#b89b82] font-mono">/ 5.0</span>
+                  <span class="ml-auto rounded-full bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-400 border border-emerald-500/20">Strong Hire</span>
+                </div>
+                <div class="mt-3.5 h-1.5 w-full rounded-full bg-[#35251a] overflow-hidden ">
+                  <div class="h-full rounded-full bg-gradient-to-r from-emerald-500 to-teal-400 transition-all duration-500" style="width: 96%"></div>
+                </div>
+                <p class="mt-2.5 text-[11px] text-[#b89b82]">8 Senior candidate loops evaluated</p>
+              </div>
+
+            </div>
+          </section>
+
+          <!-- ========================================================================= -->
+          <!-- 3. MAIN LAYOUT: TWO-COLUMN GRID (Wider Active Content + Narrow Sidebar)    -->
+          <!-- ========================================================================= -->
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 items-start">
+
+            <!-- WIDER COLUMN: Active Content (8 of 12 cols on desktop) -->
+            <div class="space-y-8 lg:col-span-8">
+
+              <!-- Active Lesson / Hero Module Card -->
+              <section aria-labelledby="in-progress-heading" class="interactive-tilt-card relative overflow-hidden rounded-2xl border border-[#4f3624] bg-gradient-to-br from-[#1b1713] via-[#16120f] to-[#100d0b] p-6 shadow-2xl transition-all duration-300">
+                <!-- Warm Glow Accent -->
+                
+                
+                <div class="flex items-center justify-between">
+                  <span class="rounded-lg bg-amber-500/15 px-2.5 py-1 text-[11px] font-semibold tracking-wide uppercase text-amber-300 border border-amber-500/30 font-mono">
+                    Currently Studying &bull; System Design
+                  </span>
+                  <span class="text-xs text-[#b89b82] font-mono flex items-center gap-1.5">
+                    <svg class="h-3.5 w-3.5 text-amber-400 animate-pulse" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="10" />
+                      <polyline points="12 6 12 12 16 14" />
+                    </svg>
+                    18 min remaining
+                  </span>
+                </div>
+
+                <h3 id="in-progress-heading" class="mt-3 text-lg sm:text-xl font-serif font-bold text-[#fdf6ea] tracking-tight leading-snug">
+                  Designing Distributed Consensus: Raft vs. Multi-Paxos Under Heavy Partition
+                </h3>
+                <p class="mt-1.5 text-xs sm:text-sm text-[#b89b82] leading-relaxed">
+                  Master leader election failures, quorum slice configurations, and split-brain recovery asked in Google L6 & Meta E6 infrastructure loops.
+                </p>
+
+                <div class="mt-5 flex flex-wrap items-center justify-between gap-3 border-t border-[#422e1e] pt-4">
+                  <div class="text-xs text-amber-400/80 font-mono">
+                    <span>Part 3 of 4: Quorum Writes & Fencing Tokens</span>
+                  </div>
+                  <button class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 px-4 py-2 text-xs font-bold text-[#18110b] shadow-md hover:shadow-amber-500/20 active:scale-95 transition-all duration-200 cursor-pointer">
+                    <span>Resume Lesson</span>
+                    <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                    </svg>
+                  </button>
+                </div>
+              </section>
+
+              <!-- ================================================================= -->
+              <!-- INTERACTIVE FAANG 4-PILLAR ROADMAP (Classic Accordions)           -->
+              <!-- ================================================================= -->
+              <section id="roadmap-section" aria-labelledby="roadmap-heading" class="rounded-2xl border border-[#442f1f] bg-[#20160f]/90 p-5 sm:p-6 space-y-5 shadow-xl backdrop-blur-sm">
+                
+                <!-- Component Header -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 pb-4 border-b border-[#3e2b1d]">
+                  <div>
+                    <div class="flex items-center gap-2.5">
+                      <h3 id="roadmap-heading" class="text-base sm:text-lg font-serif font-bold text-[#fdf6ea] tracking-tight">
+                        FAANG 4-Pillar Roadmap
+                      </h3>
+                      <span class="rounded bg-amber-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-amber-300 border border-amber-500/25 font-mono">
+                        4 Pillars &bull; 12 Modules
+                      </span>
+                    </div>
+                    <p class="text-xs text-[#b89b82] mt-0.5">
+                      The classical syllabus for Staff and Senior level loops across Silicon Valley.
+                    </p>
+                  </div>
+
+                  <!-- Global Expand / Collapse -->
+                  <div class="flex items-center gap-2 text-xs">
+                    <button id="expandAllPillars" type="button" class="text-xs text-[#b89b82] hover:text-amber-300 transition-colors cursor-pointer font-serif italic">
+                      Expand All
+                    </button>
+                    <span class="text-[#7c5f4b]">&bull;</span>
+                    <button id="collapseAllPillars" type="button" class="text-xs text-[#b89b82] hover:text-amber-300 transition-colors cursor-pointer font-serif italic">
+                      Collapse All
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Accordions Container -->
+                <div class="space-y-3.5" id="pillarsAccordion">
+
+                  <!-- ----------------------------------------------------------- -->
+                  <!-- PILLAR 1: DSA                                               -->
+                  <!-- ----------------------------------------------------------- -->
+                  <details class="pillar-accordion group rounded-xl border border-[#453020] bg-[#261b12]/80 overflow-hidden transition-all duration-300 open:border-amber-500/30 open:shadow-lg open:shadow-amber-950/20" open>
+                    <summary class="flex items-center justify-between p-4 cursor-pointer select-none hover:bg-[#2d1e15] transition-colors list-none">
+                      <div class="flex items-center gap-3.5 min-w-0 flex-1 pr-3">
+                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/15 text-xs font-serif font-bold text-amber-300 border border-amber-500/30">
+                          I
+                        </span>
+                        <div class="min-w-0 flex-1">
+                          <div class="flex items-center gap-2">
+                            <h4 class="text-xs sm:text-sm font-serif font-semibold text-[#fdf6ea] truncate">
+                              Data Structures & Algorithms (DSA)
+                            </h4>
+                            <span class="hidden sm:inline-block rounded bg-[#322218] px-1.5 py-0.5 text-[10px] text-[#b89b82] font-mono">
+                              3 Modules
+                            </span>
+                          </div>
+                          <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                            Optimal patterns, monotonic invariants & amortized bounds
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-3 shrink-0">
+                        <span class="text-xs font-mono font-bold text-amber-400/90 hidden sm:inline">94% Done</span>
+                        <svg class="h-4 w-4 text-[#b89b82] group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+
+                    <!-- Module list -->
+                    <div class="p-4 pt-1 space-y-3 border-t border-[#3e2b1d] bg-[#1f150e]/90">
+                      
+                      <!-- Module 1.1 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1516116211227-bbc155255470?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="DP preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">24:12</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-rose-500/10 text-rose-300 border-rose-500/25 font-mono">
+                                Hard
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">Video Lecture &bull; 6 Problems</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Cracking Dynamic Programming Patterns
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Memoization to tabulation on grid DAGs and bitmask states.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Module 1.2 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1509228468518-180dd4864904?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Sliding window preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">18:40</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-amber-500/10 text-amber-300 border-amber-500/25 font-mono">
+                                Medium
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">Video Lecture &bull; 4 Problems</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Sliding Window & Two-Pointer Invariants
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Frequency maps, dynamic subsegments, and pointer shrinkage.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Module 1.3 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Binary search preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">15:05</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-emerald-500/10 text-emerald-300 border-emerald-500/25 font-mono">
+                                Easy
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">Video Lecture &bull; 3 Problems</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Monotonic Binary Search & Predicates
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Applying search-on-answer to capacity allocation problems.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </details>
+
+                  <!-- ----------------------------------------------------------- -->
+                  <!-- PILLAR 2: System Design                                     -->
+                  <!-- ----------------------------------------------------------- -->
+                  <details class="pillar-accordion group rounded-xl border border-[#453020] bg-[#261b12]/80 overflow-hidden transition-all duration-300 open:border-amber-500/30 open:shadow-lg open:shadow-amber-950/20">
+                    <summary class="flex items-center justify-between p-4 cursor-pointer select-none hover:bg-[#2d1e15] transition-colors list-none">
+                      <div class="flex items-center gap-3.5 min-w-0 flex-1 pr-3">
+                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/15 text-xs font-serif font-bold text-amber-300 border border-amber-500/30">
+                          II
+                        </span>
+                        <div class="min-w-0 flex-1">
+                          <div class="flex items-center gap-2">
+                            <h4 class="text-xs sm:text-sm font-serif font-semibold text-[#fdf6ea] truncate">
+                              High-Level & Low-Level System Design (HLD/LLD)
+                            </h4>
+                            <span class="hidden sm:inline-block rounded bg-[#322218] px-1.5 py-0.5 text-[10px] text-[#b89b82] font-mono">
+                              3 Modules
+                            </span>
+                          </div>
+                          <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                            Distributed storage, consensus, rate-limiting & threading
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-3 shrink-0">
+                        <span class="text-xs font-mono font-bold text-amber-400/90 hidden sm:inline">75% Done</span>
+                        <svg class="h-4 w-4 text-[#b89b82] group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+
+                    <div class="p-4 pt-1 space-y-3 border-t border-[#3e2b1d] bg-[#1f150e]/90">
+                      
+                      <!-- Module 2.1 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Cache preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">32:10</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-rose-500/10 text-rose-300 border-rose-500/25 font-mono">
+                                Hard
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">HLD Deep Dive &bull; Architecture</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Distributed Cache: Consistent Hashing & Invalidation
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Virtual nodes, stampede prevention, and write-through vs back.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Module 2.2 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Rate limiter preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">21:18</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-amber-500/10 text-amber-300 border-amber-500/25 font-mono">
+                                Medium
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">HLD &bull; API Gateways</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Rate Limiter Architecture: Token Bucket at Scale
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Sliding window logs vs leaky buckets under Redis locking.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Module 2.3 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Concurrency preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">27:45</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-amber-500/10 text-amber-300 border-amber-500/25 font-mono">
+                                Medium
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">LLD &bull; Clean Code</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              LLD: Elevator System & Concurrency Control
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              State design pattern and dead-lock prevention with workers.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </details>
+
+                  <!-- ----------------------------------------------------------- -->
+                  <!-- PILLAR 3: Behavioral & Leadership                           -->
+                  <!-- ----------------------------------------------------------- -->
+                  <details class="pillar-accordion group rounded-xl border border-[#453020] bg-[#261b12]/80 overflow-hidden transition-all duration-300 open:border-amber-500/30 open:shadow-lg open:shadow-amber-950/20">
+                    <summary class="flex items-center justify-between p-4 cursor-pointer select-none hover:bg-[#2d1e15] transition-colors list-none">
+                      <div class="flex items-center gap-3.5 min-w-0 flex-1 pr-3">
+                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/15 text-xs font-serif font-bold text-amber-300 border border-amber-500/30">
+                          III
+                        </span>
+                        <div class="min-w-0 flex-1">
+                          <div class="flex items-center gap-2">
+                            <h4 class="text-xs sm:text-sm font-serif font-semibold text-[#fdf6ea] truncate">
+                              Behavioral & Leadership Principles
+                            </h4>
+                            <span class="hidden sm:inline-block rounded bg-[#322218] px-1.5 py-0.5 text-[10px] text-[#b89b82] font-mono">
+                              3 Modules
+                            </span>
+                          </div>
+                          <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                            STAR method mastery, executive presence & conflict signals
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-3 shrink-0">
+                        <span class="text-xs font-mono font-bold text-amber-400/90 hidden sm:inline">80% Done</span>
+                        <svg class="h-4 w-4 text-[#b89b82] group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+
+                    <div class="p-4 pt-1 space-y-3 border-t border-[#3e2b1d] bg-[#1f150e]/90">
+                      
+                      <!-- Module 3.1 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="STAR preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">14:20</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-amber-500/10 text-amber-300 border-amber-500/25 font-mono">
+                                Medium
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">STAR Framework &bull; Staff Scope</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Structuring Meta & Google STAR Stories
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Focusing on quantifiable metrics and organizational leadership.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Module 3.2 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Leadership preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">19:30</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-rose-500/10 text-rose-300 border-rose-500/25 font-mono">
+                                Hard
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">Leadership &bull; Disagree & Commit</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Handling Cross-Org Conflict & Ambiguity
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Balancing tight product milestones with system integrity.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Module 3.3 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Outage preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">11:15</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-emerald-500/10 text-emerald-300 border-emerald-500/25 font-mono">
+                                Easy
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">Storytelling &bull; Growth Mindset</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Framing Technical Outages & Post-Mortems
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Turning system outages into humility and resilience proof.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </details>
+
+                  <!-- ----------------------------------------------------------- -->
+                  <!-- PILLAR 4: Mock Interviews & Strategy                        -->
+                  <!-- ----------------------------------------------------------- -->
+                  <details class="pillar-accordion group rounded-xl border border-[#453020] bg-[#261b12]/80 overflow-hidden transition-all duration-300 open:border-amber-500/30 open:shadow-lg open:shadow-amber-950/20">
+                    <summary class="flex items-center justify-between p-4 cursor-pointer select-none hover:bg-[#2d1e15] transition-colors list-none">
+                      <div class="flex items-center gap-3.5 min-w-0 flex-1 pr-3">
+                        <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-amber-500/15 text-xs font-serif font-bold text-amber-300 border border-amber-500/30">
+                          IV
+                        </span>
+                        <div class="min-w-0 flex-1">
+                          <div class="flex items-center gap-2">
+                            <h4 class="text-xs sm:text-sm font-serif font-semibold text-[#fdf6ea] truncate">
+                              FAANG Mock Interviews & Offer Negotiation
+                            </h4>
+                            <span class="hidden sm:inline-block rounded bg-[#322218] px-1.5 py-0.5 text-[10px] text-[#b89b82] font-mono">
+                              3 Modules
+                            </span>
+                          </div>
+                          <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                            Whiteboard pacing, live loop pressure & equity multipliers
+                          </p>
+                        </div>
+                      </div>
+                      <div class="flex items-center gap-3 shrink-0">
+                        <span class="text-xs font-mono font-bold text-amber-400/90 hidden sm:inline">60% Done</span>
+                        <svg class="h-4 w-4 text-[#b89b82] group-open:rotate-180 transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </div>
+                    </summary>
+
+                    <div class="p-4 pt-1 space-y-3 border-t border-[#3e2b1d] bg-[#1f150e]/90">
+                      
+                      <!-- Module 4.1 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1531403009284-440f080d1e12?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Mock loop preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">45:00</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-rose-500/10 text-rose-300 border-rose-500/25 font-mono">
+                                Hard
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">Mock Simulation &bull; Full 45-Min</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Live System Mock: WhatsApp Global Sharding
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Live feedback critique from Google Staff Bar Raiser.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Module 4.2 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Pacing preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">22:00</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-amber-500/10 text-amber-300 border-amber-500/25 font-mono">
+                                Medium
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">Execution &bull; Pacing</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              Live Coding Pacing: The 45-Minute Breakdown
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              5m scoping, 10m solution trade-off, 20m clean code, 10m dry run.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                      <!-- Module 4.3 -->
+                      <div class="module-item group/item flex flex-col sm:flex-row sm:items-center justify-between gap-3 p-3.5 rounded-xl border border-[#402c1d] bg-[#281c14]/90 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200">
+                        <div class="flex items-center gap-3 min-w-0 flex-1">
+                          <div class="relative shrink-0 w-24 h-16 sm:w-28 sm:h-16 rounded-lg overflow-hidden bg-black border border-[#563b27] group/thumb cursor-pointer flex items-center justify-center shadow-md">
+                            <img src="https://images.unsplash.com/photo-1559526324-4b87b5e36e44?auto=format&fit=crop&q=80&w=240&h=135" class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover/thumb:scale-105 transition-transform duration-300" alt="Negotiation preview" />
+                            <div class="absolute inset-0 bg-black/40 flex items-center justify-center">
+                              <svg class="h-6 w-6 text-amber-400 group-hover/thumb:scale-110 transition-transform" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/>
+                              </svg>
+                            </div>
+                            <span class="absolute bottom-1 right-1 rounded bg-black/80 px-1 py-0.5 text-[9px] font-mono text-amber-200">16:40</span>
+                          </div>
+                          <div class="min-w-0 flex-1">
+                            <div class="flex items-center gap-2 mb-1">
+                              <span class="shrink-0 rounded px-1.5 py-0.5 text-[10px] font-bold border bg-emerald-500/10 text-emerald-300 border-emerald-500/25 font-mono">
+                                Easy
+                              </span>
+                              <span class="text-[11px] text-[#b89b82] truncate">Negotiation &bull; Compensation</span>
+                            </div>
+                            <h5 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] truncate group-hover/item:text-amber-200 transition-colors">
+                              FAANG Offer Negotiation & Equity Refresher Logic
+                            </h5>
+                            <p class="text-[11px] text-[#b89b82] truncate mt-0.5">
+                              Leveraging multiple competing term sheets with HR recruiters.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="flex items-center justify-end shrink-0 pt-2 sm:pt-0 border-t sm:border-t-0 border-[#3e2b1d]">
+                          <button type="button" class="complete-btn inline-flex items-center gap-1.5 rounded-lg border border-[#5a3e2a] bg-[#302117] px-3 py-1.5 text-xs font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 transition-all active:scale-95 cursor-pointer">
+                            <span class="check-icon flex h-4 w-4 items-center justify-center rounded-full border border-[#664932] text-transparent">
+                              <svg class="h-2.5 w-2.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                              </svg>
+                            </span>
+                            <span class="btn-text">Mark Complete</span>
+                          </button>
+                        </div>
+                      </div>
+
+                    </div>
+                  </details>
+
+                </div>
+              </section>
+
+              <!-- Upcoming Live Streams Card -->
+              <section aria-labelledby="live-pods-heading" class="rounded-2xl border border-[#442f1f] bg-[#20160f]/90 p-5 sm:p-6 space-y-4 shadow-xl">
+                <div class="flex items-center justify-between pb-3 border-b border-[#3e2b1d]">
+                  <div class="flex items-center gap-2">
+                    <span class="relative flex h-2.5 w-2.5">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-rose-500"></span>
+                    </span>
+                    <h3 id="live-pods-heading" class="text-sm sm:text-base font-serif font-bold text-[#fdf6ea]">
+                      Live Tech Theater & Podcasts
+                    </h3>
+                  </div>
+                  <span class="text-xs text-amber-400/90 font-mono">1,428 engineers tuning in</span>
+                </div>
+
+                <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 rounded-xl border border-rose-500/20 bg-gradient-to-r from-rose-950/20 to-transparent p-4 hover:border-rose-500/40 transition-all">
+                  <div class="space-y-1">
+                    <div class="flex items-center gap-2">
+                      <span class="rounded bg-rose-500/20 px-1.5 py-0.5 text-[10px] font-bold text-rose-300 border border-rose-500/30 font-mono">STREAMING NOW</span>
+                      <h4 class="text-xs sm:text-sm font-semibold text-[#fdf6ea] font-serif">Staff Loop: Raft vs. Multi-Paxos Live Deep-Dive</h4>
+                    </div>
+                    <p class="text-xs text-[#b89b82]">Host: David K. (Staff Eng @ Netflix) &bull; Q&A with Google L6 Principal</p>
+                  </div>
+                  <button id="joinPodBtn" type="button" class="self-start sm:self-auto inline-flex items-center gap-2 rounded-xl bg-rose-600 hover:bg-rose-500 px-3.5 py-2 text-xs font-bold text-white shadow-md shadow-rose-900/30 hover:scale-105 active:scale-95 transition-all cursor-pointer">
+                    <svg class="h-3.5 w-3.5" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    <span>Enter Live Theater</span>
+                  </button>
+                </div>
+              </section>
+
+            </div>
+
+            <!-- NARROWER COLUMN: "Next Up Tasks" Checklist (4 of 12 cols on desktop) -->
+            <aside aria-labelledby="tasks-heading" class="space-y-6 lg:col-span-4">
+
+              <!-- Tasks Container -->
+              <div class="rounded-2xl border border-[#442f1f] bg-[#20160f]/95 p-5 sm:p-6 space-y-4 shadow-xl backdrop-blur-sm">
+                <div class="flex items-center justify-between pb-3.5 border-b border-[#3e2b1d]">
+                  <div>
+                    <h3 id="tasks-heading" class="text-sm font-serif font-bold text-[#fdf6ea] flex items-center gap-2">
+                      <span>Next Up Tasks</span>
+                      <span class="rounded-full bg-amber-500/10 px-2 py-0.5 text-[10px] font-mono font-bold text-amber-300 border border-amber-500/25">
+                        3 of 4 left
+                      </span>
+                    </h3>
+                    <p class="text-[11px] text-[#b89b82] mt-0.5">Focus for today's prep sprint</p>
+                  </div>
+                </div>
+
+                <!-- Checklist Items -->
+                <div class="space-y-3" role="list">
+                  
+                  <div class="group flex items-start gap-3 rounded-xl border border-[#442f1f] bg-[#281c14] p-3 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200" role="listitem">
+                    <input
+                      type="checkbox"
+                      id="t1"
+                      class="mt-1 h-4 w-4 rounded border-[#664630] bg-[#302117] text-amber-500 focus:ring-0 cursor-pointer"
+                    />
+                    <div class="min-w-0 flex-1">
+                      <label for="t1" class="text-xs font-semibold text-[#faeed7] group-hover:text-amber-200 cursor-pointer block leading-snug">
+                        LeetCode #295: Find Median from Data Stream
+                      </label>
+                      <div class="mt-1.5 flex items-center gap-2 text-[10px] text-[#b89b82] font-mono">
+                        <span class="text-amber-400">DSA Hard</span>
+                        <span>&bull;</span>
+                        <span>30 min</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="group flex items-start gap-3 rounded-xl border border-[#442f1f] bg-[#281c14] p-3 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200" role="listitem">
+                    <input
+                      type="checkbox"
+                      id="t2"
+                      class="mt-1 h-4 w-4 rounded border-[#664630] bg-[#302117] text-amber-500 focus:ring-0 cursor-pointer"
+                    />
+                    <div class="min-w-0 flex-1">
+                      <label for="t2" class="text-xs font-semibold text-[#faeed7] group-hover:text-amber-200 cursor-pointer block leading-snug">
+                        Meta STAR: Cross-functional Conflict Pitch
+                      </label>
+                      <div class="mt-1.5 flex items-center gap-2 text-[10px] text-[#b89b82] font-mono">
+                        <span class="text-orange-400">Behavioral</span>
+                        <span>&bull;</span>
+                        <span>20 min</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="group flex items-start gap-3 rounded-xl border border-[#442f1f] bg-[#281c14] p-3 hover:border-amber-500/40 hover:-translate-y-0.5 transition-all duration-200" role="listitem">
+                    <input
+                      type="checkbox"
+                      id="t3"
+                      class="mt-1 h-4 w-4 rounded border-[#664630] bg-[#302117] text-amber-500 focus:ring-0 cursor-pointer"
+                    />
+                    <div class="min-w-0 flex-1">
+                      <label for="t3" class="text-xs font-semibold text-[#faeed7] group-hover:text-amber-200 cursor-pointer block leading-snug">
+                        ATS Resume Scan: Keyword alignment review
+                      </label>
+                      <div class="mt-1.5 flex items-center gap-2 text-[10px] text-[#b89b82] font-mono">
+                        <span class="text-emerald-400">Resume</span>
+                        <span>&bull;</span>
+                        <span>15 min</span>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="flex items-start gap-3 rounded-xl border border-[#3f2c1d]/60 bg-[#221710]/40 p-3 opacity-50" role="listitem">
+                    <input
+                      type="checkbox"
+                      id="t4"
+                      checked
+                      class="mt-1 h-4 w-4 rounded border-[#664630] bg-[#302117] text-amber-500 focus:ring-0 cursor-pointer"
+                    />
+                    <div class="min-w-0 flex-1">
+                      <label for="t4" class="text-xs font-medium text-[#b89b82] line-through cursor-pointer block">
+                        Morning warm-up: LRU Cache implementation
+                      </label>
+                      <div class="mt-1 flex items-center gap-2 text-[10px] text-[#997963] font-mono">
+                        <span>Completed 08:30 AM</span>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                <button class="mt-2 w-full rounded-xl border border-[#523825] bg-[#2b1e15] py-2 text-xs font-serif font-semibold text-amber-300 hover:bg-[#38261b] hover:border-amber-500/40 active:scale-95 transition-all cursor-pointer">
+                  + Add Custom Task
+                </button>
+              </div>
+
+              <!-- Resume ATS Card (Classic Parchment Style) -->
+              <div id="resume-tracker" class="rounded-2xl border border-[#442f1f] bg-[#20160f]/95 p-5 space-y-3.5 shadow-xl">
+                <div class="flex items-center justify-between pb-3 border-b border-[#3e2b1d]">
+                  <h3 class="text-sm font-serif font-bold text-[#fdf6ea]">Resume Health Index</h3>
+                  <span class="rounded bg-emerald-500/10 px-2 py-0.5 text-xs font-mono font-bold text-emerald-400 border border-emerald-500/25">94 / 100</span>
+                </div>
+                <div class="space-y-2 text-xs">
+                  <div class="flex justify-between text-[#b89b82]">
+                    <span>Google L6 Keywords</span>
+                    <span class="text-[#faeed7] font-mono font-bold">96%</span>
+                  </div>
+                  <div class="flex justify-between text-[#b89b82]">
+                    <span>Meta E6 Distributed Systems</span>
+                    <span class="text-[#faeed7] font-mono font-bold">92%</span>
+                  </div>
+                  <div class="flex justify-between text-[#b89b82]">
+                    <span>Quantified Impact Metrics</span>
+                    <span class="text-amber-400 font-mono font-bold">100%</span>
+                  </div>
+                </div>
+                <button class="mt-2 w-full rounded-xl border border-[#543a26] bg-[#2b1e15] py-2 text-xs font-semibold text-[#faeed7] hover:border-amber-500/40 hover:text-amber-200 active:scale-95 transition-all cursor-pointer">
+                  Re-scan Active PDF
+                </button>
+              </div>
+
+            </aside>
+
+          </div>
+
+        </div>
+        <!-- END OF VIEW: DASHBOARD HOME -->
+
+        <!-- ========================================================================= -->
+        <!-- VIEW: LIVE TECH THEATER (Classic Warm Theater with Dynamic Motions)       -->
+        <!-- ========================================================================= -->
+        <div id="view-live-theater" class="page-view space-y-8 hidden animate-fade-in-up">
+          
+          <!-- Theater Header & Quick Return -->
+          <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 border-b border-[#3e2b1d] pb-5">
+            <div class="flex items-center gap-3">
+              <button
+                type="button"
+                id="backToDashboardBtn"
+                class="inline-flex items-center gap-2 rounded-xl border border-[#563b27] bg-[#241911] px-3 py-1.5 text-xs font-serif font-semibold text-[#e0c7b0] hover:border-amber-500/50 hover:text-amber-200 hover:-translate-x-0.5 active:scale-95 transition-all cursor-pointer"
+                title="Return to Dashboard"
+              >
+                <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+                </svg>
+                <span>Dashboard</span>
+              </button>
+              <span class="text-[#7c5f4b] font-serif">/</span>
+              <div>
+                <h1 class="text-base sm:text-xl font-serif font-bold text-[#fdf6ea] tracking-tight">
+                  Classical Tech Theater & Live Stream
+                </h1>
+                <p class="text-xs text-[#b89b82]">Concurrent active recall note-taking and video lectures</p>
+              </div>
+            </div>
+
+            <div class="flex items-center gap-2 text-xs">
+              <span class="inline-flex items-center gap-2 rounded-full bg-amber-500/10 px-3 py-1 text-amber-300 border border-amber-500/25 shadow-sm">
+                <span class="h-2 w-2 rounded-full bg-emerald-400 animate-pulse-warm"></span>
+                <span class="font-mono">1,428 engineers listening</span>
+              </span>
+            </div>
+          </div>
+
+          <!-- Main Theater Layout (2 Columns on desktop: Left=Player & Broadcasts, Right=Recall Notes) -->
+          <div class="grid grid-cols-1 gap-8 lg:grid-cols-12 items-start">
+
+            <!-- LEFT COLUMN: Live Player & Recent Broadcasts (8 of 12 cols on desktop) -->
+            <div class="space-y-8 lg:col-span-8">
+
+              <!-- Player Container Card -->
+              <div class="rounded-2xl border border-[#513725] bg-[#20160f] p-5 sm:p-6 space-y-5 shadow-2xl">
+                
+                <!-- Above the video player: Pulsing red badge & status -->
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2.5">
+                  <div class="inline-flex items-center gap-2 rounded-full bg-rose-500/10 px-3.5 py-1 text-xs font-semibold text-rose-300 border border-rose-500/30 w-fit shadow-md shadow-rose-950/20">
+                    <span class="relative flex h-2 w-2">
+                      <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                      <span class="relative inline-flex rounded-full h-2 w-2 bg-rose-500"></span>
+                    </span>
+                    <span class="font-serif">🔴 LIVE NOW: FAANG Engineering Podcast</span>
+                  </div>
+
+                  <span class="text-xs font-mono text-[#b89b82]">
+                    Ep 42 &bull; 1080p 60fps UltraHD
+                  </span>
+                </div>
+
+                <!-- Stream Title and Host Details -->
+                <div>
+                  <h2 id="currentStreamTitle" class="text-base sm:text-xl font-serif font-bold text-[#fdf6ea] tracking-tight leading-snug">
+                    Staff Engineer Loop Deep-Dive: Distributed Systems & Consensus Pitfalls
+                  </h2>
+                  <div class="mt-2 flex flex-wrap items-center gap-2 text-xs text-[#b89b82]">
+                    <span class="text-amber-300 font-medium">Host: David K. (Staff Eng @ Netflix)</span>
+                    <span>&bull;</span>
+                    <span>Guest: Priya S. (Principal Eng @ Google)</span>
+                    <span>&bull;</span>
+                    <span class="rounded bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-300 border border-amber-500/25 font-mono">
+                      Live Q&A Open
+                    </span>
+                  </div>
+                </div>
+
+                <!-- 16:9 embedded YouTube player iframe -->
+                <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-black border border-[#5a3d29] shadow-2xl">
+                  <iframe
+                    id="mainTheaterIframe"
+                    class="absolute inset-0 h-full w-full"
+                    src="https://www.youtube-nocookie.com/embed/01s8116bSQU?rel=0&enablejsapi=1"
+                    title="FAANG Engineering Podcast Live Player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+
+                <!-- Stream Controls Bar -->
+                <div class="flex flex-wrap items-center justify-between gap-3 pt-2 text-xs text-[#b89b82] border-t border-[#3e2b1d]">
+                  <div class="flex items-center gap-2 font-mono">
+                    <span class="rounded bg-[#2e1f15] px-2 py-0.5 text-amber-300 text-[11px] border border-[#543a25]">Stream 01</span>
+                    <span>Audio / Video Synced</span>
+                  </div>
+                  <div class="flex items-center gap-2">
+                    <button
+                      type="button"
+                      id="insertTimestampBtn"
+                      class="inline-flex items-center gap-2 rounded-xl border border-[#563b27] bg-[#281c14] hover:bg-[#332318] px-3 py-1.5 text-xs font-mono text-amber-300 hover:text-amber-200 hover:border-amber-500/40 active:scale-95 transition-all cursor-pointer"
+                      title="Insert timestamp into Active Recall Notes"
+                    >
+                      <svg class="h-3.5 w-3.5 text-amber-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10" />
+                        <polyline points="12 6 12 12 16 14" />
+                      </svg>
+                      <span>Insert Timestamp to Notes</span>
+                    </button>
+                  </div>
+                </div>
+
+              </div>
+
+              <!-- Recent Live Broadcasts Container -->
+              <section aria-labelledby="recent-broadcasts-heading" class="rounded-2xl border border-[#442f1f] bg-[#20160f]/95 p-6 space-y-4 shadow-xl">
+                <div class="flex items-center justify-between pb-3 border-b border-[#3e2b1d]">
+                  <div>
+                    <h3 id="recent-broadcasts-heading" class="text-base font-serif font-bold text-[#fdf6ea]">
+                      Recent Masterclasses & Live Broadcasts
+                    </h3>
+                    <p class="text-xs text-[#b89b82] mt-0.5">Select any session to load into the theater player</p>
+                  </div>
+                  <span class="text-xs text-amber-400/90 font-mono">YouTube Data API v3</span>
+                </div>
+
+                <!-- Dynamically generated by fetchLivePodcasts() -->
+                <div id="recentBroadcastsContainer" class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                  <!-- Skeleton Loader Placeholder before JS loads -->
+                  <div class="col-span-full flex items-center justify-center py-6 text-xs text-[#b89b82]">
+                    <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24">
+                      <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                      <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                    </svg>
+                    <span>Fetching live podcasts...</span>
+                  </div>
+                </div>
+              </section>
+
+            </div>
+
+            <!-- RIGHT COLUMN: Active Recall Notes (4 of 12 cols on desktop) -->
+            <aside aria-labelledby="notes-heading" class="space-y-6 lg:col-span-4">
+              
+              <div class="rounded-2xl border border-[#442f1f] bg-[#20160f]/95 p-5 sm:p-6 space-y-4 shadow-2xl backdrop-blur-sm">
+                <!-- Header -->
+                <div class="flex items-center justify-between pb-3.5 border-b border-[#3e2b1d]">
+                  <div class="flex items-center gap-2.5">
+                    <div class="rounded-xl bg-amber-500/15 p-2 text-amber-400 border border-amber-500/30">
+                      <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 id="notes-heading" class="text-sm font-serif font-bold text-[#fdf6ea]">Active Recall Notes</h3>
+                      <p class="text-[11px] text-[#b89b82]">Capture trade-offs in real time</p>
+                    </div>
+                  </div>
+
+                  <span id="saveStatusIndicator" class="flex items-center gap-1.5 text-[11px] text-emerald-400 font-mono">
+                    <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                    <span>Auto-saved</span>
+                  </span>
+                </div>
+
+                <!-- Quick Snippet Tags -->
+                <div>
+                  <label class="text-[11px] font-serif italic text-amber-300/80 block mb-1.5">Quick Insert Tags:</label>
+                  <div class="flex flex-wrap gap-1.5">
+                    <button
+                      type="button"
+                      class="insert-tag-btn rounded-lg border border-[#523824] bg-[#261a12] px-2.5 py-1 text-[10px] font-mono text-amber-200 hover:border-amber-500/50 hover:bg-[#35251a] active:scale-95 transition-all cursor-pointer"
+                      data-tag="[Trade-off] "
+                    >
+                      + Trade-off
+                    </button>
+                    <button
+                      type="button"
+                      class="insert-tag-btn rounded-lg border border-[#523824] bg-[#261a12] px-2.5 py-1 text-[10px] font-mono text-amber-200 hover:border-amber-500/50 hover:bg-[#35251a] active:scale-95 transition-all cursor-pointer"
+                      data-tag="[Staff Strategy] "
+                    >
+                      + Strategy
+                    </button>
+                    <button
+                      type="button"
+                      class="insert-tag-btn rounded-lg border border-[#523824] bg-[#261a12] px-2.5 py-1 text-[10px] font-mono text-amber-200 hover:border-amber-500/50 hover:bg-[#35251a] active:scale-95 transition-all cursor-pointer"
+                      data-tag="[Question] "
+                    >
+                      + Question
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Rich Text Area -->
+                <div>
+                  <textarea
+                    id="recallNotesTextarea"
+                    rows="14"
+                    class="w-full rounded-xl border border-[#4f3623] bg-[#1a110a] p-4 text-xs text-[#faeed7] placeholder-[#9d7d65] focus:border-amber-500/60 focus:outline-none focus:ring-1 focus:ring-amber-500/60 font-mono leading-relaxed resize-y shadow-inner"
+                    placeholder="// Live notes for FAANG Engineering Podcast:
+[Trade-off] Raft leader election vs Multi-Paxos under split-brain
+[Staff Strategy] Always quantify network bandwidth before picking Redis sharding topology
+[Question] What is the exact latency ceiling for Meta feed ranking fan-out?"
+                  ></textarea>
+                </div>
+
+                <!-- Counter & Quick Actions -->
+                <div class="flex items-center justify-between text-[11px] text-[#b89b82] font-mono">
+                  <span id="notesCount">0 lines &bull; 0 words</span>
+                  <button
+                    type="button"
+                    id="clearNotesBtn"
+                    class="hover:text-rose-300 transition-colors cursor-pointer"
+                  >
+                    Clear Notes
+                  </button>
+                </div>
+
+                <!-- Download Notes Button with Golden Motion -->
+                <button
+                  type="button"
+                  id="downloadNotesBtn"
+                  class="w-full inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-amber-600 via-amber-500 to-amber-600 py-3 px-4 text-xs font-serif font-bold text-[#18110b] shadow-lg shadow-amber-900/40 hover:shadow-amber-500/30 hover:-translate-y-0.5 active:scale-95 transition-all duration-200 cursor-pointer"
+                >
+                  <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                  <span id="downloadBtnText">Download Notes as .txt</span>
+                </button>
+              </div>
+
+              <!-- Listening Strategy Card -->
+              <div class="rounded-2xl border border-[#442f1f] bg-[#20160f]/90 p-5 space-y-3">
+                <h4 class="text-xs font-serif font-bold text-amber-200">Active Listening Protocol</h4>
+                <ul class="space-y-2 text-[11px] text-[#b89b82] list-disc list-inside">
+                  <li>Quantify machine limits before proposing horizontal caching</li>
+                  <li>Draft your alternative architecture <em>before</em> the guest answers</li>
+                  <li>Export recall notes into your nightly spaced-repetition deck</li>
+                </ul>
+              </div>
+
+            </aside>
+
+          </div>
+
+        </div>
+        <!-- END OF VIEW: LIVE TECH THEATER -->
+
+      </main>
+
+      <!-- Classical Footer -->
+      <footer class="mt-16 border-t border-[#3e2b1d] bg-[#1b120b] py-6 px-4 sm:px-6 lg:px-8 text-center text-xs text-[#b89b82]">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-3">
+          <span class="font-serif italic text-amber-200/80">JOBG &bull; Classical FAANG Fellowship & Interview Accelerator</span>
+          <span class="font-mono text-[11px] text-[#b89b82]">&copy; 2026 JOBG Foundation. All rights reserved.</span>
+        </div>
+      </footer>
+
+    </div>
+  </div>
+
+  <!-- ========================================================================= -->
+  <!-- VANILLA JAVASCRIPT: STATE MANAGEMENT, PROGRESS CALCULATOR & LIVE API      -->
+  <!-- ========================================================================= -->
+  <script>
+    (function () {
+      // Mobile drawer toggle
+      const sidebar = document.getElementById('sidebar');
+      const openBtn = document.getElementById('openSidebarBtn');
+      const closeBtn = document.getElementById('closeSidebarBtn');
+      const backdrop = document.getElementById('sidebarBackdrop');
+
+      function toggleSidebar(open) {
+        if (open) {
+          sidebar.classList.remove('-translate-x-full');
+          backdrop.classList.remove('hidden');
+          document.body.classList.add('overflow-hidden', 'lg:overflow-auto');
+        } else {
+          sidebar.classList.add('-translate-x-full');
+          backdrop.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden', 'lg:overflow-auto');
+        }
+      }
+
+      if (openBtn) openBtn.addEventListener('click', () => toggleSidebar(true));
+      if (closeBtn) closeBtn.addEventListener('click', () => toggleSidebar(false));
+      if (backdrop) backdrop.addEventListener('click', () => toggleSidebar(false));
+
+      // Roadmap Expand All / Collapse All
+      const expandAllBtn = document.getElementById('expandAllPillars');
+      const collapseAllBtn = document.getElementById('collapseAllPillars');
+      const pillarDetails = document.querySelectorAll('.pillar-accordion');
+
+      if (expandAllBtn) {
+        expandAllBtn.addEventListener('click', () => {
+          pillarDetails.forEach((el) => (el.open = true));
+        });
+      }
+
+      if (collapseAllBtn) {
+        collapseAllBtn.addEventListener('click', () => {
+          pillarDetails.forEach((el) => (el.open = false));
+        });
+      }
+
+      // =======================================================================
+      // 1. STATE MANAGEMENT (localStorage persistence)
+      // =======================================================================
+      const STORAGE_KEY = 'JOBG_USER_PROGRESS_WARM_v1';
+
+      const defaultState = {
+        completedModules: {
+          'module-3': true // Pre-seeded: Pillar 1, Module 3
+        },
+        baseVideosCount: 83,
+        totalVideosCount: 112,
+        streakCount: 28,
+        notes: `// Live notes for Ep 42: Staff Engineer Loop\n[Trade-off] Paxos handles arbitrary network partitions better, but Raft has clearer state machines for distributed log replication.\n[Staff Strategy] In Meta system design loops, always quantify throughput with explicit math (e.g. 100M DAU * 200 writes = 200MB/s) before proposing cache partitioning.\n[Question] In Amazon leadership round, how to structure 'Disagree and Commit' when architecture is fundamentally flawed?`,
+        activeVideoId: '01s8116bSQU',
+        activeVideoTitle: 'Staff Engineer Loop Deep-Dive: Distributed Systems & Consensus Pitfalls'
+      };
+
+      let appState = loadState();
+
+      function loadState() {
+        try {
+          const stored = localStorage.getItem(STORAGE_KEY);
+          if (stored) {
+            const parsed = JSON.parse(stored);
+            return Object.assign({}, defaultState, parsed);
+          }
+        } catch (err) {
+          console.warn('Unable to read state from localStorage:', err);
+        }
+        return Object.assign({}, defaultState);
+      }
+
+      function saveState() {
+        try {
+          localStorage.setItem(STORAGE_KEY, JSON.stringify(appState));
+        } catch (err) {
+          console.warn('Unable to persist state to localStorage:', err);
+        }
+      }
+
+      // =======================================================================
+      // 2. PROGRESS CALCULATOR WITH DYNAMIC EASING & MOTION
+      // =======================================================================
+      const metricVideosCount = document.getElementById('metricVideosCount');
+      const metricVideosTotal = document.getElementById('metricVideosTotal');
+      const metricVideosBar = document.getElementById('metricVideosBar');
+      const metricVideosPercentText = document.getElementById('metricVideosPercentText');
+      const metricStreakCount = document.getElementById('metricStreakCount');
+      const metricRoadmapPercent = document.getElementById('metricRoadmapPercent');
+      const metricRoadmapBar = document.getElementById('metricRoadmapBar');
+      const metricRoadmapSubtitle = document.getElementById('metricRoadmapSubtitle');
+      const completeButtons = document.querySelectorAll('.complete-btn');
+
+      // Smooth Numerical Count-Up Helper (Dynamic Easing)
+      function animateNumber(element, start, end, duration = 750, suffix = '', decimals = 0) {
+        if (!element) return;
+        const startTime = performance.now();
+        function updateFrame(now) {
+          const elapsed = now - startTime;
+          const progress = Math.min(elapsed / duration, 1);
+          // easeOutCubic
+          const ease = 1 - Math.pow(1 - progress, 3);
+          const current = start + (end - start) * ease;
+          element.textContent = (decimals > 0 ? current.toFixed(decimals) : Math.round(current)) + suffix;
+          if (progress < 1) {
+            requestAnimationFrame(updateFrame);
+          } else {
+            element.textContent = (decimals > 0 ? end.toFixed(decimals) : Math.round(end)) + suffix;
+          }
+        }
+        requestAnimationFrame(updateFrame);
+      }
+
+      // Sparkle light effects removed per user request
+
+      let prevVideosCount = 0;
+      let prevStreakCount = 0;
+      let prevRoadmapPercent = 0;
+
+      function updateProgressMetrics(animate = false) {
+        const completedCount = Object.values(appState.completedModules).filter(Boolean).length;
+        const totalRoadmapModules = completeButtons.length || 12;
+
+        const currentVideosWatched = Math.min(appState.baseVideosCount + completedCount, appState.totalVideosCount);
+        const videoPercent = Math.round((currentVideosWatched / appState.totalVideosCount) * 100);
+
+        if (metricVideosCount) {
+          if (animate) {
+            animateNumber(metricVideosCount, prevVideosCount || (currentVideosWatched - 4), currentVideosWatched, 650);
+          } else {
+            metricVideosCount.textContent = currentVideosWatched;
+          }
+        }
+        prevVideosCount = currentVideosWatched;
+
+        if (metricVideosTotal) metricVideosTotal.textContent = `/ ${appState.totalVideosCount}`;
+        if (metricVideosBar) metricVideosBar.style.width = `${videoPercent}%`;
+        if (metricVideosPercentText) {
+          metricVideosPercentText.textContent = `${videoPercent}% complete (${7 + completedCount} this week)`;
+        }
+
+        if (metricStreakCount) {
+          if (animate) {
+            animateNumber(metricStreakCount, prevStreakCount || (appState.streakCount - 3), appState.streakCount, 650);
+          } else {
+            metricStreakCount.textContent = appState.streakCount;
+          }
+        }
+        prevStreakCount = appState.streakCount;
+
+        const targetRoadmapPercent = parseFloat(Math.min(99.0, (68.0 + (completedCount / totalRoadmapModules) * 28.0)).toFixed(1));
+        if (metricRoadmapPercent) {
+          if (animate) {
+            animateNumber(metricRoadmapPercent, prevRoadmapPercent || (targetRoadmapPercent - 4), targetRoadmapPercent, 650, '%', 1);
+          } else {
+            metricRoadmapPercent.textContent = `${targetRoadmapPercent}%`;
+          }
+        }
+        prevRoadmapPercent = targetRoadmapPercent;
+
+        if (metricRoadmapBar) metricRoadmapBar.style.width = `${targetRoadmapPercent}%`;
+        if (metricRoadmapSubtitle) {
+          metricRoadmapSubtitle.textContent = `${completedCount} of ${totalRoadmapModules} sprint modules done`;
+        }
+
+        updatePillarProgress();
+      }
+
+      function updatePillarProgress() {
+        const pillarRanges = [
+          { min: 1, max: 3, base: 90 },
+          { min: 4, max: 6, base: 70 },
+          { min: 7, max: 9, base: 75 },
+          { min: 10, max: 12, base: 55 }
+        ];
+
+        pillarDetails.forEach((pillar, idx) => {
+          if (!pillarRanges[idx]) return;
+          const range = pillarRanges[idx];
+          let doneInPillar = 0;
+          for (let i = range.min; i <= range.max; i++) {
+            if (appState.completedModules[`module-${i}`]) doneInPillar++;
+          }
+          const pillarPercent = Math.min(100, Math.round(range.base + (doneInPillar / 3) * 10));
+          const progressEl = pillar.querySelector('.font-mono');
+          if (progressEl) {
+            progressEl.textContent = `${pillarPercent}% Done`;
+          }
+        });
+      }
+
+      // Initialize and attach event listeners to module checkmark buttons
+      completeButtons.forEach((btn, index) => {
+        const moduleId = `module-${index + 1}`;
+        btn.setAttribute('data-module-id', moduleId);
+
+        function renderButtonState(isDone) {
+          const icon = btn.querySelector('.check-icon');
+          const text = btn.querySelector('.btn-text');
+
+          if (isDone) {
+            btn.setAttribute('data-completed', 'true');
+            btn.classList.add('bg-emerald-500/15', 'border-emerald-500/40', 'text-emerald-300');
+            btn.classList.remove('bg-[#302117]', 'border-[#5a3e2a]', 'text-[#e0c7b0]');
+            if (icon) {
+              icon.classList.add('bg-emerald-500', 'border-emerald-500', 'text-[#18110b]');
+              icon.classList.remove('text-transparent', 'border-[#664932]');
+            }
+            if (text) text.textContent = 'Completed';
+          } else {
+            btn.removeAttribute('data-completed');
+            btn.classList.remove('bg-emerald-500/15', 'border-emerald-500/40', 'text-emerald-300');
+            btn.classList.add('bg-[#302117]', 'border-[#5a3e2a]', 'text-[#e0c7b0]');
+            if (icon) {
+              icon.classList.remove('bg-emerald-500', 'border-emerald-500', 'text-[#18110b]');
+              icon.classList.add('text-transparent', 'border-[#664932]');
+            }
+            if (text) text.textContent = 'Mark Complete';
+          }
+        }
+
+        const initialIsDone = !!appState.completedModules[moduleId];
+        renderButtonState(initialIsDone);
+
+        btn.addEventListener('click', () => {
+          const currentIsDone = btn.getAttribute('data-completed') === 'true';
+          const newIsDone = !currentIsDone;
+
+          appState.completedModules[moduleId] = newIsDone;
+          saveState();
+
+          renderButtonState(newIsDone);
+          updateProgressMetrics(true);
+
+          
+        });
+      });
+
+      // Run initial load animation with count-up
+      updateProgressMetrics(true);
+
+      // =======================================================================
+      // 3. LIVE STREAM API HANDLER: fetchLivePodcasts()
+      // =======================================================================
+      async function fetchLivePodcasts() {
+        const container = document.getElementById('recentBroadcastsContainer');
+        if (!container) return;
+
+        container.innerHTML = `
+          <div class="col-span-full flex items-center justify-center py-6 text-xs text-[#b89b82] font-mono">
+            <svg class="animate-spin -ml-1 mr-3 h-4 w-4 text-amber-400" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>
+            <span>Querying YouTube Data API v3 live endpoints...</span>
+          </div>
+        `;
+
+        try {
+          await new Promise((resolve) => setTimeout(resolve, 300));
+
+          const fallbackData = [
+            {
+              id: { videoId: 'i53Gi_K3o7I' },
+              snippet: {
+                title: 'Top 5 System Design Trade-offs Every Staff Candidate Must Know',
+                channelTitle: 'ByteByteGo',
+                description: 'Explore trade-offs between consistency models, disk I/O bottlenecks, and rate limiting.',
+                thumbnails: {
+                  medium: {
+                    url: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?auto=format&fit=crop&q=80&w=400&h=225'
+                  }
+                }
+              },
+              meta: {
+                views: '184K views',
+                duration: '38:15',
+                tagColor: 'text-amber-400'
+              }
+            },
+            {
+              id: { videoId: 'Hdr64lKQ3e4' },
+              snippet: {
+                title: '7 Essential Dynamic Programming Patterns for Google & Meta Loops',
+                channelTitle: 'NeetCode',
+                description: 'Mastering 1D & 2D dynamic programming states, DAG transitions, and complexity.',
+                thumbnails: {
+                  medium: {
+                    url: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?auto=format&fit=crop&q=80&w=400&h=225'
+                  }
+                }
+              },
+              meta: {
+                views: '320K views',
+                duration: '46:20',
+                tagColor: 'text-orange-400'
+              }
+            },
+            {
+              id: { videoId: 's-AcqR31kQI' },
+              snippet: {
+                title: 'Distributed Consensus & Raft Explained from Scratch',
+                channelTitle: 'Gaurav Sen',
+                description: 'Full visual walkthrough of Raft cluster states, candidate heartbeats, and quorum.',
+                thumbnails: {
+                  medium: {
+                    url: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=400&h=225'
+                  }
+                }
+              },
+              meta: {
+                views: '98K views',
+                duration: '29:40',
+                tagColor: 'text-yellow-300'
+              }
+            }
+          ];
+
+          renderBroadcastCards(container, fallbackData);
+
+        } catch (err) {
+          console.error('Error fetching live podcasts:', err);
+          container.innerHTML = `
+            <div class="col-span-full py-4 text-center text-xs text-rose-400">
+              Failed to load live broadcasts. Please check connection.
+            </div>
+          `;
+        }
+      }
+
+      function renderBroadcastCards(container, items) {
+        container.innerHTML = '';
+
+        const mainIframe = document.getElementById('mainTheaterIframe');
+        const streamTitle = document.getElementById('currentStreamTitle');
+
+        items.forEach((item) => {
+          const videoId = item.id.videoId;
+          const { title, channelTitle, thumbnails } = item.snippet;
+          const { views, duration, tagColor } = item.meta;
+
+          const card = document.createElement('div');
+          card.className =
+            'broadcast-card group cursor-pointer rounded-xl border border-[#463020] bg-[#241911] p-3.5 hover:border-amber-500/50 hover:bg-[#2d1f16] hover:-translate-y-1 hover:shadow-xl hover:shadow-amber-950/20 transition-all duration-300 flex flex-col justify-between';
+          card.setAttribute('data-video-id', videoId);
+          card.setAttribute('data-video-title', title);
+          card.setAttribute('data-channel', channelTitle);
+
+          if (appState.activeVideoId === videoId) {
+            card.classList.add('border-amber-500', 'bg-[#2d1f16]', 'ring-1', 'ring-amber-500/30');
+          }
+
+          card.innerHTML = `
+            <div>
+              <div class="relative w-full aspect-video rounded-lg overflow-hidden bg-black border border-[#5a3d29] mb-3 flex items-center justify-center">
+                <img
+                  src="${thumbnails.medium.url}"
+                  alt="${channelTitle} thumbnail"
+                  class="absolute inset-0 h-full w-full object-cover opacity-60 group-hover:opacity-85 group-hover:scale-105 transition-all duration-300"
+                  loading="lazy"
+                />
+                <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-full bg-gradient-to-r from-amber-600 to-amber-500 text-[#18110b] group-hover:scale-115 transition-all shadow-lg shadow-amber-950/50">
+                    <svg class="h-4 w-4 translate-x-0.5" viewBox="0 0 24 24" fill="currentColor">
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                  </div>
+                </div>
+                <span class="absolute bottom-1.5 right-1.5 rounded bg-black/80 px-1.5 py-0.5 text-[9px] font-mono text-amber-200">${duration}</span>
+              </div>
+
+              <div class="flex items-center gap-1.5 mb-1.5">
+                <span class="text-[11px] font-serif font-bold ${tagColor}">${channelTitle}</span>
+                <svg class="h-3 w-3 ${tagColor}" viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+                </svg>
+              </div>
+
+              <h4 class="text-xs font-serif font-semibold text-[#fdf6ea] group-hover:text-amber-200 line-clamp-2 leading-snug">
+                ${title}
+              </h4>
+            </div>
+
+            <div class="mt-3.5 pt-2.5 border-t border-[#432e1e] flex items-center justify-between text-[11px] text-[#b89b82] font-mono">
+              <span>${views}</span>
+              <span class="${tagColor} group-hover:underline font-serif font-bold">Play Masterclass &rarr;</span>
+            </div>
+          `;
+
+          card.addEventListener('click', () => {
+            if (mainIframe && videoId) {
+              mainIframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&enablejsapi=1`;
+            }
+
+            if (streamTitle) {
+              streamTitle.textContent = `${channelTitle}: ${title}`;
+            }
+
+            appState.activeVideoId = videoId;
+            appState.activeVideoTitle = `${channelTitle}: ${title}`;
+            saveState();
+
+            container.querySelectorAll('.broadcast-card').forEach((c) => {
+              c.classList.remove('border-amber-500', 'bg-[#2d1f16]', 'ring-1', 'ring-amber-500/30');
+            });
+            card.classList.add('border-amber-500', 'bg-[#2d1f16]', 'ring-1', 'ring-amber-500/30');
+
+            if (mainIframe) {
+              mainIframe.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+          });
+
+          container.appendChild(card);
+        });
+      }
+
+      fetchLivePodcasts();
+
+      // =======================================================================
+      // 4. VIEW SWITCHING LOGIC (Dashboard vs. Live Tech Theater)
+      // =======================================================================
+      const viewDashboard = document.getElementById('view-dashboard');
+      const viewLiveTheater = document.getElementById('view-live-theater');
+      const navDashboardLink = document.getElementById('nav-dashboard-link');
+      const navLiveLink = document.getElementById('nav-live-link');
+      const headerBreadcrumb = document.getElementById('headerBreadcrumb');
+      const backToDashboardBtn = document.getElementById('backToDashboardBtn');
+      const joinPodBtn = document.getElementById('joinPodBtn');
+
+      function switchView(target) {
+        const isLive = target === 'live';
+
+        if (viewDashboard && viewLiveTheater) {
+          viewDashboard.classList.toggle('hidden', isLive);
+          viewLiveTheater.classList.toggle('hidden', !isLive);
+        }
+
+        if (headerBreadcrumb) {
+          headerBreadcrumb.textContent = isLive
+            ? 'JOBG / Classical Tech Theater'
+            : 'JOBG Dashboard';
+        }
+
+        if (navDashboardLink && navLiveLink) {
+          if (isLive) {
+            navLiveLink.classList.add('bg-gradient-to-r', 'from-amber-500/15', 'to-transparent', 'text-amber-200', 'border-amber-500/30');
+            navLiveLink.classList.remove('text-[#e0c7b0]', 'border-transparent');
+            navDashboardLink.classList.remove('bg-gradient-to-r', 'from-amber-500/15', 'to-transparent', 'text-amber-200', 'border-amber-500/30');
+            navDashboardLink.classList.add('text-[#e0c7b0]', 'border-transparent');
+          } else {
+            navDashboardLink.classList.add('bg-gradient-to-r', 'from-amber-500/15', 'to-transparent', 'text-amber-200', 'border-amber-500/30');
+            navDashboardLink.classList.remove('text-[#e0c7b0]', 'border-transparent');
+            navLiveLink.classList.remove('bg-gradient-to-r', 'from-amber-500/15', 'to-transparent', 'text-amber-200', 'border-amber-500/30');
+            navLiveLink.classList.add('text-[#e0c7b0]', 'border-transparent');
+          }
+        }
+
+        toggleSidebar(false);
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+
+      if (navDashboardLink) {
+        navDashboardLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          history.pushState(null, '', '#dashboard');
+          switchView('dashboard');
+        });
+      }
+
+      if (navLiveLink) {
+        navLiveLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          history.pushState(null, '', '#live');
+          switchView('live');
+        });
+      }
+
+      if (backToDashboardBtn) {
+        backToDashboardBtn.addEventListener('click', () => {
+          history.pushState(null, '', '#dashboard');
+          switchView('dashboard');
+        });
+      }
+
+      if (joinPodBtn) {
+        joinPodBtn.addEventListener('click', () => {
+          history.pushState(null, '', '#live');
+          switchView('live');
+        });
+      }
+
+      window.addEventListener('popstate', () => {
+        if (window.location.hash === '#live') {
+          switchView('live');
+        } else {
+          switchView('dashboard');
+        }
+      });
+
+      if (window.location.hash === '#live') {
+        switchView('live');
+      }
+
+      // =======================================================================
+      // 5. ACTIVE RECALL NOTES LOGIC (State sync & export)
+      // =======================================================================
+      const notesTextarea = document.getElementById('recallNotesTextarea');
+      const notesCount = document.getElementById('notesCount');
+      const downloadNotesBtn = document.getElementById('downloadNotesBtn');
+      const downloadBtnText = document.getElementById('downloadBtnText');
+      const clearNotesBtn = document.getElementById('clearNotesBtn');
+      const insertTimestampBtn = document.getElementById('insertTimestampBtn');
+      const insertTagButtons = document.querySelectorAll('.insert-tag-btn');
+      const saveStatus = document.getElementById('saveStatusIndicator');
+
+      if (notesTextarea && appState.notes) {
+        notesTextarea.value = appState.notes;
+      }
+
+      function updateNotesCount() {
+        if (!notesTextarea || !notesCount) return;
+        const text = notesTextarea.value.trim();
+        const lines = text ? text.split('\n').length : 0;
+        const words = text ? text.split(/\s+/).filter(Boolean).length : 0;
+        notesCount.textContent = `${lines} lines • ${words} words`;
+
+        if (saveStatus) {
+          saveStatus.innerHTML = `
+            <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+            <span>Auto-saved</span>
+          `;
+        }
+      }
+
+      if (notesTextarea) {
+        notesTextarea.addEventListener('input', () => {
+          appState.notes = notesTextarea.value;
+          saveState();
+          updateNotesCount();
+        });
+        updateNotesCount();
+      }
+
+      function insertSnippet(snippet) {
+        if (!notesTextarea) return;
+        const start = notesTextarea.selectionStart;
+        const end = notesTextarea.selectionEnd;
+        const val = notesTextarea.value;
+        const prefix = val.substring(0, start);
+        const suffix = val.substring(end);
+
+        const needsNewline = prefix.length > 0 && !prefix.endsWith('\n');
+        const insertion = (needsNewline ? '\n' : '') + snippet;
+
+        notesTextarea.value = prefix + insertion + suffix;
+        const newPos = start + insertion.length;
+        notesTextarea.selectionStart = newPos;
+        notesTextarea.selectionEnd = newPos;
+        notesTextarea.focus();
+
+        appState.notes = notesTextarea.value;
+        saveState();
+        updateNotesCount();
+      }
+
+      insertTagButtons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const tag = btn.getAttribute('data-tag') || '';
+          insertSnippet(tag);
+        });
+      });
+
+      if (insertTimestampBtn) {
+        insertTimestampBtn.addEventListener('click', () => {
+          const now = new Date();
+          const timeString = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', second: '2-digit' });
+          insertSnippet(`[${timeString}] `);
+        });
+      }
+
+      if (clearNotesBtn) {
+        clearNotesBtn.addEventListener('click', () => {
+          if (confirm('Clear active recall notes?')) {
+            notesTextarea.value = '';
+            appState.notes = '';
+            saveState();
+            updateNotesCount();
+            notesTextarea.focus();
+          }
+        });
+      }
+
+      if (downloadNotesBtn) {
+        downloadNotesBtn.addEventListener('click', () => {
+          const content = notesTextarea ? notesTextarea.value : '';
+          if (!content.trim()) {
+            alert('Your notes are currently empty. Type some notes before downloading!');
+            return;
+          }
+
+          const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement('a');
+          const dateStr = new Date().toISOString().slice(0, 10);
+          a.href = url;
+          a.download = `JOBG_Active_Recall_Notes_${dateStr}.txt`;
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+
+          if (downloadBtnText) {
+            const originalText = downloadBtnText.textContent;
+            downloadBtnText.textContent = 'Notes Downloaded (.txt)!';
+            downloadNotesBtn.classList.add('from-emerald-600', 'to-emerald-500', 'text-white');
+            setTimeout(() => {
+              downloadBtnText.textContent = originalText;
+              downloadNotesBtn.classList.remove('from-emerald-600', 'to-emerald-500', 'text-white');
+            }, 2500);
+          }
+        });
+      }
+
+      // Ambient light particles removed per user request
+
+      // =======================================================================
+      // 7. INTERACTIVE 3D PERSPECTIVE CARD TILT
+      // =======================================================================
+      function initTiltCards() {
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        const tiltCards = document.querySelectorAll('.interactive-tilt-card');
+        tiltCards.forEach((card) => {
+          card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            const rotateX = ((y - centerY) / centerY) * -4.5;
+            const rotateY = ((x - centerX) / centerX) * 4.5;
+            card.style.transform = `perspective(800px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-4px)`;
+          });
+          card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(800px) rotateX(0deg) rotateY(0deg) translateY(0px)';
+          });
+        });
+      }
+      initTiltCards();
+    })();
+  </script>
+</body>
+</html>
