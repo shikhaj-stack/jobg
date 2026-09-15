@@ -147,6 +147,14 @@ async function runMasterSuite() {
     const recallGet = await request("http://localhost:3000/api/recall", { headers: { Cookie: cookie } });
     assert("17. /api/recall returns spaced review flashcard deck", recallGet.status === 200 && recallGet.body.deck.length > 0);
 
+    // 13. Claude AI Dynamic Custom Roadmap Generator
+    const genRoadmapRes = await request(
+      "http://localhost:3000/api/ai/generate-roadmap",
+      { method: "POST", headers: { "Content-Type": "application/json", Cookie: cookie } },
+      { topic: "Kubernetes & Microservices Architecture", weeks: 6 }
+    );
+    assert("18. /api/ai/generate-roadmap creates custom topic roadmap with video lectures", genRoadmapRes.status === 200 && genRoadmapRes.body.roadmap.pillars.length > 0);
+
     console.log("==================================================");
     console.log(`MASTER SUITE SUMMARY: ${passed} Passed, ${failed} Failed`);
     console.log("==================================================");
