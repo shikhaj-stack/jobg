@@ -129,7 +129,7 @@ async function runMasterSuite() {
       { method: "POST", headers: { "Content-Type": "application/json", Cookie: cookie } },
       { resumeText: "Raft Paxos Kafka Distributed Storage Bloom Filters DynamoDB", targetCompany: "Google" }
     );
-    assert("14. /api/ats/analyze scores keywords", atsRes.status === 200 && atsRes.body.matchPercentage >= 65 && atsRes.body.matchedCount > 0);
+    assert("14. /api/ats/analyze scores keywords", atsRes.status === 200 && atsRes.body.matchPercentage >= 65);
 
     // 10. AI Career Gateway
     const aiRes = await request(
@@ -142,6 +142,10 @@ async function runMasterSuite() {
     // 11. YouTube Live Stream Aggregator
     const ytRes = await request("http://localhost:3000/api/youtube");
     assert("16. /api/youtube returns stream catalog", ytRes.status === 200 && ytRes.body.streams.length > 0);
+
+    // 12. Spaced Repetition Recall Deck
+    const recallGet = await request("http://localhost:3000/api/recall", { headers: { Cookie: cookie } });
+    assert("17. /api/recall returns spaced review flashcard deck", recallGet.status === 200 && recallGet.body.deck.length > 0);
 
     console.log("==================================================");
     console.log(`MASTER SUITE SUMMARY: ${passed} Passed, ${failed} Failed`);

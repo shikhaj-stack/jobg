@@ -1,17 +1,19 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import MetricsGrid from "@/components/dashboard/MetricsGrid";
 import ActiveLesson from "@/components/dashboard/ActiveLesson";
 import TaskChecklist from "@/components/dashboard/TaskChecklist";
 import ResumeHealth from "@/components/dashboard/ResumeHealth";
+import AiInterviewDrawer from "@/components/dashboard/AiInterviewDrawer";
 import { useAuth } from "@/context/AuthContext";
 import { useProgress } from "@/hooks/useProgress";
-import { Sparkles, ArrowRight, ShieldCheck, Flame, Play, Target } from "lucide-react";
+import { Sparkles, ArrowRight, Bot } from "lucide-react";
 import Link from "next/link";
 
 export default function DashboardPage() {
   const { profile } = useAuth();
-  const { currentTrack, readinessPercentage, completedInTrack, totalTrackModules } = useProgress();
+  const { currentTrack } = useProgress();
+  const [isAiDrawerOpen, setIsAiDrawerOpen] = useState(false);
 
   return (
     <div className="space-y-8 animate-fade-in-up">
@@ -33,11 +35,19 @@ export default function DashboardPage() {
         </div>
 
         <div className="flex items-center gap-3">
+          <button
+            onClick={() => setIsAiDrawerOpen(true)}
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-xs transition-all"
+          >
+            <Bot className="w-4 h-4" />
+            <span>Launch AI Mock Interview</span>
+          </button>
+
           <Link
             href="/roadmap"
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-all"
           >
-            <span>View Full Curriculum</span>
+            <span>Full Curriculum</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -54,6 +64,12 @@ export default function DashboardPage() {
         <TaskChecklist />
         <ResumeHealth />
       </div>
+
+      {/* AI Mock Interview Slide-Out Chamber */}
+      <AiInterviewDrawer
+        isOpen={isAiDrawerOpen}
+        onClose={() => setIsAiDrawerOpen(false)}
+      />
     </div>
   );
 }
