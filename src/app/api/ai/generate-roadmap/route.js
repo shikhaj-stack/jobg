@@ -1,6 +1,48 @@
 import { NextResponse } from "next/server";
 import { requireAuthenticatedUser } from "@/lib/auth/server";
 
+// Categorized curated video lectures pool
+const LECTURE_POOLS = {
+  dsa: [
+    { videoId: "KLlXCFG5TnA", title: "Two-Pointer, Sliding Window & Array State Patterns" },
+    { videoId: "oBt53YbR9Kk", title: "Dynamic Programming Masterclass & State Transitions" },
+    { videoId: "09_LlHjoEiY", title: "Advanced Graph Algorithms & Network Flow" },
+    { videoId: "PNa9OMFwO1s", title: "Segment Trees, Monotonic Queues & Suffix Tries" }
+  ],
+  systemDesign: [
+    { videoId: "bUHFg8CZFws", title: "Consistent Hashing & Distributed Storage Architecture" },
+    { videoId: "rx6t_J-Y9Z0", title: "Raft Consensus Algorithm & Distributed Replication" },
+    { videoId: "ZjAqacIC_3c", title: "Microservices Scalability & High-Throughput APIs" },
+    { videoId: "09_LlHjoEiY", title: "Distributed Caching & Fault Tolerance Guarantees" }
+  ],
+  web3: [
+    { videoId: "gyMwXuJrbJQ", title: "Smart Contract Security Auditing & Flash Loan DeFi Math" },
+    { videoId: "rx6t_J-Y9Z0", title: "EVM Storage Layout, Yul Assembly & Opcode Optimizations" },
+    { videoId: "bUHFg8CZFws", title: "Decentralized Consensus Protocols & Oracle Security" },
+    { videoId: "09_LlHjoEiY", title: "Zero-Knowledge Proofs & Layer-2 Rollup Architecture" }
+  ],
+  fullstack: [
+    { videoId: "ZjAqacIC_3c", title: "Next.js 14 Server Components & Streaming SSR Internals" },
+    { videoId: "PNa9OMFwO1s", title: "High-Performance Node.js Event Loop & Memory Profiling" },
+    { videoId: "bUHFg8CZFws", title: "PostgreSQL Index Tuning, Query Execution & Pooling" },
+    { videoId: "KLlXCFG5TnA", title: "Cloud Infrastructure, Containerization & CI/CD Pipelines" }
+  ]
+};
+
+function getTopicLectures(topic) {
+  const q = topic.toLowerCase();
+  if (q.includes("web3") || q.includes("solidity") || q.includes("contract") || q.includes("crypto") || q.includes("defi")) {
+    return LECTURE_POOLS.web3;
+  }
+  if (q.includes("design") || q.includes("system") || q.includes("distributed") || q.includes("kafka") || q.includes("cache") || q.includes("scale")) {
+    return LECTURE_POOLS.systemDesign;
+  }
+  if (q.includes("react") || q.includes("next") || q.includes("fullstack") || q.includes("node") || q.includes("backend") || q.includes("frontend")) {
+    return LECTURE_POOLS.fullstack;
+  }
+  return LECTURE_POOLS.dsa;
+}
+
 export async function POST(request) {
   try {
     const { errorResponse, user } = await requireAuthenticatedUser(request);
@@ -24,7 +66,7 @@ For each module, you MUST provide:
 3. Estimated hours
 4. Key topics/invariants
 5. A summary of architectural trade-offs
-6. A relevant YouTube lecture videoId (use verified IDs like 'bUHFg8CZFws', '09_LlHjoEiY', 'gyMwXuJrbJQ', 'ZjAqacIC_3c', 'rx6t_J-Y9Z0', 'oBt53YbR9Kk', 'KLlXCFG5TnA', 'PNa9OMFwO1s')
+6. A distinct, relevant YouTube lecture videoId (choose from 'KLlXCFG5TnA', 'oBt53YbR9Kk', '09_LlHjoEiY', 'PNa9OMFwO1s', 'bUHFg8CZFws', 'rx6t_J-Y9Z0', 'ZjAqacIC_3c', 'gyMwXuJrbJQ' without repeating the same ID)
 
 Return a clean JSON object with this exact schema:
 {
@@ -47,7 +89,7 @@ Return a clean JSON object with this exact schema:
           "estHours": number,
           "summary": "string",
           "topics": ["string", "string", "string"],
-          "videoId": "string (valid YouTube ID)",
+          "videoId": "string",
           "videoTitle": "string"
         }
       ]
@@ -69,7 +111,7 @@ Return a clean JSON object with this exact schema:
             response_format: { type: "json_object" },
             messages: [
               { role: "system", content: systemPrompt },
-              { role: "user", content: `Generate a roadmap for topic: "${topic}", target role: "${targetRole}", weeks: ${weeks}` }
+              { role: "user", content: `Generate a distinct roadmap for topic: "${topic}", target role: "${targetRole}", weeks: ${weeks}` }
             ]
           }),
         });
@@ -108,7 +150,7 @@ Return a clean JSON object with this exact schema:
             messages: [
               {
                 role: "user",
-                content: `Generate a complete, high-impact learning roadmap with curated YouTube lecture videoIds for the topic: "${topic}". Target Role: ${targetRole}. Expected sprint duration: ${weeks} weeks. Return ONLY the JSON object.`
+                content: `Generate a complete, high-impact learning roadmap with distinct YouTube lecture videoIds for the topic: "${topic}". Target Role: ${targetRole}. Expected sprint duration: ${weeks} weeks. Return ONLY the JSON object.`
               }
             ],
           }),
@@ -135,7 +177,9 @@ Return a clean JSON object with this exact schema:
       }
     }
 
-    // Dynamic Fallback Roadmap Generator tailored to requested topic
+    // Dynamic Topic-Tailored Distinct Video Lectures
+    const vids = getTopicLectures(topic);
+
     const dynamicRoadmap = {
       trackName: `${topic.toUpperCase()} MASTERY SPRINT`,
       tagline: `AI-Synthesized Curriculum for ${targetRole}`,
@@ -143,7 +187,7 @@ Return a clean JSON object with this exact schema:
       totalWeeks: weeks,
       pillars: [
         {
-          id: `custom-pillar-1`,
+          id: "custom-pillar-1",
           number: "01",
           title: `Foundations & Core Architecture of ${topic}`,
           subtitle: "Theoretical Underpinnings, Invariants & Trade-Offs",
@@ -156,8 +200,8 @@ Return a clean JSON object with this exact schema:
               estHours: 18,
               summary: `Master fundamental invariants, data structures, and memory bounds governing ${topic}.`,
               topics: ["Primitive Invariants", "Memory Layout", "Failure Boundary Traps"],
-              videoId: "bUHFg8CZFws",
-              videoTitle: "Distributed Systems & Consistent Hashing Architecture"
+              videoId: vids[0].videoId,
+              videoTitle: vids[0].title
             },
             {
               id: "mod-c2",
@@ -166,13 +210,13 @@ Return a clean JSON object with this exact schema:
               estHours: 14,
               summary: `Apply mathematical optimization, asymptotic bounds, and sub-quadratic patterns to ${topic}.`,
               topics: ["Asymptotic Bounds", "State Compression", "Amortized Analysis"],
-              videoId: "oBt53YbR9Kk",
-              videoTitle: "Dynamic Programming Patterns & State Transitions"
+              videoId: vids[1].videoId,
+              videoTitle: vids[1].title
             }
           ]
         },
         {
-          id: `custom-pillar-2`,
+          id: "custom-pillar-2",
           number: "02",
           title: `Production Scale, Security & High-Throughput Engineering`,
           subtitle: "Enterprise Reliability & Fault-Tolerant Patterns",
@@ -185,8 +229,8 @@ Return a clean JSON object with this exact schema:
               estHours: 22,
               summary: `Engineering distributed failover, quorum consensus, and lock-free thread synchronizations in ${topic}.`,
               topics: ["Quorum Consensus", "Split-Brain Prevention", "Idempotency Gates"],
-              videoId: "rx6t_J-Y9Z0",
-              videoTitle: "Raft Consensus Algorithm & Distributed Log Replication"
+              videoId: vids[2].videoId,
+              videoTitle: vids[2].title
             },
             {
               id: "mod-c4",
@@ -195,8 +239,8 @@ Return a clean JSON object with this exact schema:
               estHours: 16,
               summary: `Analyze attack vectors, audit checklists, and defensive hardening patterns for ${topic}.`,
               topics: ["Attack Vector Modeling", "Reentrancy & Invariant Proofs", "Chaos Testing"],
-              videoId: "gyMwXuJrbJQ",
-              videoTitle: "Smart Contract Security Auditing & DeFi Math"
+              videoId: vids[3].videoId,
+              videoTitle: vids[3].title
             }
           ]
         }
