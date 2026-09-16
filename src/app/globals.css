@@ -1,6 +1,11 @@
-@tailwind base;
+﻿@tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ═══════════════════════════════════════════════════════
+   Google Fonts: Noto Sans Devanagari for Hindi support
+   ═══════════════════════════════════════════════════════ */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
 
 @layer base {
   :root {
@@ -12,35 +17,80 @@
     background-color: var(--background);
     color: var(--foreground);
     font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    transition: font-family 0.2s ease;
+  }
+
+  /* ─── Hindi mode: switch to Devanagari font ─── */
+  html[lang="hi"] body {
+    font-family: 'Noto Sans Devanagari', 'Plus Jakarta Sans', system-ui, serif;
+    line-height: 1.85; /* Devanagari glyphs need extra leading */
+  }
+
+  html[lang="hi"] h1,
+  html[lang="hi"] h2,
+  html[lang="hi"] h3,
+  html[lang="hi"] h4 {
+    font-family: 'Noto Sans Devanagari', serif;
+    font-weight: 700;
   }
 }
 
-/* Custom Warm Scrollbar */
-::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-::-webkit-scrollbar-track {
-  background: #f1f5f9;
-}
-::-webkit-scrollbar-thumb {
-  background: #cbd5e1;
-  border-radius: 9999px;
-}
-::-webkit-scrollbar-thumb:hover {
-  background: #94a3b8;
+/* ═══════════════════════════════════════════════════════
+   Utility: force Devanagari font on specific elements
+   ═══════════════════════════════════════════════════════ */
+.font-hindi {
+  font-family: 'Noto Sans Devanagari', serif !important;
 }
 
-/* Classic ambient grain overlay */
+/* ═══════════════════════════════════════════════════════
+   Custom Warm Scrollbar
+   ═══════════════════════════════════════════════════════ */
+::-webkit-scrollbar        { width: 6px; height: 6px; }
+::-webkit-scrollbar-track  { background: #f1f5f9; }
+::-webkit-scrollbar-thumb  { background: #cbd5e1; border-radius: 9999px; }
+::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+
+/* ═══════════════════════════════════════════════════════
+   Classic ambient grain overlay
+   ═══════════════════════════════════════════════════════ */
 .bg-grain {
   background-image: radial-gradient(rgba(100, 116, 139, 0.05) 1px, transparent 0);
   background-size: 24px 24px;
 }
 
+/* ═══════════════════════════════════════════════════════
+   Voice Assistant: waveform bars
+   ═══════════════════════════════════════════════════════ */
+.wave-bars {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 24px;
+}
+.wave-bars span {
+  display: block;
+  width: 4px;
+  border-radius: 9999px;
+  background: #f97316;
+  animation: waveBar 0.8s ease-in-out infinite alternate;
+  transform-origin: bottom;
+}
+.wave-bars span:nth-child(1) { height: 40%; animation-delay: 0s;   }
+.wave-bars span:nth-child(2) { height: 80%; animation-delay: 0.1s; }
+.wave-bars span:nth-child(3) { height: 60%; animation-delay: 0.2s; }
+.wave-bars span:nth-child(4) { height: 100%; animation-delay: 0.3s; }
+.wave-bars span:nth-child(5) { height: 55%; animation-delay: 0.15s; }
+
+@keyframes waveBar {
+  from { transform: scaleY(0.3); }
+  to   { transform: scaleY(1); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   Reduced motion accessibility
+   ═══════════════════════════════════════════════════════ */
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;

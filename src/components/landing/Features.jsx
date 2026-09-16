@@ -1,75 +1,60 @@
-"use client";
-import React from "react";
-import { Zap, Tv, FileText, CheckCircle, Trophy, BarChart3 } from "lucide-react";
+﻿"use client";
+import { useLanguage } from "@/context/LanguageContext";
+
+const FEATURES = [
+  {
+    icon: "🎙️",
+    titleKey: "features.voice_title",
+    descKey:  "features.voice_desc",
+    color:    "from-orange-500/20 to-orange-600/5",
+    border:   "border-orange-500/30",
+    badge:    "AI Powered",
+  },
+  {
+    icon: "🗺️",
+    titleKey: "features.roadmap_title",
+    descKey:  "features.roadmap_desc",
+    color:    "from-blue-500/20 to-blue-600/5",
+    border:   "border-blue-500/30",
+    badge:    "Structured",
+  },
+  {
+    icon: "▶️",
+    titleKey: "features.video_title",
+    descKey:  "features.video_desc",
+    color:    "from-emerald-500/20 to-emerald-600/5",
+    border:   "border-emerald-500/30",
+    badge:    "Bilingual Videos",
+  },
+];
 
 export default function Features() {
-  const innovations = [
-    {
-      title: "Active-Recall Live Theater",
-      description: "Embed live YouTube streams directly into an interactive code & markdown synthesis environment. Never lose focus switching tabs.",
-      icon: Tv,
-    },
-    {
-      title: "ATS Neural Keyword Radar",
-      description: "Real-time algorithmic resume auditor. Instant feedback on keyword density and STAR leadership structure.",
-      icon: FileText,
-    },
-    {
-      title: "Non-Intrusive Progress Engine",
-      description: "Track your 60-day sprint with zero friction. One-click module mastery with instant milestone celebrations.",
-      icon: Zap,
-    },
-    {
-      title: "Multi-Track Fluidity",
-      description: "Seamlessly pivot between MAANG Algorithmic core, Full-Stack Next.js cloud, and Web3 Smart Contract tracks.",
-      icon: BarChart3,
-    },
-    {
-      title: "Autonomous Sprint Loop",
-      description: "Custom sprint task planner with real-time countdown to your target mock interview loop.",
-      icon: CheckCircle,
-    },
-    {
-      title: "Chamber Community & Leaderboard",
-      description: "Anonymized streak rankings and peer accountability to keep you disciplined throughout the 60-day sprint.",
-      icon: Trophy,
-    },
-  ];
+  const { t } = useLanguage();
 
   return (
-    <section id="innovations" className="py-24 max-w-7xl mx-auto px-6">
-      <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-        <span className="text-xs font-mono font-bold uppercase tracking-widest text-amber-700">
-          DESIGNED FOR SERIOUS PREPARATION
-        </span>
-        <h2 className="text-3xl sm:text-4xl font-serif font-bold text-slate-900">
-          Engineered for Deep Focus & Accountability
-        </h2>
-        <p className="text-sm text-slate-600">
-          Everything you need to transform raw tutorials into an interview-dominating engineering portfolio.
-        </p>
-      </div>
+    <section className="bg-slate-900 py-24">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {innovations.map((item, idx) => {
-          const Icon = item.icon;
-          return (
+        <div className="text-center mb-16">
+          <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">{t("features.title")}</h2>
+          <p className="text-white/60 max-w-xl mx-auto">{t("features.subtitle")}</p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-6">
+          {FEATURES.map((f) => (
             <div
-              key={idx}
-              className="p-6 rounded-3xl bg-white border border-slate-200/90 shadow-2xs hover:shadow-md transition-all space-y-3"
+              key={f.titleKey}
+              className={`rounded-2xl p-6 bg-gradient-to-br ${f.color} border ${f.border} hover:scale-[1.02] transition-transform duration-200`}
             >
-              <div className="p-3 rounded-2xl bg-amber-50 border border-amber-200 text-amber-800 w-fit">
-                <Icon className="w-5 h-5" />
+              <div className="text-4xl mb-4">{f.icon}</div>
+              <div className="inline-block px-2 py-0.5 rounded text-xs font-semibold bg-white/10 text-white/70 mb-3">
+                {f.badge}
               </div>
-              <h3 className="text-lg font-serif font-bold text-slate-900">
-                {item.title}
-              </h3>
-              <p className="text-xs text-slate-600 leading-relaxed">
-                {item.description}
-              </p>
+              <h3 className="text-lg font-bold text-white mb-2">{t(f.titleKey)}</h3>
+              <p className="text-white/60 text-sm leading-relaxed">{t(f.descKey)}</p>
             </div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </section>
   );

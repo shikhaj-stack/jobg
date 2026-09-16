@@ -1,0 +1,130 @@
+﻿{
+  "nav": {
+    "home": "Home",
+    "roadmap": "Learning Path",
+    "live": "Watch & Learn",
+    "notes": "My Notes",
+    "profile": "Profile",
+    "login": "Login",
+    "signup": "Get Started Free",
+    "logout": "Logout"
+  },
+  "hero": {
+    "badge": "Free for every family",
+    "headline": "Learn English with",
+    "headline_accent": "Confidence",
+    "sub": "A bilingual platform built for families. Learn English from basic to advanced — explained in Hindi so you truly understand.",
+    "cta_primary": "Start Learning Free",
+    "cta_secondary": "Watch a Demo Lesson",
+    "stats_learners": "Families Learning",
+    "stats_lessons": "Free Lessons",
+    "stats_languages": "Languages Supported"
+  },
+  "features": {
+    "title": "Everything You Need to Learn English",
+    "subtitle": "Designed for parents, grandparents, and every family member who wants to grow",
+    "voice_title": "Voice Tutor (Sakhi)",
+    "voice_desc": "Ask anything in Hindi, English, or Hinglish. Sakhi answers with audio in both languages.",
+    "roadmap_title": "Step-by-Step Roadmap",
+    "roadmap_desc": "From the alphabet to fluency — every lesson is structured, clear, and explained in Hindi.",
+    "video_title": "Watch & Learn",
+    "video_desc": "Curated Hindi and English YouTube videos matched to every lesson in your learning path."
+  },
+  "tracks": {
+    "title": "Choose Your Level",
+    "subtitle": "Start where you are comfortable — there is no wrong place to begin",
+    "beginner_name": "Beginner English",
+    "beginner_tagline": "Alphabet, basic words & simple sentences",
+    "beginner_badge": "A1 Level — Perfect Starting Point",
+    "conversational_name": "Conversational English",
+    "conversational_tagline": "Tenses, daily talk & common phrases",
+    "conversational_badge": "A2-B1 Level — Speak Confidently",
+    "advanced_name": "Advanced English",
+    "advanced_tagline": "Grammar mastery, writing & business English",
+    "advanced_badge": "B2-C1 Level — Become Fluent",
+    "cta": "Start This Track",
+    "weeks": "weeks",
+    "lessons": "lessons"
+  },
+  "roadmap": {
+    "your_progress": "Your Progress",
+    "continue": "Continue Lesson",
+    "start": "Start Lesson",
+    "completed": "Completed",
+    "watch_video": "Watch Video",
+    "difficulty_easy": "Easy",
+    "difficulty_medium": "Medium",
+    "difficulty_hard": "Hard",
+    "minutes": "min",
+    "topics_covered": "Topics Covered"
+  },
+  "voice": {
+    "tap": "Tap to Ask Sakhi",
+    "listening": "Listening...",
+    "thinking": "Sakhi is thinking...",
+    "speaking": "Sakhi is speaking...",
+    "error": "Could not understand. Please try again.",
+    "no_mic": "Microphone access denied. Please allow mic permission.",
+    "retry": "Try Again",
+    "you_said": "You said:",
+    "sakhi_said": "Sakhi replied:"
+  },
+  "notes": {
+    "title": "My Notes",
+    "empty": "No notes yet. Start a lesson and take notes!",
+    "add": "Add Note",
+    "save": "Save",
+    "delete": "Delete"
+  },
+  "recall": {
+    "title": "Vocabulary Practice",
+    "subtitle": "Review your words with spaced repetition",
+    "flip": "Tap to flip",
+    "easy": "Easy",
+    "okay": "Okay",
+    "hard": "Hard",
+    "cards_today": "Cards to review today",
+    "streak": "Day Streak",
+    "listen": "Listen"
+  },
+  "dashboard": {
+    "welcome": "Welcome back",
+    "your_track": "Your Learning Track",
+    "streak": "Day Streak",
+    "lessons_done": "Lessons Completed",
+    "continue_learning": "Continue Learning",
+    "daily_goal": "Today Goal"
+  },
+  "auth": {
+    "login_title": "Welcome Back",
+    "login_sub": "Sign in to continue your learning journey",
+    "signup_title": "Join for Free",
+    "signup_sub": "Start learning English today",
+    "email": "Email Address",
+    "password": "Password",
+    "name": "Your Name",
+    "login_btn": "Sign In",
+    "signup_btn": "Create Account",
+    "demo_btn": "Try Demo",
+    "already_account": "Already have an account?",
+    "no_account": "Do not have an account?"
+  },
+  "onboarding": {
+    "step1_title": "Which language do you prefer?",
+    "step1_sub": "We will explain lessons in your chosen language",
+    "step2_title": "What is your English level?",
+    "step2_sub": "Be honest — we will find the perfect starting point",
+    "step3_title": "Enable Voice Tutor?",
+    "step3_sub": "Sakhi can answer your questions with audio.",
+    "step3_enable": "Yes, enable voice",
+    "step3_skip": "Skip for now",
+    "step4_title": "What is your name?",
+    "step4_sub": "We will personalise your learning dashboard",
+    "step4_placeholder": "Enter your name",
+    "finish": "Start Learning!"
+  },
+  "footer": {
+    "tagline": "Free English learning for every Indian family.",
+    "made_with": "Made with love for India"
+  }
+}

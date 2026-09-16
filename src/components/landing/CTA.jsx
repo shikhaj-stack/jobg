@@ -1,43 +1,24 @@
-"use client";
-import React from "react";
+﻿"use client";
 import Link from "next/link";
-import { ArrowRight, Sparkles, ShieldCheck } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function CTA() {
+  const { t } = useLanguage();
+
   return (
-    <section className="py-20 px-6 max-w-7xl mx-auto">
-      <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-slate-950 via-slate-900 to-amber-950 p-10 md:p-16 text-center text-white shadow-2xl">
-        <div className="relative z-10 max-w-3xl mx-auto space-y-6">
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-500/20 text-amber-300 border border-amber-400/30 text-xs font-mono font-bold">
-            <Sparkles className="w-3.5 h-3.5" />
-            <span>JOIN THOUSANDS OF TIER-1 CANDIDATES</span>
-          </div>
-
-          <h2 className="text-3xl sm:text-5xl font-serif font-bold tracking-tight">
-            Transform Your Engineering Trajectory Today.
-          </h2>
-
-          <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Zero subscription walls. Zero predatory ISAs. Step into the JOBG chamber and prepare for your dream role with precision.
-          </p>
-
-          <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/signup"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-amber-500 hover:bg-amber-600 text-slate-950 font-bold text-sm shadow-xl shadow-amber-500/20 transition-all"
-            >
-              <span>Create Free Account</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-
-            <Link
-              href="/login"
-              className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white/10 hover:bg-white/20 border border-white/15 text-white font-bold text-sm transition-all"
-            >
-              <span>Log In Directly</span>
-            </Link>
-          </div>
-        </div>
+    <section className="bg-gradient-to-br from-family-primary to-slate-900 py-24">
+      <div className="max-w-3xl mx-auto px-4 text-center">
+        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
+          {t("hero.cta_primary")}
+        </h2>
+        <p className="text-white/70 mb-8 text-lg">{t("hero.sub")}</p>
+        <Link
+          href="/signup"
+          id="cta-section-signup"
+          className="inline-block px-10 py-4 rounded-full bg-family-accent hover:bg-orange-500 text-white font-bold text-lg shadow-xl hover:scale-105 transition-all duration-200"
+        >
+          {t("hero.cta_primary")} →
+        </Link>
       </div>
     </section>
   );

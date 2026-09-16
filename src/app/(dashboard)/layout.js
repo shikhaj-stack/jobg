@@ -1,26 +1,18 @@
-"use client";
-import React, { useState } from "react";
-import Sidebar from "@/components/common/Sidebar";
-import Header from "@/components/common/Header";
-import AuthGuard from "@/components/common/AuthGuard";
+﻿import { redirect } from "next/navigation";
+import { getAuthenticatedUser } from "@/lib/auth/server";
+import Navbar from "@/components/landing/Navbar";
+import VoiceAssistant from "@/components/ui/VoiceAssistant";
 
-export default function DashboardLayout({ children }) {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+export default async function DashboardLayout({ children }) {
+  const user = await getAuthenticatedUser();
+  if (!user) redirect("/login");
 
   return (
-    <AuthGuard>
-      <div className="flex min-h-screen bg-[#f8fafc]">
-        {/* Fixed Left Sidebar */}
-        <Sidebar isOpen={isSidebarOpen} onClose={() => setIsSidebarOpen(false)} />
-
-        {/* Main Content Area */}
-        <div className="flex flex-1 flex-col lg:pl-72">
-          <Header onToggleSidebar={() => setIsSidebarOpen(true)} />
-          <main id="mainContent" className="flex-1 p-4 md:p-8 max-w-7xl w-full mx-auto">
-            {children}
-          </main>
-        </div>
-      </div>
-    </AuthGuard>
+    <div className="min-h-screen bg-[#0f172a]">
+      <Navbar />
+      <main className="pt-16">{children}</main>
+      {/* Voice assistant — available on every dashboard page */}
+      <VoiceAssistant />
+    </div>
   );
 }

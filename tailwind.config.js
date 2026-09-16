@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+﻿/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
     './src/pages/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,9 +8,10 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        serif: ['"Playfair Display"', 'Georgia', 'serif'],
-        sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-        mono: ['"JetBrains Mono"', 'monospace'],
+        serif:  ['"Playfair Display"', 'Georgia', 'serif'],
+        sans:   ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+        mono:   ['"JetBrains Mono"', 'monospace'],
+        hindi:  ['"Noto Sans Devanagari"', 'serif'],
       },
       colors: {
         classic: {
@@ -39,26 +40,49 @@ module.exports = {
           600: '#ea580c',
           700: '#c2410c',
         },
+        family: {
+          primary:        '#1e40af',
+          light:          '#3b82f6',
+          accent:         '#f97316',
+          'accent-light': '#fed7aa',
+          bg:             '#f8fafc',
+          surface:        '#1e293b',
+          success:        '#22c55e',
+          warning:        '#eab308',
+          error:          '#ef4444',
+          muted:          '#94a3b8',
+        },
       },
       animation: {
-        'pulse-warm': 'pulseWarm 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-        'fade-in-up': 'fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
+        'pulse-warm':    'pulseWarm 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'fade-in-up':    'fadeInUp 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards',
         'flicker-flame': 'flickerFlame 2.2s ease-in-out infinite',
+        'mic-pulse':     'micPulse 1.5s ease-in-out infinite',
+        'wave-bar':      'waveBar 0.8s ease-in-out infinite alternate',
+        'spin-slow':     'spin 2s linear infinite',
       },
       keyframes: {
         pulseWarm: {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
-          '50%': { opacity: '0.6', transform: 'scale(1.05)' },
+          '50%':      { opacity: '0.6', transform: 'scale(1.05)' },
         },
         fadeInUp: {
-          'from': { opacity: '0', transform: 'translateY(12px)' },
-          'to': { opacity: '1', transform: 'translateY(0)' },
+          from: { opacity: '0', transform: 'translateY(12px)' },
+          to:   { opacity: '1', transform: 'translateY(0)' },
         },
         flickerFlame: {
           '0%, 100%': { transform: 'scale(1) rotate(0deg)' },
-          '25%': { transform: 'scale(1.06) rotate(-2deg)' },
-          '50%': { transform: 'scale(0.97) rotate(1deg)' },
-          '75%': { transform: 'scale(1.03) rotate(-1deg)' },
+          '25%':      { transform: 'scale(1.06) rotate(-2deg)' },
+          '50%':      { transform: 'scale(0.97) rotate(1deg)' },
+          '75%':      { transform: 'scale(1.03) rotate(-1deg)' },
+        },
+        micPulse: {
+          '0%, 100%': { boxShadow: '0 0 0 0 rgba(249,115,22,0.4)' },
+          '50%':      { boxShadow: '0 0 0 16px rgba(249,115,22,0)' },
+        },
+        waveBar: {
+          from: { transform: 'scaleY(0.3)' },
+          to:   { transform: 'scaleY(1)' },
         },
       },
     },

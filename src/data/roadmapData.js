@@ -1,405 +1,344 @@
+﻿// ═══════════════════════════════════════════════════════════════════════════
+// Bilingual English Learning Roadmap Data
+// Each module has { en, hi } for title, summary, topics, and videoId
+// ═══════════════════════════════════════════════════════════════════════════
+
 export const ROADMAP_TRACKS = {
-  maang: {
-    id: "maang",
-    name: "MAANG / Tier-1 Core Engineering",
-    tagline: "Algorithmic Mastery, Distributed Systems, & High-Scale Architecture",
-    badge: "Tier-1 FAANG/MAANG Target",
-    accentColor: "amber",
-    stats: {
-      totalModules: 16,
-      estimatedWeeks: 12,
-      salaryRange: "$180k - $350k+"
-    },
+
+  // ─── TRACK 1: BEGINNER (A1) ─────────────────────────────────────────────
+  beginner: {
+    id: "beginner",
+    name:    { en: "Beginner English",    hi: "शुरुआती अंग्रेजी" },
+    tagline: { en: "Alphabet, basic words & simple sentences", hi: "वर्णमाला, सरल शब्द और छोटे वाक्य" },
+    badge:   "A1 Level",
+    accentColor: "blue",
+    stats: { totalModules: 10, estimatedWeeks: 4 },
     pillars: [
       {
-        id: "pillar-dsa",
+        id: "pillar-alphabet",
         number: "01",
-        title: "Algorithmic Prowess & Dynamic Memory",
-        subtitle: "Foundational Data Structures & Advanced Graph Dynamics",
-        description: "Master core algorithmic problem solving patterns tested at Google, Meta, and Apple.",
-        badge: "Critical Tier-1 Weight (40%)",
+        title:    { en: "Alphabet & Phonics",        hi: "वर्णमाला और ध्वनि" },
+        subtitle: { en: "Letters, sounds & writing", hi: "अक्षर, आवाज़ और लिखावट" },
+        description: { en: "Master every letter with its sound and shape.", hi: "हर अक्षर की आवाज़ और आकार सीखें।" },
         modules: [
           {
-            id: "m-dsa-1",
-            title: "Dynamic Programming & State Machine Transitions",
-            difficulty: "Hard",
-            status: "in-progress",
-            estHours: 6,
-            problemsCount: 24,
-            summary: "2D grid transitions, bitmask DP, interval optimization, and state-compression techniques.",
-            topics: ["0/1 Knapsack variations", "Longest Common Subsequence", "Matrix Chain Multiplications", "Bitmask DP"],
-            videoId: "oBt53YbR9Kk",
-            resources: [
-              { name: "NeetCode DP Masterclass", url: "https://neetcode.io" },
-              { name: "LeetCode 75 DP Set", url: "https://leetcode.com" }
-            ]
+            id: "m-beg-1",
+            title:   { en: "A to Z — Sounds & Writing", hi: "A से Z — आवाज़ और लिखावट" },
+            summary: { en: "Learn each letter's sound with picture examples. Practice writing uppercase and lowercase.", hi: "हर अक्षर की आवाज़ तस्वीरों के साथ सीखें। बड़े और छोटे अक्षर लिखने का अभ्यास करें।" },
+            difficulty: "Easy",
+            estMinutes: 20,
+            videoId:  { en: "ULrR_HVbBCU", hi: "KdGiCmE7iB8" },
+            topics: [
+              { en: "Vowels: A, E, I, O, U",  hi: "स्वर: A, E, I, O, U" },
+              { en: "Consonants B to Z",       hi: "व्यंजन B से Z" },
+              { en: "Capital vs Small letters", hi: "बड़े और छोटे अक्षर" },
+            ],
           },
           {
-            id: "m-dsa-2",
-            title: "Advanced Graph Algorithms & Network Flow",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 8,
-            problemsCount: 18,
-            summary: "Tarjan SCC, Dijkstra min-cost paths, bipartite matching, and topological dependency resolvers.",
-            topics: ["Disjoint Set Union (DSU)", "Shortest Path Faster Algo", "Eulerian & Hamiltonian Paths"],
-            videoId: "09_LlHjoEiY",
-            resources: [
-              { name: "CP-Algorithms Graph Theory", url: "https://cp-algorithms.com" }
-            ]
+            id: "m-beg-2",
+            title:   { en: "Phonics — Letter Sounds",        hi: "Phonics — अक्षरों की आवाज़" },
+            summary: { en: "Learn how each letter sounds in words. Practice cat, bat, hat, man, fan, ran.", hi: "शब्दों में हर अक्षर कैसे बोला जाता है। cat, bat, hat जैसे शब्दों का अभ्यास।" },
+            difficulty: "Easy",
+            estMinutes: 25,
+            videoId: { en: "BELlZKpi1Zs", hi: "TxDo4G6oNV8" },
+            topics: [
+              { en: "Short vowel sounds (a, e, i, o, u)", hi: "छोटी स्वर ध्वनियाँ" },
+              { en: "Simple CVC words (cat, dog, sun)",  hi: "सरल CVC शब्द" },
+            ],
           },
-          {
-            id: "m-dsa-3",
-            title: "Monotonic Stacks, Queues & Segment Trees",
-            difficulty: "Medium",
-            status: "ready",
-            estHours: 5,
-            problemsCount: 15,
-            summary: "Range minimum query processing, sliding window maximums, and lazy propagation.",
-            topics: ["Next Greater Element", "Range Sum Query Mutable", "Fenwick Tree / Binary Indexed Tree"],
-            videoId: "PNa9OMFwO1s",
-            resources: []
-          },
-          {
-            id: "m-dsa-4",
-            title: "Trie Data Structures & Suffix Trees",
-            difficulty: "Medium",
-            status: "ready",
-            estHours: 4,
-            problemsCount: 12,
-            summary: "Prefix matching, bitwise XOR maximum queries, and autocomplete indexing engines.",
-            topics: ["Prefix Trees", "Maximum XOR Pair", "Aho-Corasick Automaton"],
-            videoId: "KLlXCFG5TnA",
-            resources: []
-          }
-        ]
+        ],
       },
       {
-        id: "pillar-system-design",
+        id: "pillar-vocabulary",
         number: "02",
-        title: "Large-Scale Distributed Systems & Storage",
-        subtitle: "Scalability, Partitioning, Consensus & Fault Tolerance",
-        description: "Design planet-scale services capable of handling millions of QPS with ultra-low latency.",
-        badge: "High Impact (35%)",
+        title:    { en: "Basic Vocabulary",        hi: "बुनियादी शब्द-भंडार" },
+        subtitle: { en: "Everyday words with Hindi meanings", hi: "रोज़मर्रा के शब्द हिंदी अर्थ के साथ" },
+        description: { en: "Build your first 200 essential English words.", hi: "अपने पहले 200 ज़रूरी अंग्रेजी शब्द बनाएं।" },
         modules: [
           {
-            id: "m-sys-1",
-            title: "Consistent Hashing & Distributed Key-Value Stores",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 7,
-            problemsCount: 6,
-            summary: "Dynamo-style architecture, gossip protocols, SSTables, LSM-trees, and vector clocks.",
-            topics: ["Virtual Nodes", "Quorum Consensus (R+W>N)", "Write-Ahead Logging (WAL)", "Bloom Filters"],
-            videoId: "bUHFg8CZFws",
-            resources: [
-              { name: "Designing Data-Intensive Applications (Kleppmann)", url: "https://dataintensive.net" }
-            ]
+            id: "m-beg-3",
+            title:   { en: "Family & Relationships",        hi: "परिवार और रिश्ते" },
+            summary: { en: "Mother, father, sister, brother — learn family words with pronunciation.", hi: "माँ, पिता, बहन, भाई — परिवार के शब्द उच्चारण के साथ सीखें।" },
+            difficulty: "Easy",
+            estMinutes: 20,
+            videoId: { en: "oiNnNh3mEhI", hi: "eFf-ylwWvPY" },
+            topics: [
+              { en: "Nuclear family words",  hi: "मूल परिवार के शब्द" },
+              { en: "Extended family words", hi: "बड़े परिवार के शब्द" },
+            ],
           },
           {
-            id: "m-sys-2",
-            title: "Real-Time Event Streaming & Message Brokers",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 6,
-            problemsCount: 5,
-            summary: "Kafka partition design, consumer groups, idempotency, exactly-once delivery semantics.",
-            topics: ["Log Compaction", "Outbox Pattern", "Backpressure Handling", "CDC with Debezium"],
-            videoId: "bUHFg8CZFws",
-            resources: []
+            id: "m-beg-4",
+            title:   { en: "Numbers 1 to 100",    hi: "1 से 100 तक गिनती" },
+            summary: { en: "Count, say, and write numbers 1–100 in English.", hi: "अंग्रेजी में 1 से 100 तक गिनना, बोलना और लिखना।" },
+            difficulty: "Easy",
+            estMinutes: 20,
+            videoId: { en: "d-diB65scQU", hi: "pDjZj_gLgI0" },
+            topics: [
+              { en: "1–20 with pronunciation", hi: "1 से 20 उच्चारण सहित" },
+              { en: "Tens: 20, 30, 40...",     hi: "दहाई: बीस, तीस, चालीस..." },
+            ],
           },
           {
-            id: "m-sys-3",
-            title: "Distributed Rate Limiting & API Gateways",
-            difficulty: "Medium",
-            status: "ready",
-            estHours: 4,
-            problemsCount: 8,
-            summary: "Token bucket, sliding window counter with Redis Lua scripts, DDoS resilience.",
-            topics: ["Leaky Bucket", "Sliding Window Logs", "Circuit Breaker Pattern", "Envoy Gateway"],
-            videoId: "bUHFg8CZFws",
-            resources: []
+            id: "m-beg-5",
+            title:   { en: "Colors, Shapes & Sizes", hi: "रंग, आकार और माप" },
+            summary: { en: "Describe the world around you — red, blue, circle, square, big, small.", hi: "अपने आस-पास की दुनिया का वर्णन करें — लाल, नीला, गोल, चौकोर, बड़ा, छोटा।" },
+            difficulty: "Easy",
+            estMinutes: 20,
+            videoId: { en: "IhK2GVnnhNs", hi: "FzlXanTBAuE" },
+            topics: [
+              { en: "12 basic colors",  hi: "12 मूल रंग" },
+              { en: "Basic shapes",     hi: "बुनियादी आकार" },
+              { en: "Size adjectives",  hi: "आकार विशेषण" },
+            ],
           },
-          {
-            id: "m-sys-4",
-            title: "Global Video Streaming & CDN Edge Caching",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 6,
-            problemsCount: 4,
-            summary: "HLS/DASH chunking, adaptive bitrate, edge CDN caching, multi-region database replication.",
-            topics: ["Byte-range requests", "Transcoding pipelines", "GeoDNS Routing", "Cache Invalidation"],
-            videoId: "bUHFg8CZFws",
-            resources: []
-          }
-        ]
+        ],
       },
       {
-        id: "pillar-lld",
+        id: "pillar-greetings",
         number: "03",
-        title: "Low-Level Design & Concurrency",
-        subtitle: "Object-Oriented Design, Thread Safety & Clean Architecture",
-        description: "Write robust, maintainable, thread-safe object-oriented code under strict interview conditions.",
-        badge: "Coding Round (15%)",
+        title:    { en: "Greetings & Simple Sentences", hi: "अभिवादन और सरल वाक्य" },
+        subtitle: { en: "Say hello, thank you & introduce yourself", hi: "नमस्ते, धन्यवाद और अपना परिचय दें" },
+        description: { en: "Speak your first sentences with confidence.", hi: "आत्मविश्वास के साथ पहले वाक्य बोलें।" },
         modules: [
           {
-            id: "m-lld-1",
-            title: "Design a Thread-Safe Parking Lot & In-Memory Database",
-            difficulty: "Medium",
-            status: "ready",
-            estHours: 5,
-            problemsCount: 10,
-            summary: "SOLID principles, Factory, Strategy, Observer design patterns with Mutex locks.",
-            topics: ["ReadWriteLock", "Deadlock Prevention", "Interface Segregation", "Clean Domain Modeling"],
-            videoId: "bUHFg8CZFws",
-            resources: []
+            id: "m-beg-6",
+            title:   { en: "Greetings & Polite Phrases", hi: "अभिवादन और शिष्ट वाक्यांश" },
+            summary: { en: "Hello, Good morning, How are you? Please, Thank you, Sorry — everyday politeness.", hi: "नमस्ते, सुप्रभात, आप कैसे हैं? कृपया, धन्यवाद, माफ़ी — रोज़ की शिष्टता।" },
+            difficulty: "Easy",
+            estMinutes: 15,
+            videoId: { en: "SJE0bJBFHN8", hi: "AaexC1b0N24" },
+            topics: [
+              { en: "Greetings by time of day", hi: "दिन के समय अनुसार अभिवादन" },
+              { en: "Polite requests",           hi: "विनम्र अनुरोध" },
+            ],
           },
           {
-            id: "m-lld-2",
-            title: "Concurrent Task Scheduler with Priority & Worker Pools",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 6,
-            problemsCount: 8,
-            summary: "Thread pools, Blocking queues, Cron expression parser, and grace period handling.",
-            topics: ["ExecutorService / Go Goroutines", "Backoff Strategies", "Task Cancellation"],
-            videoId: "bUHFg8CZFws",
-            resources: []
-          }
-        ]
+            id: "m-beg-7",
+            title:   { en: "Introduce Yourself in English", hi: "अंग्रेजी में अपना परिचय दें" },
+            summary: { en: "My name is..., I am from..., I like... — build a simple self-introduction.", hi: "मेरा नाम है..., मैं ... से हूँ..., मुझे ... पसंद है — सरल आत्म-परिचय बनाएं।" },
+            difficulty: "Easy",
+            estMinutes: 20,
+            videoId: { en: "dG4CJfgOGS0", hi: "eRdeSFi4TXc" },
+            topics: [
+              { en: "Name, age, city", hi: "नाम, उम्र, शहर" },
+              { en: "Hobbies & likes", hi: "शौक और पसंद" },
+            ],
+          },
+        ],
       },
-      {
-        id: "pillar-behavioral",
-        number: "04",
-        title: "Executive Presence & Behavioral Leadership",
-        subtitle: "Amazon Leadership Principles & Google Craftsmanship",
-        description: "Structure compelling STAR stories that prove conflict resolution, ownership, and deep technical impact.",
-        badge: "Culture Round (10%)",
-        modules: [
-          {
-            id: "m-beh-1",
-            title: "The STAR Framework for High-Stakes Engineering Incidents",
-            difficulty: "Medium",
-            status: "ready",
-            estHours: 3,
-            problemsCount: 15,
-            summary: "How to describe P0 outages, cross-functional disagreements, and mentorship achievements.",
-            topics: ["Situation & Task framing", "Actionable technical specifics", "Quantifiable metrics & lessons"],
-            videoId: "bUHFg8CZFws",
-            resources: []
-          },
-          {
-            id: "m-beh-2",
-            title: "System Trade-Off Debates & Technical Influence",
-            difficulty: "Medium",
-            status: "ready",
-            estHours: 3,
-            problemsCount: 10,
-            summary: "Demonstrating deep curiosity, architectural negotiation, and customer obsession.",
-            topics: ["Disagree and commit", "Delivering results under ambiguity", "Technical debt management"],
-            videoId: "bUHFg8CZFws",
-            resources: []
-          }
-        ]
-      }
-    ]
+    ],
   },
 
-  webdev: {
-    id: "webdev",
-    name: "Modern Full-Stack & Cloud Architecture",
-    tagline: "High-Performance Web Apps, Microservices, & Serverless Cloud",
-    badge: "Full-Stack Specialist",
+  // ─── TRACK 2: CONVERSATIONAL (A2–B1) ─────────────────────────────────────
+  conversational: {
+    id: "conversational",
+    name:    { en: "Conversational English",     hi: "बातचीत की अंग्रेजी" },
+    tagline: { en: "Tenses, daily talk & common phrases", hi: "काल, रोज़मर्रा की बातें और वाक्यांश" },
+    badge:   "A2–B1 Level",
+    accentColor: "orange",
+    stats: { totalModules: 12, estimatedWeeks: 8 },
+    pillars: [
+      {
+        id: "pillar-tenses",
+        number: "01",
+        title:    { en: "Tenses Made Simple",    hi: "काल — आसान तरीके से" },
+        subtitle: { en: "Present, Past & Future explained in Hindi", hi: "वर्तमान, भूत और भविष्य हिंदी में समझाया" },
+        description: { en: "Never confuse tenses again — learn with Hindi explanations.", hi: "काल से कभी भ्रमित न हों — हिंदी में समझाया गया।" },
+        modules: [
+          {
+            id: "m-con-1",
+            title:   { en: "Simple Present Tense",  hi: "सामान्य वर्तमान काल" },
+            summary: { en: "I eat, She reads, They play — when do we use simple present? Rules with Hindi examples.", hi: "मैं खाता हूँ, वह पढ़ती है — Simple Present कब उपयोग करें? हिंदी उदाहरणों के साथ नियम।" },
+            difficulty: "Medium",
+            estMinutes: 30,
+            videoId: { en: "muMz1T9Vox4", hi: "LNnlBLxVTFg" },
+            topics: [
+              { en: "Subject + Verb rules",     hi: "Subject + Verb के नियम" },
+              { en: "He/She/It + s/es",         hi: "He/She/It के साथ s/es" },
+              { en: "Negative & Question form", hi: "नकारात्मक और प्रश्न रूप" },
+            ],
+          },
+          {
+            id: "m-con-2",
+            title:   { en: "Simple Past Tense",  hi: "सामान्य भूत काल" },
+            summary: { en: "I went, She cooked, They arrived — past tense rules and irregular verbs.", hi: "मैं गया, उसने पकाया — भूत काल के नियम और अनियमित क्रियाएं।" },
+            difficulty: "Medium",
+            estMinutes: 30,
+            videoId: { en: "8W3yCLiMJGQ", hi: "hhqC6OtOHsI" },
+            topics: [
+              { en: "Regular verbs + -ed",  hi: "नियमित क्रियाएं + -ed" },
+              { en: "Top 50 irregular verbs", hi: "50 अनियमित क्रियाएं" },
+            ],
+          },
+          {
+            id: "m-con-3",
+            title:   { en: "Future Tense — will & going to", hi: "भविष्य काल — will और going to" },
+            summary: { en: "I will call you. I am going to visit Delhi. When to use which?", hi: "मैं आपको call करूंगा। मैं दिल्ली जाने वाला हूँ। कौन सा कब उपयोग करें?" },
+            difficulty: "Medium",
+            estMinutes: 25,
+            videoId: { en: "Zh2yz3GmKrM", hi: "t3JM3bRsqhA" },
+            topics: [
+              { en: "will vs going to",     hi: "will बनाम going to" },
+              { en: "Making predictions",   hi: "भविष्यवाणियाँ करना" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "pillar-daily",
+        number: "02",
+        title:    { en: "Daily Life Conversations", hi: "रोज़ की बातचीत" },
+        subtitle: { en: "Shopping, doctor, travel & office", hi: "खरीदारी, डॉक्टर, सफर और दफ्तर" },
+        description: { en: "Real-world conversations you will use every day.", hi: "असली ज़िंदगी की बातचीत जो आप हर दिन करेंगे।" },
+        modules: [
+          {
+            id: "m-con-4",
+            title:   { en: "At the Market & Shopping", hi: "बाज़ार और खरीदारी में" },
+            summary: { en: "How much does this cost? Do you have a discount? I want to return this.", hi: "इसकी कीमत क्या है? क्या छूट मिलेगी? मुझे यह वापस करना है।" },
+            difficulty: "Medium",
+            estMinutes: 25,
+            videoId: { en: "GYE1kOAuGKM", hi: "t6OiFLfAi7I" },
+            topics: [
+              { en: "Asking prices", hi: "कीमत पूछना" },
+              { en: "Bargaining phrases", hi: "मोलभाव के वाक्य" },
+            ],
+          },
+          {
+            id: "m-con-5",
+            title:   { en: "At the Doctor",  hi: "डॉक्टर के पास" },
+            summary: { en: "I have a fever. My stomach hurts. How many times a day should I take this?", hi: "मुझे बुखार है। मेरे पेट में दर्द है। दिन में कितनी बार लेनी है?" },
+            difficulty: "Medium",
+            estMinutes: 25,
+            videoId: { en: "HMvQREAGFf4", hi: "i8nLlAkNaM8" },
+            topics: [
+              { en: "Describing symptoms", hi: "लक्षण बताना" },
+              { en: "Understanding prescriptions", hi: "दवाई की पर्ची समझना" },
+            ],
+          },
+          {
+            id: "m-con-6",
+            title:   { en: "Directions & Travel", hi: "रास्ता और यात्रा" },
+            summary: { en: "How do I get to the station? Turn left, go straight, take the second right.", hi: "स्टेशन कैसे जाएं? बाईं तरफ मुड़ें, सीधे जाएं, दूसरी दाईं तरफ लें।" },
+            difficulty: "Medium",
+            estMinutes: 20,
+            videoId: { en: "VIvs6HMbDTA", hi: "BoMPjBqJnM4" },
+            topics: [
+              { en: "Giving directions", hi: "रास्ता बताना" },
+              { en: "Transport vocabulary", hi: "परिवहन शब्दावली" },
+            ],
+          },
+        ],
+      },
+      {
+        id: "pillar-idioms",
+        number: "03",
+        title:    { en: "Common Idioms & Phrases", hi: "आम मुहावरे और वाक्यांश" },
+        subtitle: { en: "Sound natural in English conversations", hi: "अंग्रेजी बातचीत में स्वाभाविक लगें" },
+        description: { en: "Use idioms to speak like a native — explained in Hindi.", hi: "मुहावरों का उपयोग करके ऐसे बोलें जैसे मातृभाषी — हिंदी में समझाया गया।" },
+        modules: [
+          {
+            id: "m-con-7",
+            title:   { en: "25 Most Used Idioms",    hi: "25 सबसे ज़्यादा उपयोग होने वाले मुहावरे" },
+            summary: { en: "Break a leg, Hit the nail, Under the weather — with Hindi meaning & example sentences.", hi: "Break a leg, Hit the nail — हिंदी अर्थ और उदाहरण वाक्यों के साथ।" },
+            difficulty: "Medium",
+            estMinutes: 35,
+            videoId: { en: "nKnfKhIzqtY", hi: "yLkdw4a8SZk" },
+            topics: [
+              { en: "Work & career idioms", hi: "काम और करियर के मुहावरे" },
+              { en: "Feeling & emotion idioms", hi: "भावना के मुहावरे" },
+            ],
+          },
+        ],
+      },
+    ],
+  },
+
+  // ─── TRACK 3: ADVANCED (B2–C1) ───────────────────────────────────────────
+  advanced: {
+    id: "advanced",
+    name:    { en: "Advanced English",      hi: "उन्नत अंग्रेजी" },
+    tagline: { en: "Grammar mastery, writing & business English", hi: "व्याकरण, लेखन और व्यापारिक अंग्रेजी" },
+    badge:   "B2–C1 Level",
     accentColor: "emerald",
-    stats: {
-      totalModules: 14,
-      estimatedWeeks: 10,
-      salaryRange: "$140k - $240k+"
-    },
+    stats: { totalModules: 10, estimatedWeeks: 10 },
     pillars: [
       {
-        id: "pillar-frontend",
+        id: "pillar-grammar",
         number: "01",
-        title: "Next.js 14, React Architecture & Web Performance",
-        subtitle: "RSC, Hydration Internals, Micro-Frontends & Core Web Vitals",
-        description: "Build lightning fast user interfaces with modern React paradigms and advanced caching.",
-        badge: "Frontend Core (35%)",
+        title:    { en: "Grammar Mastery",         hi: "व्याकरण में महारत" },
+        subtitle: { en: "Articles, prepositions & complex tenses", hi: "Articles, prepositions और जटिल काल" },
+        description: { en: "Eliminate grammar errors and write correctly.", hi: "व्याकरण की गलतियाँ दूर करें और सही लिखें।" },
         modules: [
           {
-            id: "m-web-1",
-            title: "React Server Components (RSC) & Streaming SSR",
+            id: "m-adv-1",
+            title:   { en: "Articles — A, An, The",  hi: "Articles — A, An, The" },
+            summary: { en: "The trickiest part of English — when to use a, an, or the? Explained with Hindi rules.", hi: "अंग्रेजी का सबसे मुश्किल हिस्सा — a, an, या the कब लगाएं? हिंदी नियमों के साथ।" },
             difficulty: "Hard",
-            status: "ready",
-            estHours: 6,
-            problemsCount: 12,
-            summary: "Server Actions, Suspense boundaries, streaming HTML responses, and bundle optimization.",
-            topics: ["RSC vs Client Components", "Selective Hydration", "Parallel Routes & Intercepting"],
-            videoId: "ZjAqacIC_3c",
-            resources: []
+            estMinutes: 40,
+            videoId: { en: "7Bw4rZ0nDGo", hi: "MUqGSPe3_wk" },
+            topics: [
+              { en: "Definite vs Indefinite article", hi: "निश्चित बनाम अनिश्चित article" },
+              { en: "When to use NO article",         hi: "article कब न लगाएं" },
+            ],
           },
           {
-            id: "m-web-2",
-            title: "State Architecture & Offline-First IndexedDB Sync",
-            difficulty: "Medium",
-            status: "ready",
-            estHours: 5,
-            problemsCount: 8,
-            summary: "Zustand/TanStack Query with optimistic mutations, background sync, and conflict resolution.",
-            topics: ["Optimistic UI", "Normalized Store Pattern", "Web Workers for heavy compute"],
-            videoId: "ZjAqacIC_3c",
-            resources: []
-          }
-        ]
+            id: "m-adv-2",
+            title:   { en: "Prepositions — In, On, At & more", hi: "Prepositions — In, On, At और अधिक" },
+            summary: { en: "I am at home. She sat on the chair. The keys are in the drawer. Master all prepositions.", hi: "मैं घर पर हूँ। वह कुर्सी पर बैठी। चाबियाँ दराज में हैं। सभी prepositions सीखें।" },
+            difficulty: "Hard",
+            estMinutes: 35,
+            videoId: { en: "r7OhYnZ1DKo", hi: "0GeCIdCqB7E" },
+            topics: [
+              { en: "Place prepositions",  hi: "स्थान prepositions" },
+              { en: "Time prepositions",   hi: "समय prepositions" },
+            ],
+          },
+        ],
       },
       {
-        id: "pillar-backend",
+        id: "pillar-writing",
         number: "02",
-        title: "Scalable Microservices, Node.js / Go & GraphQL",
-        subtitle: "gRPC, Async Workers, Database Indexes & ACID Transactions",
-        description: "Design robust backend services with high concurrency, schema validation, and secure auth.",
-        badge: "Backend Core (35%)",
+        title:    { en: "Writing Skills",          hi: "लेखन कौशल" },
+        subtitle: { en: "Emails, letters & paragraphs", hi: "ईमेल, पत्र और अनुच्छेद" },
+        description: { en: "Write professional emails and formal letters in English.", hi: "अंग्रेजी में पेशेवर ईमेल और औपचारिक पत्र लिखें।" },
         modules: [
           {
-            id: "m-web-3",
-            title: "High-Performance Node.js / Go Event Loop Deep Dive",
+            id: "m-adv-3",
+            title:   { en: "Writing a Formal Email", hi: "औपचारिक ईमेल कैसे लिखें" },
+            summary: { en: "Subject line, greeting, body, closing — structure a professional email from scratch.", hi: "Subject line, अभिवादन, मुख्य भाग, समापन — शुरू से एक पेशेवर ईमेल बनाएं।" },
             difficulty: "Hard",
-            status: "ready",
-            estHours: 7,
-            problemsCount: 10,
-            summary: "Cluster mode, worker threads, memory leak profiling with heap snapshots, CPU flame graphs.",
-            topics: ["Libuv event loop phases", "Garbage collection tuning", "Stream pipelines and backpressure"],
-            videoId: "PNa9OMFwO1s",
-            resources: []
+            estMinutes: 40,
+            videoId: { en: "kFSx6HuHb3k", hi: "7w-lf0ZSJFA" },
+            topics: [
+              { en: "Email structure & format",      hi: "ईमेल की संरचना और प्रारूप" },
+              { en: "Professional vocabulary",       hi: "पेशेवर शब्दावली" },
+              { en: "Common email phrases",          hi: "आम ईमेल वाक्यांश" },
+            ],
           },
-          {
-            id: "m-web-4",
-            title: "PostgreSQL Index Tuning, Query Plans & Connection Pooling",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 6,
-            problemsCount: 12,
-            summary: "EXPLAIN ANALYZE, B-Tree vs GIN vs BRIN indexes, PgBouncer pooling, isolation levels.",
-            topics: ["Partial indexes", "N+1 query resolution", "Distributed locks with advisory locks"],
-            videoId: "PNa9OMFwO1s",
-            resources: []
-          }
-        ]
+        ],
       },
       {
-        id: "pillar-devops",
+        id: "pillar-business",
         number: "03",
-        title: "Cloud Infrastructure, Docker & Kubernetes CI/CD",
-        subtitle: "Terraform, Docker Multi-stage Builds, Zero-Downtime Deployments",
-        description: "Automate production releases with containerization, canary deployments, and monitoring.",
-        badge: "DevOps & Cloud (30%)",
+        title:    { en: "Business English",      hi: "व्यापारिक अंग्रेजी" },
+        subtitle: { en: "Meetings, presentations & office talk", hi: "मीटिंग, प्रेज़ेंटेशन और दफ्तर की बातें" },
+        description: { en: "Speak with confidence in professional settings.", hi: "पेशेवर माहौल में आत्मविश्वास के साथ बोलें।" },
         modules: [
           {
-            id: "m-web-5",
-            title: "Containerization, Multi-stage Docker & K8s Pod Lifecycle",
+            id: "m-adv-4",
+            title:   { en: "Office Vocabulary & Small Talk", hi: "दफ्तर की शब्दावली और छोटी बातचीत" },
+            summary: { en: "Deadline, presentation, agenda, minutes of meeting — plus water-cooler small talk.", hi: "Deadline, प्रेज़ेंटेशन, agenda — और दफ्तर में की जाने वाली आम बातचीत।" },
             difficulty: "Medium",
-            status: "ready",
-            estHours: 5,
-            problemsCount: 8,
-            summary: "Minimal image construction, rolling updates, ingress controllers, horizontal pod autoscaling.",
-            topics: ["Distroless images", "Readiness & Liveness probes", "ConfigMaps and Secrets"],
-            videoId: "ZjAqacIC_3c",
-            resources: []
-          }
-        ]
-      }
-    ]
+            estMinutes: 35,
+            videoId: { en: "bVlm4QHdLRs", hi: "RqBWFh6GWFE" },
+            topics: [
+              { en: "Meeting vocabulary",  hi: "मीटिंग की शब्दावली" },
+              { en: "Professional small talk", hi: "पेशेवर छोटी बातचीत" },
+            ],
+          },
+        ],
+      },
+    ],
   },
-
-  web3: {
-    id: "web3",
-    name: "Web3 & Blockchain Protocol Engineering",
-    tagline: "Solidity, Smart Contract Security, DeFi Protocols, & Zero-Knowledge",
-    badge: "Web3 Protocol Architect",
-    accentColor: "purple",
-    stats: {
-      totalModules: 12,
-      estimatedWeeks: 10,
-      salaryRange: "$160k - $300k+"
-    },
-    pillars: [
-      {
-        id: "pillar-solidity",
-        number: "01",
-        title: "EVM Internals & Gas-Optimized Solidity",
-        subtitle: "Yul Assembly, Storage Slots, Reentrancy & ERC Standards",
-        description: "Write ultra-efficient smart contracts while mastering the Ethereum Virtual Machine architecture.",
-        badge: "Protocol Foundation (40%)",
-        modules: [
-          {
-            id: "m-w3-1",
-            title: "EVM Storage Layout & Yul/Inline Assembly Optimization",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 8,
-            problemsCount: 14,
-            summary: "Slot packing, bitwise math in Yul, calldata vs memory gas costs, opcode level auditing.",
-            topics: ["SSTORE/SLOAD gas dynamics", "Transient storage (EIP-1153)", "Custom errors vs revert strings"],
-            videoId: "gyMwXuJrbJQ",
-            resources: []
-          },
-          {
-            id: "m-w3-2",
-            title: "DeFi AMM Mathematics & Flash Loan Arbitrage Engines",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 7,
-            problemsCount: 10,
-            summary: "Uniswap v2/v3 constant product x*y=k formula, concentrated liquidity math, slippage protection.",
-            topics: ["Tick math & Q64.96 fixed-point numbers", "Flash loans with Aave v3", "MEV protection & sandwich attacks"],
-            videoId: "gyMwXuJrbJQ",
-            resources: []
-          }
-        ]
-      },
-      {
-        id: "pillar-security",
-        number: "02",
-        title: "Smart Contract Security Auditing & Formal Verification",
-        subtitle: "Foundry Fuzzing, Slither, Invariant Testing & Exploit PoCs",
-        description: "Audit production DeFi protocols, uncover critical zero-day vulnerabilities, and write exploit proofs.",
-        badge: "Auditing & Security (40%)",
-        modules: [
-          {
-            id: "m-w3-3",
-            title: "Reentrancy, Read-Only Reentrancy & Oracle Manipulation",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 6,
-            problemsCount: 10,
-            summary: "Spot price manipulation vs TWAP oracles, cross-contract reentrancy attacks, checks-effects-interactions.",
-            topics: ["Chainlink price feeds", "ReentrancyGuard implementation", "Simulating exploits with Foundry"],
-            videoId: "gyMwXuJrbJQ",
-            resources: []
-          }
-        ]
-      },
-      {
-        id: "pillar-zk",
-        number: "03",
-        title: "Layer-2 Rollups & Zero-Knowledge Circuits",
-        subtitle: "Optimistic vs ZK Rollups, Circom, Groth16 Proofs",
-        description: "Scale Ethereum using state roots, fraud proofs, and zero-knowledge privacy circuits.",
-        badge: "Advanced Scaling (20%)",
-        modules: [
-          {
-            id: "m-w3-4",
-            title: "Zero-Knowledge Proofs with Circom & SnarkJS",
-            difficulty: "Hard",
-            status: "ready",
-            estHours: 7,
-            problemsCount: 6,
-            summary: "R1CS constraint systems, witness generation, verifier smart contract deployment on-chain.",
-            topics: ["Circom syntax", "Groth16 trusted setup", "Private credential verification"],
-            videoId: "gyMwXuJrbJQ",
-            resources: []
-          }
-        ]
-      }
-    ]
-  }
 };

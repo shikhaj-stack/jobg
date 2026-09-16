@@ -1,64 +1,71 @@
-"use client";
-import React from "react";
+﻿"use client";
 import Link from "next/link";
-import { ArrowRight, Sparkles, ShieldCheck, Flame, CheckCircle, Terminal } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+
+const stats = [
+  { keyLabel: "hero.stats_learners", value: "50,000+" },
+  { keyLabel: "hero.stats_lessons",  value: "300+" },
+  { keyLabel: "hero.stats_languages", value: "2" },
+];
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
-    <section className="relative pt-16 pb-20 md:pt-24 md:pb-32 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 text-center space-y-8">
+    <section className="relative min-h-screen bg-slate-900 flex items-center overflow-hidden pt-16">
+      {/* Gradient blobs */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/4 -left-32 w-96 h-96 bg-family-primary/20 rounded-full blur-3xl" />
+        <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-family-accent/20 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 text-center">
+
         {/* Badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-amber-500/10 border border-amber-300 text-amber-900 text-xs font-bold font-mono tracking-wide animate-fade-in-up">
-          <Sparkles className="w-3.5 h-3.5 text-amber-600" />
-          <span>NEXT-GEN MAANG & WEB3 JOB READINESS</span>
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-family-primary/20 border border-family-primary/30 text-family-light text-sm font-medium mb-8 animate-fade-in-up">
+          <span className="w-2 h-2 rounded-full bg-family-accent animate-pulse" />
+          {t("hero.badge")}
         </div>
 
         {/* Headline */}
-        <h1 className="text-4xl sm:text-6xl lg:text-7xl font-serif font-extrabold text-slate-950 tracking-tight max-w-5xl mx-auto leading-[1.15]">
-          Bridging the Gap Between <span className="text-transparent bg-clip-text bg-gradient-to-r from-amber-600 via-amber-700 to-copper-600">Unstructured Content</span> and Top-Tier Employment.
+        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 animate-fade-in-up">
+          {t("hero.headline")}{" "}
+          <span className="bg-gradient-to-r from-family-accent to-amber-400 bg-clip-text text-transparent">
+            {t("hero.headline_accent")}
+          </span>
         </h1>
 
-        {/* Subheading */}
-        <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
-          The internet is flooded with tutorials, yet thousands of engineers fail to get hired because they lack structure, consistency, and real-time guidance. JOBG provides the accountability of a $20k bootcamp without the predatory income share agreements.
+        {/* Sub */}
+        <p className="max-w-2xl mx-auto text-lg text-white/70 leading-relaxed mb-10 animate-fade-in-up">
+          {t("hero.sub")}
         </p>
 
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in-up">
           <Link
             href="/signup"
-            className="w-full sm:w-auto flex items-center justify-center gap-3 px-8 py-4 rounded-2xl bg-gradient-to-r from-amber-500 via-amber-600 to-amber-700 hover:from-amber-600 hover:to-amber-800 text-slate-950 font-bold text-sm shadow-xl shadow-amber-500/25 hover:scale-102 transition-all"
+            id="hero-cta-primary"
+            className="px-8 py-3.5 rounded-full bg-family-accent hover:bg-orange-500 text-white font-semibold text-base shadow-lg hover:shadow-orange-500/30 transition-all duration-200 hover:scale-105"
           >
-            <span>Start Your 60-Day Sprint</span>
-            <ArrowRight className="w-4 h-4" />
+            {t("hero.cta_primary")} →
           </Link>
-
           <Link
-            href="/login"
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-8 py-4 rounded-2xl bg-white hover:bg-stone-50 text-slate-800 border border-slate-300 font-bold text-sm shadow-xs transition-all"
+            href="/live"
+            id="hero-cta-demo"
+            className="px-8 py-3.5 rounded-full bg-white/10 hover:bg-white/20 text-white font-semibold text-base border border-white/20 transition-all duration-200"
           >
-            <span>Explore Demo Chamber</span>
+            {t("hero.cta_secondary")}
           </Link>
         </div>
 
-        {/* Feature Pill Matrix */}
-        <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
-          <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <div className="font-serif font-bold text-xl text-slate-900">4-Pillar</div>
-            <p className="text-xs text-slate-500">Structured FAANG Roadmap</p>
-          </div>
-          <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <div className="font-serif font-bold text-xl text-slate-900">Live Theater</div>
-            <p className="text-xs text-slate-500">Curated Real-time Streams</p>
-          </div>
-          <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <div className="font-serif font-bold text-xl text-slate-900">Active Recall</div>
-            <p className="text-xs text-slate-500">Live Markdown Note Synthesizer</p>
-          </div>
-          <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <div className="font-serif font-bold text-xl text-slate-900">ATS Neural Radar</div>
-            <p className="text-xs text-slate-500">92%+ Resume Match Health</p>
-          </div>
+        {/* Stats */}
+        <div className="flex flex-wrap justify-center gap-8 sm:gap-16 animate-fade-in-up">
+          {stats.map(({ keyLabel, value }) => (
+            <div key={keyLabel} className="text-center">
+              <div className="text-3xl font-bold text-white mb-1">{value}</div>
+              <div className="text-sm text-white/50">{t(keyLabel)}</div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
