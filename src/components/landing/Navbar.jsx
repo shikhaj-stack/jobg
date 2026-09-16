@@ -14,12 +14,12 @@ export default function LandingNavbar() {
         <Link href="/" className="flex items-center gap-3 group">
           <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 p-0.5 shadow-sm group-hover:scale-105 transition-all">
             <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-white text-amber-700 font-serif font-bold text-base">
-              JG
+              KN
             </div>
           </div>
           <div>
             <span className="font-serif font-bold tracking-tight text-lg text-slate-900 block leading-tight">
-              JOBG
+              KUCHNAYA
             </span>
             <span className="text-[10px] font-mono tracking-widest text-amber-700 font-semibold uppercase">
               Job Readiness Ecosystem
@@ -30,7 +30,7 @@ export default function LandingNavbar() {
         {/* Links */}
         <div className="hidden md:flex items-center gap-8 text-sm font-medium text-slate-600">
           <a href="#mission" className="hover:text-amber-800 transition-colors">Mission</a>
-          <a href="#tracks" className="hover:text-amber-800 transition-colors">Career Tracks</a>
+          <a href="#tracks" className="hover:text-amber-800 transition-colors">KUCHNAYA Roadmap</a>
           <a href="#innovations" className="hover:text-amber-800 transition-colors">Innovations</a>
           <a href="#theater" className="hover:text-amber-800 transition-colors">Tech Theater</a>
         </div>

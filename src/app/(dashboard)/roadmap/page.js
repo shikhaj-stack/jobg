@@ -38,7 +38,7 @@ export default function RoadmapPage() {
   const [isGenerating, setIsGenerating] = useState(false);
   const [generatedRoadmap, setGeneratedRoadmap] = useState(null);
 
-  const currentTrack = generatedRoadmap || tracks[activeTrackId] || tracks.maang;
+  const currentTrack = generatedRoadmap || tracks[activeTrackId] || tracks.kuchnaya || Object.values(tracks)[0];
 
   const handleGenerateAiRoadmap = async (e) => {
     e.preventDefault();
@@ -105,7 +105,7 @@ export default function RoadmapPage() {
 
       {/* Track Selector Tabs (if not viewing custom AI roadmap) */}
       {!generatedRoadmap && (
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-3">
+        <div className={`grid gap-3 ${Object.keys(tracks).length === 1 ? "grid-cols-1 max-w-xl" : "grid-cols-1 sm:grid-cols-3"}`}>
           {Object.entries(tracks).map(([key, track]) => (
             <button
               key={key}

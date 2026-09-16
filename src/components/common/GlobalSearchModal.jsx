@@ -520,7 +520,7 @@ export default function GlobalSearchModal({ isOpen, onClose }) {
             <span>•</span>
             <span>Press <kbd className="font-mono bg-white border border-slate-200 px-1.5 py-0.5 rounded text-[10px]">Enter ⏎</kbd> for AI Solver</span>
           </div>
-          <span className="text-amber-700 font-bold">JOBG Multi-LLM Search Enabled</span>
+          <span className="text-amber-700 font-bold">KUCHNAYA Multi-LLM Search Enabled</span>
         </div>
 
       </div>

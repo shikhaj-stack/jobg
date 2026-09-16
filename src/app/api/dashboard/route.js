@@ -8,8 +8,8 @@ export async function GET(request) {
     const { errorResponse, user } = await requireAuthenticatedUser(request);
     if (errorResponse) return errorResponse;
 
-    const trackKey = "maang";
-    const track = ROADMAP_TRACKS[trackKey] || ROADMAP_TRACKS.maang;
+    const trackKey = "kuchnaya";
+    const track = ROADMAP_TRACKS[trackKey] || ROADMAP_TRACKS.kuchnaya || Object.values(ROADMAP_TRACKS)[0];
     const allModules = track.pillars.flatMap((p) => p.modules);
     const totalModules = allModules.length;
 
@@ -47,7 +47,7 @@ export async function GET(request) {
         email: user.email,
         displayName: user.displayName || "Alex Rivera",
         targetCompany: "Google (L5 Core Systems)",
-        targetRole: "maang",
+        targetRole: "kuchnaya",
         sprintDay: 18,
         sprintTotalDays: 60,
       },

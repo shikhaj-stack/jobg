@@ -15,7 +15,7 @@ import { useProgress } from "@/hooks/useProgress";
 
 const NAV_ITEMS = [
   { href: "/dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { href: "/roadmap", label: "3-Track Roadmap", icon: Map, badge: "Curriculum" },
+  { href: "/roadmap", label: "KUCHNAYA Roadmap", icon: Map, badge: "Curriculum" },
   { href: "/live", label: "Live Tech Theater", icon: Tv, badge: "Live" },
   { href: "/notes", label: "Active Recall Notes", icon: BookOpenCheck },
   { href: "/profile", label: "Candidate Profile", icon: UserCircle2 },
@@ -44,12 +44,12 @@ export default function Sidebar({ isOpen, onClose }) {
           <Link href="/dashboard" className="flex items-center gap-3 group">
             <div className="relative flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-amber-500 via-amber-600 to-amber-800 p-0.5 shadow-xs shadow-amber-900/40 group-hover:scale-105 transition-all duration-300">
               <div className="flex h-full w-full items-center justify-center rounded-[10px] bg-white text-amber-700 font-serif font-bold text-base">
-                JG
+                KN
               </div>
             </div>
             <div>
               <span className="font-serif font-bold tracking-tight text-lg text-slate-900 block leading-tight">
-                JOBG
+                KUCHNAYA
               </span>
               <span className="text-[10px] font-mono tracking-widest text-amber-700 font-semibold uppercase">
                 Readiness Chamber

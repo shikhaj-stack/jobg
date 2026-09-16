@@ -52,10 +52,10 @@ export default function LoginPage() {
         <div className="relative z-10">
           <Link href="/" className="flex items-center gap-3 group">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500 text-slate-950 font-serif font-bold text-base">
-              JG
+              KN
             </div>
             <span className="font-serif font-bold text-xl tracking-tight text-white">
-              JOBG // Chamber
+              KUCHNAYA // Chamber
             </span>
           </Link>
         </div>
@@ -67,7 +67,7 @@ export default function LoginPage() {
           </div>
 
           <h2 className="text-3xl lg:text-4xl font-serif font-bold leading-tight">
-            "JOBG gave me the exact mental discipline required to crack the Google L5 bar."
+            "KUCHNAYA gave me the exact mental discipline required to crack the Google L5 bar."
           </h2>
 
           <p className="text-xs text-slate-400 font-mono">
@@ -101,9 +101,9 @@ export default function LoginPage() {
           <div className="space-y-2">
             <div className="lg:hidden flex items-center gap-2 mb-6">
               <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-600 text-white font-serif font-bold text-sm">
-                JG
+                KN
               </div>
-              <span className="font-serif font-bold text-slate-900">JOBG</span>
+              <span className="font-serif font-bold text-slate-900">KUCHNAYA</span>
             </div>
             <h1 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900">
               Welcome Back to Chamber

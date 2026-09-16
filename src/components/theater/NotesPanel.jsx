@@ -39,7 +39,7 @@ export default function NotesPanel({ currentStream }) {
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `JOBG-Notes-${currentStream.id}.md`;
+    a.download = `KUCHNAYA-Notes-${currentStream.id}.md`;
     a.click();
     URL.revokeObjectURL(url);
   };

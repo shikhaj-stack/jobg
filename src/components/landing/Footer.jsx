@@ -8,11 +8,11 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 text-xs text-slate-500">
         <div className="flex items-center gap-3">
           <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-amber-600 text-white font-serif font-bold text-xs">
-            JG
+            KN
           </div>
           <div>
-            <p className="font-serif font-bold text-slate-900">JOBG // Classical Chamber</p>
-            <p className="text-[10px] text-slate-400">© 2026 JOBG Ecosystem. Open Educational Platform.</p>
+            <p className="font-serif font-bold text-slate-900">KUCHNAYA // Classical Chamber</p>
+            <p className="text-[10px] text-slate-400">© 2026 KUCHNAYA Ecosystem. Open Educational Platform.</p>
           </div>
         </div>
 

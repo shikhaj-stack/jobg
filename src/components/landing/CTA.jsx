@@ -18,7 +18,7 @@ export default function CTA() {
           </h2>
 
           <p className="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mx-auto">
-            Zero subscription walls. Zero predatory ISAs. Step into the JOBG chamber and prepare for your dream role with precision.
+            Zero subscription walls. Zero predatory ISAs. Step into the KUCHNAYA chamber and prepare for your dream role with precision.
           </p>
 
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">

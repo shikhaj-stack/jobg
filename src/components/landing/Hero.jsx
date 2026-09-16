@@ -20,7 +20,7 @@ export default function Hero() {
 
         {/* Subheading */}
         <p className="text-base sm:text-xl text-slate-600 max-w-3xl mx-auto font-sans leading-relaxed">
-          The internet is flooded with tutorials, yet thousands of engineers fail to get hired because they lack structure, consistency, and real-time guidance. JOBG provides the accountability of a $20k bootcamp without the predatory income share agreements.
+          The internet is flooded with tutorials, yet thousands of engineers fail to get hired because they lack structure, consistency, and real-time guidance. KUCHNAYA provides the accountability of a $20k bootcamp without the predatory income share agreements.
         </p>
 
         {/* Action Buttons */}
@@ -44,8 +44,8 @@ export default function Hero() {
         {/* Feature Pill Matrix */}
         <div className="pt-12 grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto text-left">
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
-            <div className="font-serif font-bold text-xl text-slate-900">4-Pillar</div>
-            <p className="text-xs text-slate-500">Structured FAANG Roadmap</p>
+            <div className="font-serif font-bold text-xl text-slate-900">Single-Track</div>
+            <p className="text-xs text-slate-500">KUCHNAYA Roadmap</p>
           </div>
           <div className="p-4 rounded-2xl bg-white border border-slate-200 shadow-2xs">
             <div className="font-serif font-bold text-xl text-slate-900">Live Theater</div>

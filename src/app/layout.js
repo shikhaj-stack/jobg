@@ -2,7 +2,7 @@ import "./globals.css";
 import { AuthProvider } from "@/context/AuthContext";
 
 export const metadata = {
-  title: "JOBG // Ultimate MAANG & Web3 Job Readiness Platform",
+  title: "KUCHNAYA // Ultimate Career & Job Readiness Platform",
   description: "Bridging the gap between unstructured content and top-tier employment. Curated roadmaps, real-time live tech theater, and AI-powered job readiness.",
 };
 
