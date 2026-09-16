@@ -1,56 +1,65 @@
 ﻿"use client";
 import { createContext, useContext, useState, useEffect, useCallback } from "react";
+import enTranslations from "@/i18n/en.json";
+import hiTranslations from "@/i18n/hi.json";
+
+const TRANSLATION_MAP = {
+  en: enTranslations,
+  hi: hiTranslations,
+};
 
 const LanguageContext = createContext(null);
 
 export function LanguageProvider({ children }) {
   const [lang, setLangState] = useState("en");
-  const [translations, setTranslations] = useState({});
 
-  // Load translations for the given language
-  const loadTranslations = useCallback(async (language) => {
-    try {
-      const mod = await import(`@/i18n/${language}.json`);
-      setTranslations(mod.default || mod);
-    } catch {
-      // fallback to empty obj — no crash
-      setTranslations({});
-    }
-  }, []);
-
-  // On mount: read saved preference
+  // On mount: read saved preference safely
   useEffect(() => {
-    const saved = typeof window !== "undefined"
-      ? localStorage.getItem("lang") || "en"
-      : "en";
-    setLangState(saved);
-    loadTranslations(saved);
-    // Set html[lang] attribute for CSS font switching
-    document.documentElement.lang = saved;
-  }, [loadTranslations]);
+    try {
+      if (typeof window !== "undefined") {
+        const saved = localStorage.getItem("lang") || "en";
+        setLangState(saved);
+        document.documentElement.lang = saved;
+      }
+    } catch (e) {}
+  }, []);
 
   const setLang = useCallback((newLang) => {
     setLangState(newLang);
-    localStorage.setItem("lang", newLang);
-    document.documentElement.lang = newLang;
-    loadTranslations(newLang);
-  }, [loadTranslations]);
+    try {
+      if (typeof window !== "undefined") {
+        localStorage.setItem("lang", newLang);
+        document.documentElement.lang = newLang;
+      }
+    } catch (e) {}
+  }, []);
 
-  // t("hero.headline") — resolves dot-notation keys
+  // t("hero.headline") — resolves dot-notation keys synchronously
   const t = useCallback((key, fallback = "") => {
+    if (!key || typeof key !== "string") return fallback || "";
+    const activeDictionary = TRANSLATION_MAP[lang] || TRANSLATION_MAP.en;
     const parts = key.split(".");
-    let val = translations;
+    let val = activeDictionary;
     for (const part of parts) {
-      if (val == null) return fallback || key;
+      if (val == null) {
+        // Fallback to English dictionary if key missing in Hindi
+        let fallbackVal = TRANSLATION_MAP.en;
+        for (const fp of parts) {
+          if (fallbackVal == null) return fallback || key;
+          fallbackVal = fallbackVal[fp];
+        }
+        return (fallbackVal != null && fallbackVal !== "") ? fallbackVal : (fallback || key);
+      }
       val = val[part];
     }
     return (val != null && val !== "") ? val : (fallback || key);
-  }, [translations]);
+  }, [lang]);
 
   // For bilingual objects: { en: "...", hi: "..." }
   const tObj = useCallback((obj) => {
-    if (!obj || typeof obj !== "object") return obj ?? "";
-    return obj[lang] ?? obj["en"] ?? "";
+    if (!obj) return "";
+    if (typeof obj !== "object") return String(obj);
+    return obj[lang] || obj.en || obj.hi || Object.values(obj)[0] || "";
   }, [lang]);
 
   return (
@@ -62,6 +71,14 @@ export function LanguageProvider({ children }) {
 
 export function useLanguage() {
   const ctx = useContext(LanguageContext);
-  if (!ctx) throw new Error("useLanguage must be used inside <LanguageProvider>");
+  if (!ctx) {
+    // Fallback if rendered outside provider
+    return {
+      lang: "en",
+      setLang: () => {},
+      t: (k, fb = "") => fb || k,
+      tObj: (obj) => (typeof obj === "object" ? (obj?.en || obj?.hi || "") : String(obj || "")),
+    };
+  }
   return ctx;
 }

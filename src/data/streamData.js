@@ -43,3 +43,14 @@ export const LESSON_VIDEOS = [
   { id: "v-adv-4-en", lang: "en", track: "advanced", moduleId: "m-adv-4", title: "Business English Vocabulary & Small Talk", channel: "Speak English with Vanessa", videoId: "bVlm4QHdLRs", badge: "Advanced" },
   { id: "v-adv-4-hi", lang: "hi", track: "advanced", moduleId: "m-adv-4", title: "Business English हिंदी में — दफ्तर की बातें", channel: "English Seekho", videoId: "RqBWFh6GWFE", badge: "Advanced" },
 ];
+// Compatibility export for legacy live theater components
+export const LIVE_STREAMS = LESSON_VIDEOS.map((v) => ({
+  id: v.id,
+  title: v.title,
+  channel: v.channel || "ParivarLearn Academy",
+  category: v.track ? v.track.toUpperCase() : "GENERAL",
+  videoId: typeof v.videoId === "object" ? (v.videoId.hi || v.videoId.en) : v.videoId,
+  isLive: false,
+  viewers: 1450,
+  instructor: "Sakhi AI Tutor",
+}));

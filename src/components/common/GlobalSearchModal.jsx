@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import React, { useState, useEffect, useRef } from "react";
 import { Search, X, BookOpen, Video, ExternalLink, Sparkles, Code2, AlertTriangle, Play, ChevronRight, Copy, Check, Compass } from "lucide-react";
 import { ROADMAP_TRACKS } from "@/data/roadmapData";
