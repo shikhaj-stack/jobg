@@ -1,19 +1,21 @@
-"use client";
+﻿"use client";
 import React, { useState } from "react";
 import MetricsGrid from "@/components/dashboard/MetricsGrid";
 import ActiveLesson from "@/components/dashboard/ActiveLesson";
 import TaskChecklist from "@/components/dashboard/TaskChecklist";
-import ResumeHealth from "@/components/dashboard/ResumeHealth";
-import AiInterviewDrawer from "@/components/dashboard/AiInterviewDrawer";
 import { useAuth } from "@/context/AuthContext";
 import { useProgress } from "@/hooks/useProgress";
-import { Sparkles, ArrowRight, Bot } from "lucide-react";
+import { useLanguage } from "@/context/LanguageContext";
+import { Sparkles, ArrowRight, Mic, BookOpen, Layers } from "lucide-react";
 import Link from "next/link";
 
 export default function DashboardPage() {
   const { profile } = useAuth();
-  const { currentTrack } = useProgress();
-  const [isAiDrawerOpen, setIsAiDrawerOpen] = useState(false);
+  const { currentTrack, readinessPercentage, completedInTrack, totalTrackModules } = useProgress();
+  const { lang, tObj } = useLanguage();
+
+  const trackName = currentTrack ? (tObj(currentTrack.name) || currentTrack.name) : "Beginner English";
+  const userName = (typeof window !== "undefined" && localStorage.getItem("jobg_user_name")) || profile.displayName || (lang === "hi" ? "शिक्षार्थी" : "Learner");
 
   return (
     <div className="space-y-8 animate-fade-in-up">
@@ -21,33 +23,37 @@ export default function DashboardPage() {
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-2 border-b border-slate-200/80">
         <div>
           <div className="flex items-center gap-2 mb-1">
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-700 bg-amber-50 px-2.5 py-0.5 rounded-md border border-amber-200">
-              {currentTrack.badge}
+            <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-800 bg-amber-100/80 px-2.5 py-0.5 rounded-md border border-amber-200">
+              {currentTrack?.badge || "A1 Level"}
             </span>
-            <span className="text-xs text-slate-500 font-mono">Day 18 of 60 Sprint</span>
+            <span className="text-xs text-slate-500 font-mono">
+              {trackName}
+            </span>
           </div>
           <h1 className="text-2xl sm:text-3xl font-serif font-bold text-slate-900 tracking-tight">
-            Welcome back, {profile.displayName || "Alex Rivera"}
+            {lang === "hi" ? `स्वागत है, ${userName} जी!` : `Welcome back, ${userName}!`}
           </h1>
           <p className="text-xs sm:text-sm text-slate-500 mt-0.5">
-            Your readiness score is up +12% this week. Maintain momentum towards your {profile.targetCompany || "Google"} interview loop.
+            {lang === "hi" 
+              ? `आपकी प्रगति ${readinessPercentage}% है। आज का पाठ पूरा करें और सखी के साथ बोलकर अभ्यास करें।` 
+              : `Your learning progress is ${readinessPercentage}%. Complete today's lesson and practice speaking with Sakhi.`}
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <button
-            onClick={() => setIsAiDrawerOpen(true)}
-            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-xs transition-all"
-          >
-            <Bot className="w-4 h-4" />
-            <span>Launch AI Mock Interview</span>
-          </button>
-
           <Link
             href="/roadmap"
+            className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-amber-500 hover:bg-amber-400 text-slate-950 text-xs font-bold shadow-xs transition-all"
+          >
+            <BookOpen className="w-4 h-4" />
+            <span>{lang === "hi" ? "रोडमैप देखें" : "View Roadmap"}</span>
+          </Link>
+
+          <Link
+            href="/notes"
             className="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold shadow-xs transition-all"
           >
-            <span>Full Curriculum</span>
+            <span>{lang === "hi" ? "शब्दावली तिजोरी" : "Vocabulary Vault"}</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </Link>
         </div>
@@ -59,17 +65,10 @@ export default function DashboardPage() {
       {/* Currently In Focus Active Lesson */}
       <ActiveLesson />
 
-      {/* Two-Column Grid: Task Checklist & Resume ATS Health */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+      {/* Daily Practice & Task Checklist */}
+      <div className="grid grid-cols-1 gap-6">
         <TaskChecklist />
-        <ResumeHealth />
       </div>
-
-      {/* AI Mock Interview Slide-Out Chamber */}
-      <AiInterviewDrawer
-        isOpen={isAiDrawerOpen}
-        onClose={() => setIsAiDrawerOpen(false)}
-      />
     </div>
   );
 }

@@ -2,6 +2,7 @@
 import { getAuthenticatedUser } from "@/lib/auth/server";
 import Navbar from "@/components/landing/Navbar";
 import VoiceAssistant from "@/components/ui/VoiceAssistant";
+import OnboardingWizard from "@/components/common/OnboardingWizard";
 
 export default async function DashboardLayout({ children }) {
   const user = await getAuthenticatedUser();
@@ -13,6 +14,8 @@ export default async function DashboardLayout({ children }) {
       <main className="pt-16">{children}</main>
       {/* Voice assistant — available on every dashboard page */}
       <VoiceAssistant />
+      {/* 4-step onboarding wizard for first-time learners */}
+      <OnboardingWizard />
     </div>
   );
 }

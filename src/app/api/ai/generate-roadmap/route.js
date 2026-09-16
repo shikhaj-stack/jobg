@@ -1,47 +1,14 @@
-import { NextResponse } from "next/server";
+﻿import { NextResponse } from "next/server";
 import { requireAuthenticatedUser } from "@/lib/auth/server";
 
-// Categorized curated video lectures pool
-const LECTURE_POOLS = {
-  dsa: [
-    { videoId: "KLlXCFG5TnA", title: "Two-Pointer, Sliding Window & Array State Patterns" },
-    { videoId: "oBt53YbR9Kk", title: "Dynamic Programming Masterclass & State Transitions" },
-    { videoId: "09_LlHjoEiY", title: "Advanced Graph Algorithms & Network Flow" },
-    { videoId: "PNa9OMFwO1s", title: "Segment Trees, Monotonic Queues & Suffix Tries" }
-  ],
-  systemDesign: [
-    { videoId: "bUHFg8CZFws", title: "Consistent Hashing & Distributed Storage Architecture" },
-    { videoId: "rx6t_J-Y9Z0", title: "Raft Consensus Algorithm & Distributed Replication" },
-    { videoId: "ZjAqacIC_3c", title: "Microservices Scalability & High-Throughput APIs" },
-    { videoId: "09_LlHjoEiY", title: "Distributed Caching & Fault Tolerance Guarantees" }
-  ],
-  web3: [
-    { videoId: "gyMwXuJrbJQ", title: "Smart Contract Security Auditing & Flash Loan DeFi Math" },
-    { videoId: "rx6t_J-Y9Z0", title: "EVM Storage Layout, Yul Assembly & Opcode Optimizations" },
-    { videoId: "bUHFg8CZFws", title: "Decentralized Consensus Protocols & Oracle Security" },
-    { videoId: "09_LlHjoEiY", title: "Zero-Knowledge Proofs & Layer-2 Rollup Architecture" }
-  ],
-  fullstack: [
-    { videoId: "ZjAqacIC_3c", title: "Next.js 14 Server Components & Streaming SSR Internals" },
-    { videoId: "PNa9OMFwO1s", title: "High-Performance Node.js Event Loop & Memory Profiling" },
-    { videoId: "bUHFg8CZFws", title: "PostgreSQL Index Tuning, Query Execution & Pooling" },
-    { videoId: "KLlXCFG5TnA", title: "Cloud Infrastructure, Containerization & CI/CD Pipelines" }
-  ]
-};
-
-function getTopicLectures(topic) {
-  const q = topic.toLowerCase();
-  if (q.includes("web3") || q.includes("solidity") || q.includes("contract") || q.includes("crypto") || q.includes("defi")) {
-    return LECTURE_POOLS.web3;
-  }
-  if (q.includes("design") || q.includes("system") || q.includes("distributed") || q.includes("kafka") || q.includes("cache") || q.includes("scale")) {
-    return LECTURE_POOLS.systemDesign;
-  }
-  if (q.includes("react") || q.includes("next") || q.includes("fullstack") || q.includes("node") || q.includes("backend") || q.includes("frontend")) {
-    return LECTURE_POOLS.fullstack;
-  }
-  return LECTURE_POOLS.dsa;
-}
+const ENGLISH_VIDEO_POOLS = [
+  { videoId: "ULrR_HVbBCU", title: "A to Z English Alphabet & Phonics" },
+  { videoId: "BELlZKpi1Zs", title: "Basic English Pronunciation and Words" },
+  { videoId: "oiNnNh3mEhI", title: "Everyday English Sentences for Daily Use" },
+  { videoId: "dG4CJfgOGS0", title: "Self Introduction & Greetings in English" },
+  { videoId: "KdGiCmE7iB8", title: "हिंदी से अंग्रेजी बोलना सीखें" },
+  { videoId: "yLkdw4a8SZk", title: "दैनिक बातचीत के आसान अंग्रेजी वाक्य" }
+];
 
 export async function POST(request) {
   try {
@@ -49,91 +16,48 @@ export async function POST(request) {
     if (errorResponse) return errorResponse;
 
     const body = await request.json();
-    const { topic, targetRole = "Tier-1 Senior Engineer", weeks = 8 } = body;
+    const { topic, weeks = 4, lang = "hi" } = body;
 
     if (!topic || !topic.trim()) {
       return NextResponse.json({ error: "Topic is required" }, { status: 400 });
     }
 
-    const openAiKey = request.headers.get("x-openai-key") || body.openaiKey || process.env.OPENAI_API_KEY;
     const anthropicKey = request.headers.get("x-anthropic-key") || body.anthropicKey || process.env.ANTHROPIC_API_KEY || process.env.CLAUDE_API_KEY;
 
-    const systemPrompt = `You are the JOBG Elite AI Curriculum Architect.
-Generate a comprehensive, production-grade learning roadmap for ANY requested technical topic.
-For each module, you MUST provide:
-1. Module title
-2. Difficulty (Easy / Medium / Hard)
-3. Estimated hours
-4. Key topics/invariants
-5. A summary of architectural trade-offs
-6. A distinct, relevant YouTube lecture videoId (choose from 'KLlXCFG5TnA', 'oBt53YbR9Kk', '09_LlHjoEiY', 'PNa9OMFwO1s', 'bUHFg8CZFws', 'rx6t_J-Y9Z0', 'ZjAqacIC_3c', 'gyMwXuJrbJQ' without repeating the same ID)
+    const systemPrompt = `You are ParivarLearn's Bilingual AI English Curriculum Guide.
+Generate a structured, family-friendly bilingual English learning roadmap for the requested topic.
+Every title, summary, and topic MUST be a bilingual object with both "en" (English) and "hi" (Hindi) translations.
 
-Return a clean JSON object with this exact schema:
+Schema required:
 {
-  "trackName": "string",
-  "tagline": "string",
-  "badge": "string",
-  "totalWeeks": number,
+  "trackName": { "en": "string", "hi": "string" },
+  "tagline": { "en": "string", "hi": "string" },
+  "badge": "Custom Track",
+  "totalWeeks": ${weeks},
   "pillars": [
     {
-      "id": "string",
+      "id": "p-custom-1",
       "number": "01",
-      "title": "string",
-      "subtitle": "string",
-      "description": "string",
+      "title": { "en": "string", "hi": "string" },
+      "subtitle": { "en": "string", "hi": "string" },
+      "description": { "en": "string", "hi": "string" },
       "modules": [
         {
-          "id": "string",
-          "title": "string",
-          "difficulty": "Hard | Medium | Easy",
-          "estHours": number,
-          "summary": "string",
-          "topics": ["string", "string", "string"],
-          "videoId": "string",
-          "videoTitle": "string"
+          "id": "m-c-1",
+          "title": { "en": "string", "hi": "string" },
+          "difficulty": "Easy | Medium | Hard",
+          "estMinutes": 25,
+          "summary": { "en": "string", "hi": "string" },
+          "topics": [
+            { "en": "string", "hi": "string" }
+          ],
+          "videoId": { "en": "ULrR_HVbBCU", "hi": "KdGiCmE7iB8" }
         }
       ]
     }
   ]
 }`;
 
-    // 1. Try OpenAI if available
-    if (openAiKey) {
-      try {
-        const response = await fetch("https://api.openai.com/v1/chat/completions", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${openAiKey}`,
-          },
-          body: JSON.stringify({
-            model: "gpt-4o-mini",
-            response_format: { type: "json_object" },
-            messages: [
-              { role: "system", content: systemPrompt },
-              { role: "user", content: `Generate a distinct roadmap for topic: "${topic}", target role: "${targetRole}", weeks: ${weeks}` }
-            ]
-          }),
-        });
-
-        if (response.ok) {
-          const data = await response.json();
-          const parsed = JSON.parse(data.choices?.[0]?.message?.content || "{}");
-          if (parsed.pillars && parsed.pillars.length > 0) {
-            return NextResponse.json({
-              success: true,
-              topic,
-              roadmap: parsed,
-              modelUsed: "gpt-4o-mini",
-              provider: "OpenAI",
-              timestamp: new Date().toISOString(),
-            });
-          }
-        }
-      } catch (err) {}
-    }
-
-    // 2. Try Anthropic Claude if available
     if (anthropicKey) {
       try {
         const response = await fetch("https://api.anthropic.com/v1/messages", {
@@ -144,13 +68,13 @@ Return a clean JSON object with this exact schema:
             "content-type": "application/json",
           },
           body: JSON.stringify({
-            model: "claude-haiku-4-5-20251001",
-            max_tokens: 2048,
+            model: "claude-3-5-haiku-20241022",
+            max_tokens: 2500,
             system: systemPrompt,
             messages: [
               {
                 role: "user",
-                content: `Generate a complete, high-impact learning roadmap with distinct YouTube lecture videoIds for the topic: "${topic}". Target Role: ${targetRole}. Expected sprint duration: ${weeks} weeks. Return ONLY the JSON object.`
+                content: `Create a bilingual English learning roadmap for: "${topic}". Target duration: ${weeks} weeks. Return ONLY raw JSON without markdown code fences.`
               }
             ],
           }),
@@ -166,81 +90,135 @@ Return a clean JSON object with this exact schema:
               success: true,
               topic,
               roadmap: parsed,
-              modelUsed: data.model || "claude-haiku-4-5-20251001",
+              modelUsed: data.model,
               provider: "Anthropic Claude",
-              timestamp: new Date().toISOString(),
             });
           }
         }
       } catch (err) {
-        console.warn("Claude API call notice, using resilient fallback generator:", err.message);
+        console.warn("Claude API call fallback:", err.message);
       }
     }
 
-    // Dynamic Topic-Tailored Distinct Video Lectures
-    const vids = getTopicLectures(topic);
-
+    // High quality bilingual fallback curriculum
     const dynamicRoadmap = {
-      trackName: `${topic.toUpperCase()} MASTERY SPRINT`,
-      tagline: `AI-Synthesized Curriculum for ${targetRole}`,
-      badge: "AI CUSTOM TRACK",
+      name: {
+        en: `${topic} — English Course`,
+        hi: `${topic} — अंग्रेजी सीखें`
+      },
+      tagline: {
+        en: `Step-by-step practical English lessons for ${topic}`,
+        hi: `${topic} के लिए कदम-दर-कदम व्यावहारिक अंग्रेजी पाठ`
+      },
+      badge: "AI Custom Roadmap",
       totalWeeks: weeks,
+      stats: { totalModules: 4, estimatedWeeks: weeks },
       pillars: [
         {
           id: "custom-pillar-1",
           number: "01",
-          title: `Foundations & Core Architecture of ${topic}`,
-          subtitle: "Theoretical Underpinnings, Invariants & Trade-Offs",
-          description: `Deep conceptual deconstruction of ${topic}, addressing low-level primitives, state-space constraints, and baseline paradigms.`,
+          title: {
+            en: `Essential Vocabulary for ${topic}`,
+            hi: `${topic} के लिए आवश्यक शब्द-भंडार`
+          },
+          subtitle: {
+            en: "Words, meanings & correct pronunciation",
+            hi: "शब्द, हिंदी अर्थ और सही उच्चारण"
+          },
+          description: {
+            en: `Learn the most common words and expressions needed when dealing with ${topic}.`,
+            hi: `${topic} में उपयोग होने वाले सबसे महत्वपूर्ण शब्द और वाक्यांश सीखें।`
+          },
           modules: [
             {
               id: "mod-c1",
-              title: `${topic}: Core Primitives & State Mechanics`,
-              difficulty: "Hard",
-              estHours: 18,
-              summary: `Master fundamental invariants, data structures, and memory bounds governing ${topic}.`,
-              topics: ["Primitive Invariants", "Memory Layout", "Failure Boundary Traps"],
-              videoId: vids[0].videoId,
-              videoTitle: vids[0].title
+              title: {
+                en: `Key Words & Greetings for ${topic}`,
+                hi: `${topic} के प्रमुख शब्द और अभिवादन`
+              },
+              difficulty: "Easy",
+              estMinutes: 20,
+              summary: {
+                en: `Master polite greetings, common questions, and essential terminology.`,
+                hi: `विनम्र अभिवादन, आम प्रश्न और ज़रूरी शब्दों का अभ्यास करें।`
+              },
+              topics: [
+                { en: "Key Vocabulary List", hi: "प्रमुख शब्दावली सूची" },
+                { en: "Polite Request Phrases", hi: "विनम्र निवेदन के वाक्य" }
+              ],
+              videoId: { en: "ULrR_HVbBCU", hi: "KdGiCmE7iB8" }
             },
             {
               id: "mod-c2",
-              title: `${topic}: Algorithmic Complexity & Optimization`,
+              title: {
+                en: `Listening & Understanding Responses`,
+                hi: `सामने वाले की बात सुनना और समझना`
+              },
               difficulty: "Medium",
-              estHours: 14,
-              summary: `Apply mathematical optimization, asymptotic bounds, and sub-quadratic patterns to ${topic}.`,
-              topics: ["Asymptotic Bounds", "State Compression", "Amortized Analysis"],
-              videoId: vids[1].videoId,
-              videoTitle: vids[1].title
+              estMinutes: 25,
+              summary: {
+                en: `Practice understanding what people say to you in ${topic} situations.`,
+                hi: `${topic} के दौरान लोग क्या कह रहे हैं, उसे आसानी से समझना सीखें।`
+              },
+              topics: [
+                { en: "Common Questions You Will Hear", hi: "अक्सर पूछे जाने वाले सवाल" },
+                { en: "Keywords to Listen For", hi: "ध्यान देने योग्य शब्द" }
+              ],
+              videoId: { en: "BELlZKpi1Zs", hi: "TxDo4G6oNV8" }
             }
           ]
         },
         {
           id: "custom-pillar-2",
           number: "02",
-          title: `Production Scale, Security & High-Throughput Engineering`,
-          subtitle: "Enterprise Reliability & Fault-Tolerant Patterns",
-          description: `Scale ${topic} across distributed nodes, handle partition tolerances, eliminate security vectors, and achieve P99 latency SLA targets.`,
+          title: {
+            en: `Practical Conversations for ${topic}`,
+            hi: `${topic} में व्यावहारिक बातचीत`
+          },
+          subtitle: {
+            en: "Speaking confidently without hesitation",
+            hi: "बिना हिचकिचाहट के आत्मविश्वास से बोलें"
+          },
+          description: {
+            en: `Complete dialogue practice with step-by-step Hindi explanations and audio practice.`,
+            hi: `कदम-दर-कदम हिंदी व्याख्या और अभ्यास के साथ पूरी बातचीत का अभ्यास।`
+          },
           modules: [
             {
               id: "mod-c3",
-              title: `${topic}: Resilient Failure Recovery & Concurrency`,
-              difficulty: "Hard",
-              estHours: 22,
-              summary: `Engineering distributed failover, quorum consensus, and lock-free thread synchronizations in ${topic}.`,
-              topics: ["Quorum Consensus", "Split-Brain Prevention", "Idempotency Gates"],
-              videoId: vids[2].videoId,
-              videoTitle: vids[2].title
+              title: {
+                en: `Real-life Dialogue Practice`,
+                hi: `वास्तविक बातचीत का अभ्यास`
+              },
+              difficulty: "Medium",
+              estMinutes: 30,
+              summary: {
+                en: `Full conversation scripts with audio prompts and Sakhi AI voice practice.`,
+                hi: `ऑडियो और सखी AI वॉयस अभ्यास के साथ पूर्ण बातचीत।`
+              },
+              topics: [
+                { en: "Starting the Conversation", hi: "बातचीत शुरू करना" },
+                { en: "Asking for Clarification", hi: "दोबारा पूछना जब समझ न आए" }
+              ],
+              videoId: { en: "oiNnNh3mEhI", hi: "yLkdw4a8SZk" }
             },
             {
               id: "mod-c4",
-              title: `${topic}: Security Exploits, Audits & Defense In Depth`,
-              difficulty: "Hard",
-              estHours: 16,
-              summary: `Analyze attack vectors, audit checklists, and defensive hardening patterns for ${topic}.`,
-              topics: ["Attack Vector Modeling", "Reentrancy & Invariant Proofs", "Chaos Testing"],
-              videoId: vids[3].videoId,
-              videoTitle: vids[3].title
+              title: {
+                en: `Confidence & Fluency Drill`,
+                hi: `आत्मविश्वास और धाराप्रवाह बोलने का अभ्यास`
+              },
+              difficulty: "Easy",
+              estMinutes: 20,
+              summary: {
+                en: `Review your new phrases with Sakhi voice tutor to build speaking muscle memory.`,
+                hi: `सखी वॉयस ट्यूटर के साथ बोलकर अभ्यास करें ताकि झिझक हमेशा के लिए दूर हो।`
+              },
+              topics: [
+                { en: "Pronunciation Practice", hi: "उच्चारण का अभ्यास" },
+                { en: "Self-Review Quiz", hi: "स्वयं-जाँच प्रश्नोत्तरी" }
+              ],
+              videoId: { en: "dG4CJfgOGS0", hi: "eRdeSFi4TXc" }
             }
           ]
         }
@@ -251,8 +229,8 @@ Return a clean JSON object with this exact schema:
       success: true,
       topic,
       roadmap: dynamicRoadmap,
-      modelUsed: "JOBG-Dynamic-Synthesizer",
-      provider: "Built-in Copilot",
+      modelUsed: "ParivarLearn-Synthesizer",
+      provider: "Built-in Bilingual Engine",
       timestamp: new Date().toISOString(),
     });
   } catch (error) {

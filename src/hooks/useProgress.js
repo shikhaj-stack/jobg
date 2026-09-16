@@ -1,20 +1,20 @@
-"use client";
+﻿"use client";
 import { useState, useEffect, useCallback } from 'react';
 import { ROADMAP_TRACKS } from '@/data/roadmapData';
 import { useAuth } from '@/context/AuthContext';
 import confetti from 'canvas-confetti';
 
 const INITIAL_TASKS = [
-  { id: 't1', title: 'Solve LC 295: Find Median from Data Stream (Hard)', category: 'DSA', completed: true },
-  { id: 't2', title: 'Review DynamoDB Partition & Virtual Node Hashing', category: 'System Design', completed: false },
-  { id: 't3', title: 'Polish Amazon STAR Behavioral Story for Incident P0', category: 'Behavioral', completed: false },
-  { id: 't4', title: 'Run Foundry Invariant Fuzzing test on AMM contract', category: 'Web3', completed: false },
+  { id: 't1', title: 'A से Z अक्षरों की आवाज़ और Phonics सीखें (Learn letter sounds)', category: 'Phonics', completed: true },
+  { id: 't2', title: 'सखी के साथ 5 नए पारिवारिक शब्दों का अभ्यास करें (Family Words)', category: 'Vocabulary', completed: false },
+  { id: 't3', title: 'पाठ वीडियो देखें: अंग्रेजी में अपना परिचय कैसे दें (Self Intro)', category: 'Listening', completed: false },
+  { id: 't4', title: 'सखी वॉयस ट्यूटर के साथ 3 वाक्य बोलकर अभ्यास करें (Speaking)', category: 'Speaking', completed: false },
 ];
 
 export function useProgress() {
   const { user, profile } = useAuth();
-  const [activeTrackId, setActiveTrackId] = useState('kuchnaya');
-  const [completedModules, setCompletedModules] = useState(['m-dsa-1']);
+  const [activeTrackId, setActiveTrackId] = useState('beginner');
+  const [completedModules, setCompletedModules] = useState(['m-beg-1']);
   const [tasks, setTasks] = useState(INITIAL_TASKS);
   const [notes, setNotes] = useState({});
 
