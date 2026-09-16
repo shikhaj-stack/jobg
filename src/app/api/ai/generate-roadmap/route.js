@@ -80,8 +80,8 @@ const TOPIC_KNOWLEDGE_BASE = {
         levelTitle: { en: "Level 3: Trees, Heaps & Binary Search", hi: "लेवल 3: ट्री, हीप और बाइनरी सर्च" },
         levelGoal: { en: "Master hierarchical structures, BFS/DFS tree traversals, and priority queues.", hi: "बाइनरी सर्च ट्री, BFS/DFS ट्रैवर्सल और प्रायोरिटी क्यू सीखें।" },
         playlist: [
-          { videoId: "rx6t_J-Y9Z0", title: "Binary Tree Traversals (Inorder, Preorder, Postorder)", channel: "Striver", duration: "65 min", lang: "hi" },
-          { videoId: "PNa9OMFwO1s", title: "Heaps & Priority Queues Explained", channel: "NeetCode", duration: "48 min", lang: "en" }
+          { videoId: "09_LlHjoEiY", title: "Binary Tree Traversals (Inorder, Preorder, Postorder)", channel: "Striver", duration: "65 min", lang: "hi" },
+          { videoId: "tWVWeAqZ0WU", title: "Heaps & Priority Queues Explained", channel: "NeetCode", duration: "48 min", lang: "en" }
         ],
         modules: [
           {
@@ -91,7 +91,7 @@ const TOPIC_KNOWLEDGE_BASE = {
             difficulty: "Medium",
             estMinutes: 50,
             topics: [{ en: "BFS & DFS", hi: "BFS और DFS" }, { en: "Lowest Common Ancestor", hi: "LCA समस्या" }],
-            videoId: { en: "rx6t_J-Y9Z0", hi: "PNa9OMFwO1s" }
+            videoId: { en: "09_LlHjoEiY", hi: "tWVWeAqZ0WU" }
           }
         ]
       },

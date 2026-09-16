@@ -27,7 +27,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Learn each letter's sound with picture examples. Practice writing uppercase and lowercase.", hi: "हर अक्षर की आवाज़ तस्वीरों के साथ सीखें। बड़े और छोटे अक्षर लिखने का अभ्यास करें।" },
             difficulty: "Easy",
             estMinutes: 20,
-            videoId:  { en: "ULrR_HVbBCU", hi: "KdGiCmE7iB8" },
+            videoId: { en: "36IBDpTRVNE", hi: "hq3yfQnllfQ" },
             topics: [
               { en: "Vowels: A, E, I, O, U",  hi: "स्वर: A, E, I, O, U" },
               { en: "Consonants B to Z",       hi: "व्यंजन B से Z" },
@@ -40,7 +40,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Learn how each letter sounds in words. Practice cat, bat, hat, man, fan, ran.", hi: "शब्दों में हर अक्षर कैसे बोला जाता है। cat, bat, hat जैसे शब्दों का अभ्यास।" },
             difficulty: "Easy",
             estMinutes: 25,
-            videoId: { en: "BELlZKpi1Zs", hi: "TxDo4G6oNV8" },
+            videoId: { en: "BELlZKpi1Zs", hi: "ChqnN3cKzXQ" },
             topics: [
               { en: "Short vowel sounds (a, e, i, o, u)", hi: "छोटी स्वर ध्वनियाँ" },
               { en: "Simple CVC words (cat, dog, sun)",  hi: "सरल CVC शब्द" },
@@ -61,7 +61,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Mother, father, sister, brother — learn family words with pronunciation.", hi: "माँ, पिता, बहन, भाई — परिवार के शब्द उच्चारण के साथ सीखें।" },
             difficulty: "Easy",
             estMinutes: 20,
-            videoId: { en: "oiNnNh3mEhI", hi: "eFf-ylwWvPY" },
+            videoId: { en: "24GWC1dDyUM", hi: "TOkaCU2lS8E" },
             topics: [
               { en: "Nuclear family words",  hi: "मूल परिवार के शब्द" },
               { en: "Extended family words", hi: "बड़े परिवार के शब्द" },
@@ -73,7 +73,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Count, say, and write numbers 1–100 in English.", hi: "अंग्रेजी में 1 से 100 तक गिनना, बोलना और लिखना।" },
             difficulty: "Easy",
             estMinutes: 20,
-            videoId: { en: "d-diB65scQU", hi: "pDjZj_gLgI0" },
+            videoId: { en: "bGetqbqDVaA", hi: "y3GynqBwV1M" },
             topics: [
               { en: "1–20 with pronunciation", hi: "1 से 20 उच्चारण सहित" },
               { en: "Tens: 20, 30, 40...",     hi: "दहाई: बीस, तीस, चालीस..." },
@@ -85,7 +85,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Describe the world around you — red, blue, circle, square, big, small.", hi: "अपने आस-पास की दुनिया का वर्णन करें — लाल, नीला, गोल, चौकोर, बड़ा, छोटा।" },
             difficulty: "Easy",
             estMinutes: 20,
-            videoId: { en: "IhK2GVnnhNs", hi: "FzlXanTBAuE" },
+            videoId: { en: "VdzzE20zQC8", hi: "Qxd9ok73qoA" },
             topics: [
               { en: "12 basic colors",  hi: "12 मूल रंग" },
               { en: "Basic shapes",     hi: "बुनियादी आकार" },
@@ -107,7 +107,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Hello, Good morning, How are you? Please, Thank you, Sorry — everyday politeness.", hi: "नमस्ते, सुप्रभात, आप कैसे हैं? कृपया, धन्यवाद, माफ़ी — रोज़ की शिष्टता।" },
             difficulty: "Easy",
             estMinutes: 15,
-            videoId: { en: "SJE0bJBFHN8", hi: "AaexC1b0N24" },
+            videoId: { en: "amxeGGNwwzE", hi: "WyBY5KoOf8g" },
             topics: [
               { en: "Greetings by time of day", hi: "दिन के समय अनुसार अभिवादन" },
               { en: "Polite requests",           hi: "विनम्र अनुरोध" },
@@ -119,7 +119,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "My name is..., I am from..., I like... — build a simple self-introduction.", hi: "मेरा नाम है..., मैं ... से हूँ..., मुझे ... पसंद है — सरल आत्म-परिचय बनाएं।" },
             difficulty: "Easy",
             estMinutes: 20,
-            videoId: { en: "dG4CJfgOGS0", hi: "eRdeSFi4TXc" },
+            videoId: { en: "IDaxAC8DdBI", hi: "PofzRwd3q24" },
             topics: [
               { en: "Name, age, city", hi: "नाम, उम्र, शहर" },
               { en: "Hobbies & likes", hi: "शौक और पसंद" },
@@ -152,7 +152,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "I eat, She reads, They play — when do we use simple present? Rules with Hindi examples.", hi: "मैं खाता हूँ, वह पढ़ती है — Simple Present कब उपयोग करें? हिंदी उदाहरणों के साथ नियम।" },
             difficulty: "Medium",
             estMinutes: 30,
-            videoId: { en: "muMz1T9Vox4", hi: "LNnlBLxVTFg" },
+            videoId: { en: "Ljjiw9mC_Cg", hi: "pXZtRXpGNck" },
             topics: [
               { en: "Subject + Verb rules",     hi: "Subject + Verb के नियम" },
               { en: "He/She/It + s/es",         hi: "He/She/It के साथ s/es" },
@@ -165,7 +165,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "I went, She cooked, They arrived — past tense rules and irregular verbs.", hi: "मैं गया, उसने पकाया — भूत काल के नियम और अनियमित क्रियाएं।" },
             difficulty: "Medium",
             estMinutes: 30,
-            videoId: { en: "8W3yCLiMJGQ", hi: "hhqC6OtOHsI" },
+            videoId: { en: "HouExpWyNlY", hi: "rOrC7hi2YLA" },
             topics: [
               { en: "Regular verbs + -ed",  hi: "नियमित क्रियाएं + -ed" },
               { en: "Top 50 irregular verbs", hi: "50 अनियमित क्रियाएं" },
@@ -177,7 +177,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "I will call you. I am going to visit Delhi. When to use which?", hi: "मैं आपको call करूंगा। मैं दिल्ली जाने वाला हूँ। कौन सा कब उपयोग करें?" },
             difficulty: "Medium",
             estMinutes: 25,
-            videoId: { en: "Zh2yz3GmKrM", hi: "t3JM3bRsqhA" },
+            videoId: { en: "T-L0BBB2icQ", hi: "KgxL_Gw-sbY" },
             topics: [
               { en: "will vs going to",     hi: "will बनाम going to" },
               { en: "Making predictions",   hi: "भविष्यवाणियाँ करना" },
@@ -198,7 +198,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "How much does this cost? Do you have a discount? I want to return this.", hi: "इसकी कीमत क्या है? क्या छूट मिलेगी? मुझे यह वापस करना है।" },
             difficulty: "Medium",
             estMinutes: 25,
-            videoId: { en: "GYE1kOAuGKM", hi: "t6OiFLfAi7I" },
+            videoId: { en: "I00ph_RJYAw", hi: "HouExpWyNlY" },
             topics: [
               { en: "Asking prices", hi: "कीमत पूछना" },
               { en: "Bargaining phrases", hi: "मोलभाव के वाक्य" },
@@ -210,7 +210,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "I have a fever. My stomach hurts. How many times a day should I take this?", hi: "मुझे बुखार है। मेरे पेट में दर्द है। दिन में कितनी बार लेनी है?" },
             difficulty: "Medium",
             estMinutes: 25,
-            videoId: { en: "HMvQREAGFf4", hi: "i8nLlAkNaM8" },
+            videoId: { en: "Cj9DKRWp-ek", hi: "rOrC7hi2YLA" },
             topics: [
               { en: "Describing symptoms", hi: "लक्षण बताना" },
               { en: "Understanding prescriptions", hi: "दवाई की पर्ची समझना" },
@@ -222,7 +222,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "How do I get to the station? Turn left, go straight, take the second right.", hi: "स्टेशन कैसे जाएं? बाईं तरफ मुड़ें, सीधे जाएं, दूसरी दाईं तरफ लें।" },
             difficulty: "Medium",
             estMinutes: 20,
-            videoId: { en: "VIvs6HMbDTA", hi: "BoMPjBqJnM4" },
+            videoId: { en: "SHXPpsIJTb0", hi: "WyBY5KoOf8g" },
             topics: [
               { en: "Giving directions", hi: "रास्ता बताना" },
               { en: "Transport vocabulary", hi: "परिवहन शब्दावली" },
@@ -243,7 +243,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Break a leg, Hit the nail, Under the weather — with Hindi meaning & example sentences.", hi: "Break a leg, Hit the nail — हिंदी अर्थ और उदाहरण वाक्यों के साथ।" },
             difficulty: "Medium",
             estMinutes: 35,
-            videoId: { en: "nKnfKhIzqtY", hi: "yLkdw4a8SZk" },
+            videoId: { en: "RRJtDw4TNPM", hi: "pXZtRXpGNck" },
             topics: [
               { en: "Work & career idioms", hi: "काम और करियर के मुहावरे" },
               { en: "Feeling & emotion idioms", hi: "भावना के मुहावरे" },
@@ -276,7 +276,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "The trickiest part of English — when to use a, an, or the? Explained with Hindi rules.", hi: "अंग्रेजी का सबसे मुश्किल हिस्सा — a, an, या the कब लगाएं? हिंदी नियमों के साथ।" },
             difficulty: "Hard",
             estMinutes: 40,
-            videoId: { en: "7Bw4rZ0nDGo", hi: "MUqGSPe3_wk" },
+            videoId: { en: "r49hrj4cK5U", hi: "2hlnMQKPdE8" },
             topics: [
               { en: "Definite vs Indefinite article", hi: "निश्चित बनाम अनिश्चित article" },
               { en: "When to use NO article",         hi: "article कब न लगाएं" },
@@ -288,7 +288,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "I am at home. She sat on the chair. The keys are in the drawer. Master all prepositions.", hi: "मैं घर पर हूँ। वह कुर्सी पर बैठी। चाबियाँ दराज में हैं। सभी prepositions सीखें।" },
             difficulty: "Hard",
             estMinutes: 35,
-            videoId: { en: "r7OhYnZ1DKo", hi: "0GeCIdCqB7E" },
+            videoId: { en: "r49hrj4cK5U", hi: "Kwtm_Awg-lE" },
             topics: [
               { en: "Place prepositions",  hi: "स्थान prepositions" },
               { en: "Time prepositions",   hi: "समय prepositions" },
@@ -309,7 +309,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Subject line, greeting, body, closing — structure a professional email from scratch.", hi: "Subject line, अभिवादन, मुख्य भाग, समापन — शुरू से एक पेशेवर ईमेल बनाएं।" },
             difficulty: "Hard",
             estMinutes: 40,
-            videoId: { en: "kFSx6HuHb3k", hi: "7w-lf0ZSJFA" },
+            videoId: { en: "rGrH-IGHS9w", hi: "rGrH-IGHS9w" },
             topics: [
               { en: "Email structure & format",      hi: "ईमेल की संरचना और प्रारूप" },
               { en: "Professional vocabulary",       hi: "पेशेवर शब्दावली" },
@@ -331,7 +331,7 @@ export const ROADMAP_TRACKS = {
             summary: { en: "Deadline, presentation, agenda, minutes of meeting — plus water-cooler small talk.", hi: "Deadline, प्रेज़ेंटेशन, agenda — और दफ्तर में की जाने वाली आम बातचीत।" },
             difficulty: "Medium",
             estMinutes: 35,
-            videoId: { en: "bVlm4QHdLRs", hi: "RqBWFh6GWFE" },
+            videoId: { en: "8WURPzIEiHE", hi: "PofzRwd3q24" },
             topics: [
               { en: "Meeting vocabulary",  hi: "मीटिंग की शब्दावली" },
               { en: "Professional small talk", hi: "पेशेवर छोटी बातचीत" },
