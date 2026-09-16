@@ -20,7 +20,7 @@ export default function TrackSelector({ activeTrackId, onSelectTrack }) {
   };
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8">
+    <div className={`grid gap-4 mb-8 ${tracks.length === 1 ? "grid-cols-1 max-w-2xl" : "grid-cols-1 md:grid-cols-3"}`}>
       {tracks.map((track) => {
         const Icon = getIcon(track.id);
         const isActive = activeTrackId === track.id;

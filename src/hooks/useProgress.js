@@ -13,7 +13,7 @@ const INITIAL_TASKS = [
 
 export function useProgress() {
   const { user, profile } = useAuth();
-  const [activeTrackId, setActiveTrackId] = useState('maang');
+  const [activeTrackId, setActiveTrackId] = useState('kuchnaya');
   const [completedModules, setCompletedModules] = useState(['m-dsa-1']);
   const [tasks, setTasks] = useState(INITIAL_TASKS);
   const [notes, setNotes] = useState({});
@@ -198,7 +198,7 @@ export function useProgress() {
     } catch (e) {}
   }, []);
 
-  const currentTrack = ROADMAP_TRACKS[activeTrackId] || ROADMAP_TRACKS.maang;
+  const currentTrack = ROADMAP_TRACKS[activeTrackId] || ROADMAP_TRACKS.kuchnaya || Object.values(ROADMAP_TRACKS)[0];
   const allModulesInCurrentTrack = currentTrack.pillars.flatMap((p) => p.modules);
   const totalTrackModules = allModulesInCurrentTrack.length;
   const completedInTrack = allModulesInCurrentTrack.filter((m) => completedModules.includes(m.id)).length;

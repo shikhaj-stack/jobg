@@ -19,7 +19,7 @@ export default function AuthGuard({ children }) {
       <div className="min-h-screen flex items-center justify-center bg-[#f8fafc]">
         <div className="flex flex-col items-center gap-4 text-center">
           <Loader2 className="w-10 h-10 animate-spin text-amber-600" />
-          <p className="text-sm font-medium text-slate-600">Entering JOBG Chamber...</p>
+          <p className="text-sm font-medium text-slate-600">Entering KUCHNAYA Chamber...</p>
         </div>
       </div>
     );
